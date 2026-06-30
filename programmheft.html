@@ -139,6 +139,12 @@ main{padding:clamp(1.6rem,4vw,2.8rem) 0 1rem}
 .card[aria-expanded="true"] .badge.mehr svg{transform:rotate(180deg)}
 .info-text{margin-top:.6rem;padding-top:.6rem;border-top:1px dashed var(--line);font-size:.95rem;color:var(--ink-soft);display:none}
 .card[aria-expanded="true"] .info-text{display:block}
+.info-text p{margin:.5rem 0}
+.info-text p:first-child{margin-top:0}
+.info-text p:last-child{margin-bottom:0}
+.card-chev{flex:none;align-self:flex-start;margin-top:.15rem;color:var(--koralle);width:1.35rem;height:1.35rem;transition:transform .2s}
+.card-chev svg{width:100%;height:100%}
+.card[aria-expanded="true"] .card-chev{transform:rotate(180deg)}
 /* Mahlzeiten/Pausen dezenter */
 .slot.meal .card{background:var(--creme);border-style:dashed;box-shadow:none}
 .slot.meal h3{color:var(--ink-soft);font-weight:600}
@@ -206,7 +212,7 @@ footer a{color:var(--gold-hell);font-weight:700}
   @page{size:A4 landscape;margin:8mm}
   html{scroll-padding-top:0}
   body{background:#fff;font-size:10pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .cover,.bar,.info-wrap,footer,.lcband,.skip,.day-head .tagdruck,.badge.mehr,.tagezahl,.info-text,.empty{display:none!important}
+  .cover,.bar,.info-wrap,footer,.lcband,.skip,.day-head .tagdruck,.badge.mehr,.card-chev,.tagezahl,.info-text,.empty{display:none!important}
   main{padding:0}
   .wrap{max-width:none;padding:0}
   /* jeder Tag startet auf einem frischen Blatt; ein Tag DARF mehrere Blätter füllen */
@@ -503,41 +509,43 @@ footer a{color:var(--gold-hell);font-weight:700}
     var zt = el("div","zeit"); zt.innerHTML = esc(zp.a) + (zp.b?'<small>– '+esc(zp.b)+'</small>':"");
     slot.appendChild(zt);
 
-    var hasInfo = !!(p.info && p.info.trim());
+    // Beschreibung = manueller Info-Text + ehemalige Labels, alles zusammengeführt
+    var woParts = (p.wo||"").split(/\s\/\s/);
+    var infoParts = [];
+    if(p.info && p.info.trim()) infoParts.push(p.info.trim());
+    var hinweise = [];
+    if(p.hinweis) hinweise.push(p.hinweis.trim().replace(/\.?$/,".") );
+    if(woParts.length>1) hinweise.push("Bei schlechtem Wetter / als Alternative: "+woParts.slice(1).join(" / ").trim()+".");
+    if(p.optional) hinweise.push("Optionales Angebot – die Teilnahme ist freiwillig.");
+    if(p.anmeldung==="offen") hinweise.push("Ohne Anmeldung – einfach vorbeikommen.");
+    if(p.anmeldung==="begrenzt") hinweise.push("Begrenzte Plätze – am besten frühzeitig da sein.");
+    if(p.status==="geaendert") hinweise.push("Programmänderung – bitte aktuelle Hinweise beachten.");
+    if(p.status==="entfaellt") hinweise.push("Dieser Programmpunkt entfällt.");
+    if(hinweise.length) infoParts.push(hinweise.join(" "));
+    var hasInfo = infoParts.length>0;
+
     var card = el("div","card"+(hasInfo?" has-info":"")+(p.status==="entfaellt"?" cancelled":""));
     if(hasInfo){ card.setAttribute("role","button"); card.tabIndex=0; card.setAttribute("aria-expanded","false"); }
 
-    // top: titel + zielgruppen-icons
+    // top: titel + zielgruppen-icons + Aufklapp-Pfeil
     var top = el("div","card-top");
     top.appendChild(el("h3",null,esc(p.titel)));
     var zg = el("div","zg-icons");
     (p.wen||[]).forEach(function(k){ if(ZG[k]) zg.innerHTML += '<svg role="img" aria-label="'+esc(ZG[k].label)+'"><use href="#'+ICON[ZG[k].icon]+'"/></svg>'; });
     top.appendChild(zg);
+    if(hasInfo){ var chev=el("span","card-chev"); chev.innerHTML=svgUse("i-chev"); top.appendChild(chev); }
     card.appendChild(top);
 
-    // meta: wer / wo
+    // meta: wer / wo  (Ort = Hauptort; eine evtl. Wetter-Alternative steht in der Beschreibung)
     var meta = el("div","meta");
     if(p.wer) meta.innerHTML += '<span class="wer">'+svgUse("i-person")+esc(p.wer)+'</span>';
-    if(p.wo){
-      var wetter = /\s\/\s/.test(p.wo);
-      meta.innerHTML += '<span>'+svgUse("i-pin")+esc(p.wo)+'</span>';
-    }
+    if(p.wo) meta.innerHTML += '<span>'+svgUse("i-pin")+esc(woParts[0].trim())+'</span>';
     if(p.wer||p.wo) card.appendChild(meta);
 
-    // badges
-    var badges = el("div","badges");
-    if(p.optional) badges.innerHTML += '<span class="badge optional">Optional</span>';
-    if(p.anmeldung==="offen") badges.innerHTML += '<span class="badge offen">Ohne Anmeldung</span>';
-    if(p.anmeldung==="begrenzt") badges.innerHTML += '<span class="badge begrenzt">Begrenzte Plätze</span>';
-    if(p.hinweis) badges.innerHTML += '<span class="badge alter">'+esc(p.hinweis)+'</span>';
-    if(/\s\/\s/.test(p.wo||"")) badges.innerHTML += '<span class="badge wetter">'+svgUse("i-sun")+'Wetter-Alternative</span>';
-    if(p.status==="geaendert") badges.innerHTML += '<span class="badge geaendert">Geändert</span>';
-    if(p.status==="entfaellt") badges.innerHTML += '<span class="badge entfaellt">Entfällt</span>';
-    if(hasInfo) badges.innerHTML += '<span class="badge mehr">Mehr Infos '+svgUse("i-chev")+'</span>';
-    if(badges.children.length) card.appendChild(badges);
-
     if(hasInfo){
-      card.appendChild(el("div","info-text",esc(p.info)));
+      var info = el("div","info-text");
+      infoParts.forEach(function(t){ info.appendChild(el("p",null,esc(t))); });
+      card.appendChild(info);
       var toggle=function(){ var x=card.getAttribute("aria-expanded")==="true"; card.setAttribute("aria-expanded",!x); };
       card.addEventListener("click",toggle);
       card.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); toggle(); } });
