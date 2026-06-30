@@ -7,6 +7,7 @@
 <meta name="description" content="Der digitale Tagesplaner fürs Wundaplunda: alle Programmpunkte mit Leitung, Ort & Zielgruppe — pro Tag ausdruckbar, in Sekunden aktualisierbar.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#FBF4E6">
+<link rel="icon" type="image/png" href="assets/img/marke-quadrat.png">
 <link rel="stylesheet" href="assets/fonts.css">
 <style>
 :root{
@@ -17,7 +18,7 @@
   --gold:#E1971F; --gold-hell:#F1B53C;
   --magenta:#D8418F; --gruen:#5E8C57;
   --ink:#33291F; --ink-soft:#5C5142; --muted:#6F6249; --line:#E7D9BC;
-  --display:'Fraunces',Georgia,serif; --sans:'Nunito Sans',-apple-system,'Segoe UI',sans-serif; --hand:'Caveat',cursive;
+  --display:'Nunito',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; --sans:'Nunito',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; --hand:'Caveat',cursive;
   --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2.5rem; --s5:4rem;
   --radius:1.2rem; --radius-s:.7rem;
   --shadow:0 14px 40px -18px rgba(51,41,31,.30);
@@ -49,6 +50,10 @@ a{color:var(--blau)}
 .wortmarke span:nth-child(7n+5){color:var(--koralle)}
 .wortmarke span:nth-child(7n+6){color:var(--magenta)}
 .wortmarke span:nth-child(7n+7){color:var(--gruen)}
+/* Echtes Original-Logo statt Text-Wortmarke */
+.cover-logo{width:min(94%,560px);height:auto;margin:.1rem 0 .6rem}
+footer .foot-logo{width:min(80%,330px);height:auto}
+.print-head .print-logo{height:1.4rem;width:auto}
 
 /* ---------- Cover ---------- */
 .cover{position:relative;overflow:hidden;background:var(--hell);border-bottom:3px solid var(--line)}
@@ -217,6 +222,7 @@ footer a{color:var(--gold-hell);font-weight:700}
   body[data-printday="sa"] .day[data-day="sa"]{display:block!important;break-before:auto}
   .print-head{display:flex!important;border-bottom:2.5px solid #195591;margin-bottom:.45rem;padding-bottom:.3rem;align-items:flex-end}
   .print-head .wortmarke{font-size:1.55rem}
+  .print-head .print-logo{height:1.55rem;width:auto}
   .print-head .pdatum{font-size:1.5rem}
   .day-head{display:none!important}
   /* zweispaltiger, dichter Tagesplan → ein Tag passt aufs Blatt */
@@ -293,7 +299,7 @@ footer a{color:var(--gold-hell);font-weight:700}
   </svg>
   <div class="wrap">
     <span class="kicker">Schön, dass du da bist!</span>
-    <h1><span class="sr-only">Wundaplunda – Programmheft &amp; Tagesplaner</span><span class="wortmarke" aria-hidden="true"><span>W</span><span>U</span><span>N</span><span>D</span><span>A</span><span>P</span><span>L</span><span>U</span><span>N</span><span>D</span><span>A</span></span></h1>
+    <h1><span class="sr-only">Wundaplunda – Programmheft &amp; Tagesplaner</span><img class="cover-logo" src="assets/img/wortmarke.png" alt="WUNDAPLUNDA" width="1368" height="154"></h1>
     <div class="untertitel" id="cover-sub">Familien-Sommercamp im Ökodorf Sulzbrunn</div>
     <div class="datumzeile" id="cover-datum"></div>
     <p class="intro">Dein digitaler Tagesplaner: alle Programmpunkte mit <strong>Leitung</strong>, <strong>Ort</strong> und <strong>für wen</strong> sie gedacht sind. Tippe einen Punkt für mehr Infos — oder druck dir deinen Tag fürs Zelt aus.</p>
@@ -399,7 +405,7 @@ footer a{color:var(--gold-hell);font-weight:700}
 
 <footer>
   <div class="wrap">
-    <span class="wortmarke" aria-label="Wundaplunda"><span>W</span><span>U</span><span>N</span><span>D</span><span>A</span><span>P</span><span>L</span><span>U</span><span>N</span><span>D</span><span>A</span></span>
+    <img class="foot-logo" src="assets/img/logo-wundaplunda-creme.png" alt="WUNDAPLUNDA – Das Sommererlebnis für Groß und Klein" width="1640" height="301">
     <p id="foot-info"></p>
     <p>Fragen zu Anreise, Buchung oder Frühstück? <a href="mailto:gaeste@seminarhaus-sulzbrunn.de">gaeste@seminarhaus-sulzbrunn.de</a></p>
   </div>
@@ -552,7 +558,7 @@ footer a{color:var(--gold-hell);font-weight:700}
 
     // Druckkopf (nur im Druck sichtbar)
     var ph = el("div","print-head");
-    ph.innerHTML = '<span class="wortmarke"><span>W</span><span>U</span><span>N</span><span>D</span><span>A</span><span>P</span><span>L</span><span>U</span><span>N</span><span>D</span><span>A</span></span>'
+    ph.innerHTML = '<img class="print-logo" src="assets/img/wortmarke.png" alt="WUNDAPLUNDA">'
       + '<span class="pdatum">'+esc(t.wochentag)+', '+esc(t.datum)+(D.festival.jahr?(" "+D.festival.jahr):"")+'</span>';
     sec.appendChild(ph);
 

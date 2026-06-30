@@ -6,6 +6,7 @@
 <title>Redaktion · Wundaplunda Programmheft (intern)</title>
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#FBF4E6">
+<link rel="icon" type="image/png" href="assets/img/marke-quadrat.png">
 <link rel="stylesheet" href="assets/fonts.css">
 <style>
 :root{
@@ -13,7 +14,7 @@
   --blau:#195591; --blau-tief:#103F6E; --blau-mittel:#2C6CA4;
   --koralle:#EE8469; --rot:#E0431F; --gold:#E1971F; --magenta:#D8418F; --gruen:#5E8C57;
   --ink:#33291F; --ink-soft:#5C5142; --muted:#6F6249; --line:#E7D9BC;
-  --display:'Fraunces',Georgia,serif; --sans:'Nunito Sans',-apple-system,'Segoe UI',sans-serif; --hand:'Caveat',cursive;
+  --display:'Nunito',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; --sans:'Nunito',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; --hand:'Caveat',cursive;
   --radius:.9rem; --shadow:0 10px 30px -16px rgba(51,41,31,.3);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -28,6 +29,7 @@ header.top{background:var(--hell);border-bottom:3px solid var(--line)}
 .top .wrap{padding-top:1.1rem;padding-bottom:1.1rem}
 .top h1{margin:0;font-size:inherit;font-weight:inherit;line-height:1.1}
 .top .wortmarke{font-size:1.9rem}
+.top .red-logo{height:40px;width:auto;display:inline-block;vertical-align:middle}
 .top .badge-intern{display:inline-block;background:var(--sand);color:var(--ink-soft);font-family:var(--hand);font-size:1.2rem;padding:.05em .7em;border-radius:99px;transform:rotate(-1deg);margin-left:.5rem;vertical-align:middle}
 .top p.sub{color:var(--ink-soft);margin-top:.3rem;max-width:70ch}
 .top p.sub a{font-weight:700}
@@ -109,7 +111,7 @@ textarea#code{min-height:200px;font-family:ui-monospace,SFMono-Regular,Menlo,mon
 
 <header class="top">
   <div class="wrap">
-    <h1><span class="sr-only">Wundaplunda Programmheft – Redaktion</span><span class="wortmarke" aria-hidden="true"><span>W</span><span>U</span><span>N</span><span>D</span><span>A</span><span>P</span><span>L</span><span>U</span><span>N</span><span>D</span><span>A</span></span><span class="badge-intern">Redaktion · intern</span></h1>
+    <h1><span class="sr-only">Wundaplunda Programmheft – Redaktion</span><img class="red-logo" src="assets/img/wortmarke.png" alt="WUNDAPLUNDA" width="1368" height="154"><span class="badge-intern">Redaktion · intern</span></h1>
     <p class="sub">Hier pflegst du das Programm — ohne Code zu schreiben. Punkt anklicken → ändern → <strong>„Code erzeugen"</strong> → den Block in <code>assets/programm-daten.js</code> einsetzen. Damit aktualisieren sich <strong>Tagesplaner und Ausdruck gleichzeitig</strong>. Vorschau: <a href="programmheft.html" target="_blank">programmheft.html</a></p>
   </div>
 </header>
