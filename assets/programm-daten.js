@@ -146,6 +146,88 @@ const WUNDA = {
     { tag:"sa", zeit:"16:00", titel:"Abreise", wer:"", wo:"", wen:["alle"], hinweis:"Wer mag ist gerne zum Abbau Samstag und Sonntag eingeladen und am Samstagabend ab 19 Uhr zum Pizzahelfendenfest" },
   ],
 
+  /* --- KATALOG 2026 (aus wundaplunda.de/programm-2026): Leitung, Foto & Beschreibung,
+         nach Programmpunkt-Titel zugeordnet. Wird automatisch in die passenden
+         Tagesplan-Kacheln eingeblendet (Foto + Text beim Aufklappen). --- */
+  katalog: {
+    "Geländeführung": {
+      wer: "Oliver, Carmen & Fabienne (Gemeinschaft Sulzbrunn)",
+      foto: "gelaendefuehrung.png",
+      beschreibung: "Bei der Tour über das rund 15,5 Hektar große Gelände zeigen euch Sulzbrunn-Bewohner:innen Wald, Wiesen und die zehn Gebäude des kleinen Dorfs – inklusive der Geschichte rund um die Sulzbrunner Jodquelle (Kurbetrieb seit 1852)."
+    },
+    "Kinderkreis": {
+      wer: "Wundaplunda Team",
+      foto: "kinderkreis.png",
+      beschreibung: "Während die Großen ihren Frauen- und Männerkreis haben, schaffen wir für die Kinder einen eigenen Raum zum Ankommen: Wir finden heraus, worauf ihr euch am meisten freut, lernen erste neue Freund:innen kennen und reden über alles, was den Lageralltag schön macht. Dieses Jahr mit Überraschungsgast mit roter Nase!"
+    },
+    "Musik am Lagerfeuer": {
+      foto: "lagerfeuerabende.png",
+      beschreibung: "Wenn die Nacht hereinbricht, versammeln wir uns am knisternden Feuer. Mitgebrachte Instrumente – Trommel, Gitarre, Rassel – sind herzlich willkommen. Gemeinsam singen, musizieren und erzählen wir Geschichten unter dem Sternenhimmel."
+    },
+    "Yoga": {
+      wer: "Amelie Zech (Stimmtherapeutin & Yogalehrerin)",
+      foto: "yoga.png",
+      beschreibung: "Beim Yoga am Morgen mobilisieren wir den ganzen Körper, entspannen und lassen die Gedanken los – kraftvoll und entspannt in den Wundaplunda-Tag mit Amelie Zech."
+    },
+    "Gemeinsamer Morgenkreis": {
+      wer: "Wundaplunda Team",
+      foto: "morgenkreis.png",
+      beschreibung: "Der Lagerruf holt die Letzten aus den Federn und bringt uns alle zusammen. Jeden Morgen begrüßen wir den neuen Tag, besprechen, was uns erwartet, und singen die ersten Lieder."
+    },
+    "Clanzeit": {
+      foto: "clanzeit.png",
+      beschreibung: "Findet euren Clan für die Woche! In kleiner Gemeinschaft verbringt ihr Zeit miteinander, tauscht euch aus und kommt in Verbindung – mit ein paar überraschenden Impulsen vom Team. So entsteht Vertrautheit und ganz viel Miteinander."
+    },
+    "Frauenkreis": {
+      wer: "Fabienne (Gemeinschaft Sulzbrunn)",
+      foto: "frauenkreis.png",
+      beschreibung: "Wir legen bewusst die vielen Alltagsrollen ab – Mutter, Partnerin, Tochter – und kommen zur Essenz des Frauseins. Durch Körperübungen, Austausch, Singen und Energiearbeit verbinden wir uns miteinander und mit uns selbst. Ein Raum für dich – komm so, wie du bist."
+    },
+    "Seifenblasen": {
+      foto: "riesenseifenblasen.png",
+      beschreibung: "Hier machen wir die größten Blasen aller Zeiten! Sie steigen hoch in den Himmel und schimmern in allen Farben. Komm vorbei und probier es aus – wer schafft die größte Blase?"
+    },
+    "Männerkreis": {
+      wer: "Oliver (Gemeinschaft Sulzbrunn)",
+      foto: "maennerkreis.png",
+      beschreibung: "Im geschützten Raum tauschen wir uns über Themen aus, die uns als Mann der heutigen Zeit bewegen oder herausfordern. Wild, sanft und authentisch – ein Raum, in dem wir uns hören, begegnen und berühren."
+    },
+    "Betthupferl Geschichte": {
+      wer: "Lisa Suitner",
+      foto: "abendgeschichten.png",
+      beschreibung: "Schnapp dir dein Kuscheltier, mach's dir gemütlich und lass den Tag mit einem Lächeln ausklingen. Lisa – Clownin, Musikerin und Geschichtenerzählerin aus Vorarlberg – bringt ihre liebsten Geschichten samt Humor und Musik mit."
+    },
+    "Fit in den Tag / Achtsames Atmen": {
+      wer: "Matthias Zech (Fachtrainer Ausdauersport & Triathlet)",
+      foto: "morgen-workout.png",
+      beschreibung: "Raus aus dem Schlafmodus, rein in die Bewegung: Mit einer Mischung aus Ausdauer-, Kraft- und Koordinationsübungen starten wir aktiv in den Tag – ganz ohne Leistungsdruck, jede:r im eigenen Tempo. Für Erwachsene; bequeme Kleidung und etwas zu trinken mitbringen."
+    },
+    "Weidenflechten": {
+      wer: "Tina Thierfelder (Naturgestalterin & Weidenflechterin)",
+      foto: "weiden.png",
+      beschreibung: "Aus frischen Weidenruten gestalten wir wunderschöne Weidenzauberstäbe oder dekorative Weidenfische. Für Groß und Klein, ganz ohne Vorkenntnisse – kreative Kunst aus der Natur."
+    },
+    "Feuershow": {
+      wer: "Artistik Calimbaro",
+      foto: "feuer-akrobatikshow.jpg",
+      beschreibung: "Artistik Calimbaro ist seit 2019 fester Bestandteil des Wundaplunda. Freut euch auf die bezaubernde Feuer-Akrobatikshow von Florian & Susanne – Leidenschaft, Energie und pure Magie in der Nacht."
+    },
+    "Eltern - Kind Akrobatik": {
+      wer: "Susanne (Artistik Calimbaro)",
+      foto: "eltern-kind-akrobatik.png",
+      beschreibung: "Gemeinsam lachen, balancieren und Vertrauen stärken: In spielerischen Übungen lernen Groß und Klein einfache akrobatische Elemente – ob fliegende Kinder oder tragende Eltern. Keine Vorkenntnisse nötig, für Kinder von 3–6 Jahren."
+    },
+    "Clan Open Stage": {
+      foto: "clan-open-stage.png",
+      beschreibung: "Bühne frei für die Clans! In bunter, unterstützender Atmosphäre zeigt ihr, was in euch steckt – lustig, kreativ, wild oder überraschend. Es geht nicht um Perfektion, sondern um Freude, Mut und gemeinsames Erleben."
+    },
+    "Modellieren mit Ton": {
+      wer: "Amelie & Matthias",
+      foto: "ton-brennen.png",
+      beschreibung: "Kinder ab 6 Jahren gestalten gemeinsam mit einem Elternteil eigene kleine Objekte aus Ton. Anschließend brennen wir die Werke im Feuer und beobachten, wie der Ton fest und zum Werkstück wird."
+    }
+  },
+
   verpflegung: {
     hinweis: "Alles Bio, vegetarisch/vegan – teils aus eigenem Anbau. Zahlung bar oder per PayPal (QR) an der Essensausgabe. Bitte Bargeld für die Woche mitbringen.",
     essenszeiten: [
