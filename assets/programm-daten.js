@@ -3,173 +3,209 @@
    ----------------------------------------------------------------------------
    Das ist die EINZIGE Datei, die du pflegst. Aus ihr entstehen automatisch:
      · der digitale Tagesplaner (Web)
-     · der Pro-Tag-Ausdruck für die Infowand (jetzt MIT Leitung!)
+     · der Pro-Tag-Ausdruck für die Infowand (mit Leitung!)
      · die Info-Seiten (Geländeplan, Essen & Trinken, gut zu wissen)
    Ändern, speichern, fertig — Web UND Ausdruck sind sofort synchron.
 
+   Stand: Zeitplan Wundaplunda 2026 (Mo 03.08. – Sa 08.08.2026).
+
    EIN PROGRAMMPUNKT — Felder (alles außer tag/zeit/titel/wen ist optional):
      tag        "mo" "di" "mi" "do" "fr" "sa"
-     zeit       "14:00 – 15:00"  oder  "ab 20:30"
+     zeit       "14:00 – 15:00"  oder  "ab 20:30"  oder  "Ganztags"
      titel      Was passiert
-     wer        Leitung / Wer        ← war im alten PDF NICHT zu sehen
+     wer        Leitung / Wer
      wo         Ort  (Wetter-Alternative mit " / " trennen: "Feuerstelle / Plundazelt")
      wen        ["erwachsene"] ["kinder_0_4"] ["kinder_ab_5"] ["alle"]  (mehrere erlaubt)
      anmeldung  "offen"  (ohne Anmeldung)  |  "begrenzt"  (Plätze begrenzt)
-     optional   true   → wird als "Optional" markiert
-     hinweis    kurzer Zusatz (Alter, Bändchen …)
-     info       längerer Text / Beschreibung — erscheint, wenn man tippt
-     status     "geaendert"  oder  "entfaellt"   ← für Wetter/Ausfall, in Sekunden
+     optional   true   → als "optional" beschrieben
+     hinweis    kurzer Zusatz (Alter, Bändchen, Ort-Notiz …)
+     info       längerer Text / Beschreibung — erscheint beim Aufklappen
+     status     "geaendert"  oder  "entfaellt"
 
-   ÄNDERUNG IN SEKUNDEN (Beispiel Wetter/Ausfall):
-     · Etwas fällt aus?  →  status: "entfaellt"  ergänzen.
-     · Neue Zeit/Ort?    →  zeit/wo ändern  +  status: "geaendert".
-     Danach Tag neu ausdrucken — der Stempel ist schon drin.
+   KATALOG 2026 (unten): Leitung, Foto & Beschreibung je Angebot, nach TITEL
+   den Tagesplan-Kacheln zugeordnet. Kommt derselbe Titel mehrfach vor (z. B.
+   Morgenkreis an mehreren Tagen), erben alle Kacheln automatisch Foto & Text.
    ========================================================================== */
 
 const WUNDA = {
   festival: {
-    name: "Wundaplunda", jahr: 2025,
+    name: "Wundaplunda", jahr: 2026,
     untertitel: "Familien-Sommercamp im Ökodorf Sulzbrunn",
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
-    hinweis_jahr: "Demo mit den echten Daten von 2025 — Vorlage für 2026",
+    hinweis_jahr: "Programm & Zeiten Stand Sommer 2026 – Änderungen möglich",
     tage: [
-      { key:"mo", wochentag:"Montag", datum:"04.08." },
-      { key:"di", wochentag:"Dienstag", datum:"05.08." },
-      { key:"mi", wochentag:"Mittwoch", datum:"06.08." },
-      { key:"do", wochentag:"Donnerstag", datum:"07.08." },
-      { key:"fr", wochentag:"Freitag", datum:"08.08." },
-      { key:"sa", wochentag:"Samstag", datum:"09.08." },
+      { key:"mo", wochentag:"Montag", datum:"03.08." },
+      { key:"di", wochentag:"Dienstag", datum:"04.08." },
+      { key:"mi", wochentag:"Mittwoch", datum:"05.08." },
+      { key:"do", wochentag:"Donnerstag", datum:"06.08." },
+      { key:"fr", wochentag:"Freitag", datum:"07.08." },
+      { key:"sa", wochentag:"Samstag", datum:"08.08." },
     ]
   },
 
   zielgruppen: [
     { key:"erwachsene", label:"Erwachsene", icon:"feder" },
-    { key:"kinder_0_4", label:"Kinder 0–4 J.", icon:"kaefer" },
-    { key:"kinder_ab_5", label:"Kinder ab 5 J.", icon:"falter" },
+    { key:"kinder_0_4", label:"Kinder bis 6 J.", icon:"kaefer" },
+    { key:"kinder_ab_5", label:"Kinder ab 6 J.", icon:"falter" },
     { key:"alle", label:"Alle", icon:"gruppe" },
   ],
 
-  // --- ALLE PROGRAMMPUNKTE (eine Zeile = ein Punkt) ---
+  // --- ALLE PROGRAMMPUNKTE (Zeitplan 2026, eine Zeile = ein Punkt) ---
   programm: [
-    // Montag
-    { tag:"mo", zeit:"11:00 – 14:00", titel:"Ankommen", wer:"", wo:"", wen:["alle"] },
+    // Montag 03.08.
+    { tag:"mo", zeit:"11:00 – 14:00", titel:"Anreise & Ankommen", wer:"", wo:"", wen:["alle"] },
     { tag:"mo", zeit:"12:00 – 13:30", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"mo", zeit:"14:00 – 15:00", titel:"Eröffnung", wer:"Wundaplunda Team", wo:"Senke Feuerstelle / Turnhalle", wen:["alle"], info:"Am Anreisetag starten wir gemeinsam – mit offenen Herzen und einem Lächeln. Hier erfährst du auch, was es mit der Clanzeit auf sich hat." },
-    { tag:"mo", zeit:"14:00 – 16:30", titel:"Waffeln & Kaffee", wer:"Sulzbrunn Team", wo:"Zirkuszelt", wen:["alle"] },
-    { tag:"mo", zeit:"15:00 – 16:30", titel:"Geländeführung", wer:"Beate & Gudrun", wo:"Treff Zirkuszelt", wen:["alle"], info:"Rundgang über das rund 15 Hektar große Gelände der Gemeinschaft Sulzbrunn – Geschichte, Orte und Orientierung für die ganze Woche." },
-    { tag:"mo", zeit:"16:30 – 17:00", titel:"Kasperletheater", wer:"Amelie Zech, Akademie Rückenwind", wo:"Zirkuszelt", wen:["kinder_0_4"] },
-    { tag:"mo", zeit:"16:30 – 18:00", titel:"Austausch in Gemeinschaft leben", wer:"Matthias Scharpenberg", wo:"Pavillon", wen:["erwachsene"] },
-    { tag:"mo", zeit:"17:00 – 17:45", titel:"Kinderkreis", wer:"Wundaplunda Team & Amelie Zech", wo:"Zirkuszelt", wen:["kinder_ab_5", "kinder_0_4"] },
+    { tag:"mo", zeit:"14:00 – 16:00", titel:"Eröffnung & Crêpes / Kaffee", wer:"Oliver, Carmen & Fabienne", wo:"Senke / Zirkuszelt", wen:["alle"] },
+    { tag:"mo", zeit:"14:30 – 16:00", titel:"Geländeführung", wer:"", wo:"Zirkuszelt", wen:["alle"] },
+    { tag:"mo", zeit:"14:30 – 16:00", titel:"Bienenführung", wer:"Josef", wo:"Treff Jurte", wen:["alle"] },
+    { tag:"mo", zeit:"14:30 – 16:00", titel:"Seifenblasen", wer:"Patrick", wo:"Senke", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"mo", zeit:"16:30 – 17:30", titel:"Impro Show Kids", wer:"EingangAusgang", wo:"Zirkuszelt", wen:["alle"] },
+    { tag:"mo", zeit:"17:30 – 18:00", titel:"Kinderkreis mit Clown Malab", wer:"Florian, Carmen & Amelie", wo:"Zirkuszelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"mo", zeit:"18:00 – 19:30", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"mo", zeit:"19:30 – 20:00", titel:"Klangmeditation", wer:"Anna Elisabeth", wo:"Pavillon", wen:["kinder_ab_5", "erwachsene"] },
-    { tag:"mo", zeit:"ab 20:30", titel:"Musik am Lagerfeuer", wer:"Amelie Zech", wo:"Feuerstelle / Plundazelt", wen:["alle"], info:"Gemeinsames Singen und Geschichten am Feuer – der gemütliche Ausklang des ersten Abends." },
-    // Dienstag
-    { tag:"di", zeit:"07:30 – 08:15", titel:"Yoga", wer:"Amelie Zech, Akademie Rückenwind", wo:"Pavillon", wen:["erwachsene"] },
-    { tag:"di", zeit:"08:00 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur mit rotem Bändchen" },
-    { tag:"di", zeit:"09:15 – 09:45", titel:"Gemeinsamer Morgenkreis", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"], info:"Täglicher gemeinsamer Start in den Tag: Musik, Programmänderungen, Austausch. Verbindet, inspiriert, informiert." },
-    { tag:"di", zeit:"09:45 – 10:30", titel:"Clanzeit", wer:"Alle", wo:"Treff: Zirkuszelt", wen:["alle"], info:"Jeden zweiten Tag treffen wir uns in unseren Clans, um in Verbindung zu kommen, Spaß zu haben und uns auf die Clan Open Stage vorzubereiten – mit Überraschungsthema!" },
-    { tag:"di", zeit:"10:30 – 12:00", titel:"Steine bemalen, Naturmobiles basteln", wer:"Barbara Burstall", wo:"Jurte", wen:["kinder_ab_5", "kinder_0_4"] },
-    { tag:"di", zeit:"10:30 – 12:00", titel:"Brot backen mit Sauerteig", wer:"Margaretha Zach", wo:"Wundazelt", wen:["alle"], optional:true },
-    { tag:"di", zeit:"10:30 – 12:00", titel:"Austausch Kooperation statt Rebellion Bindungsspiele und ihre Bedeutung", wer:"Caro Fest, Kinderglück Allgäu", wo:"Pavillon", wen:["erwachsene"], optional:true },
-    { tag:"di", zeit:"12:00 – 13:30", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"di", zeit:"14:00 – 15:30", titel:"Frauenkreis", wer:"Fabienne Mäutner", wo:"Pavillon", wen:["erwachsene"] },
-    { tag:"di", zeit:"14:30 – 15:30", titel:"Seifenblasen", wer:"Patrick Grotz", wo:"Treff Plundazelt", wen:["kinder_0_4"] },
-    { tag:"di", zeit:"15:30 – 16:30", titel:"Slackline", wer:"Thomas Jung", wo:"Treff Plundazelt", wen:["kinder_ab_5"] },
-    { tag:"di", zeit:"15:30 – 16:30", titel:"Kopfstand Handstand Workshop", wer:"Susanne Reinhard, Artistik Calimbaro", wo:"Turnhalle", wen:["kinder_ab_5"], optional:true },
-    { tag:"di", zeit:"17:00 – 17:30", titel:"Jonglier & Akrobatikshow", wer:"Artistik Calimbaro & Duo Fiducia", wo:"Vor Seminarhaus / Turnhalle", wen:["kinder_ab_5"] },
-    { tag:"di", zeit:"17:30 – 18:00", titel:"Klangmeditation", wer:"Anna Elisabeth Mayr", wo:"Pavillon", wen:["kinder_ab_5", "erwachsene"] },
+    { tag:"mo", zeit:"19:30 – 20:30", titel:"Singkreis – Rolf & Margaretha", wer:"Rolf & Margaretha", wo:"Senke", wen:["kinder_ab_5","erwachsene"] },
+    { tag:"mo", zeit:"ab 20:30", titel:"Lagerfeuerabend", wer:"", wo:"", wen:["alle"] },
+    { tag:"mo", zeit:"Ganztags", titel:"Waldrallye · Spielewagen · Flying Fox", wer:"", wo:"", wen:["alle"] },
+    // Dienstag 04.08.
+    { tag:"di", zeit:"07:30 – 08:15", titel:"Yoga", wer:"Amelie", wo:"", wen:["erwachsene"] },
+    { tag:"di", zeit:"08:00 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
+    { tag:"di", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"", wen:["alle"] },
+    { tag:"di", zeit:"09:45 – 10:30", titel:"Clanzeit", wer:"", wo:"", wen:["alle"] },
+    { tag:"di", zeit:"10:30 – 12:30", titel:"Pois basteln", wer:"Barbara & Patty", wo:"", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"di", zeit:"10:30 – 12:30", titel:"Wir entdecken den Wald", wer:"Kristina Wolf", wo:"", wen:["alle"] },
+    { tag:"di", zeit:"10:30 – 12:30", titel:"Knotenkunde & Tarpaufbau", wer:"", wo:"", wen:["erwachsene"] },
+    { tag:"di", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
+    { tag:"di", zeit:"14:00 – 16:00", titel:"Kuchen Pappelkinder & Hoflädle", wer:"", wo:"Dorfplatz", wen:["alle"], hinweis:"Kleiner Markt mit Kinderschminken (Pappelkinder), Töpfern (Ayshe), Weiden (Tina), Schmuck (Fabienne), Karten (Lena) und Kerzen (Birgit)" },
+    { tag:"di", zeit:"15:00 – 16:00", titel:"Singen – Rolf & Margaretha", wer:"Rolf & Margaretha", wo:"Dorfplatz", wen:["alle"] },
+    { tag:"di", zeit:"15:00 – 16:00", titel:"Poi-Workshop", wer:"Susanne & Patty", wo:"", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"di", zeit:"16:00 – 18:00", titel:"Frauenkreis", wer:"Fabienne", wo:"", wen:["erwachsene"] },
+    { tag:"di", zeit:"16:30 – 17:30", titel:"Kinderband 'Die leicht verschwitzten Zwerge'", wer:"", wo:"", wen:["alle"] },
+    { tag:"di", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"di", zeit:"18:00 – 19:30", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"di", zeit:"19:00 – 20:30", titel:"Männerkreis", wer:"Oliver Weickert", wo:"Pavillon", wen:["erwachsene"] },
-    { tag:"di", zeit:"19:30 – 20:00", titel:"Betthupferl Geschichte", wer:"Lisa Suitner", wo:"Zirkuszelt", wen:["kinder_0_4"] },
-    { tag:"di", zeit:"ab 20:30", titel:"Rumbakana", wer:"", wo:"Zirkuszelt / Turnhalle", wen:["alle"] },
-    // Mittwoch
-    { tag:"mi", zeit:"07:30 – 08:15", titel:"Fit in den Tag / Achtsames Atmen", wer:"Matze Zech, Howtoathletic / Laurenz Verweyen", wo:"Treff Wundazelt / Pavillon", wen:["erwachsene"] },
-    { tag:"mi", zeit:"08:00 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur mit rotem Bändchen" },
-    { tag:"mi", zeit:"09:15 – 09:45", titel:"Gemeinsamer Morgenkreis", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"], info:"Täglicher gemeinsamer Start in den Tag: Musik, Programmänderungen, Austausch. Verbindet, inspiriert, informiert." },
-    { tag:"mi", zeit:"10:00 – 11:00", titel:"Singen für Gross und Klein", wer:"Karin Jana Beck und Matthias Gerber", wo:"Plundazelt", wen:["alle"] },
-    { tag:"mi", zeit:"10:00 – 12:00", titel:"Zwergengärtchen gestalten", wer:"Josephine Winestock", wo:"Jurte", wen:["kinder_ab_5", "kinder_0_4"] },
-    { tag:"mi", zeit:"10:00 – 12:00", titel:"Glutbrennen", wer:"Laurenz Verweyen", wo:"Pappelkinderplatz", wen:["alle"], info:"Mit Glut und Geduld Holz gestalten – ein achtsames Naturhandwerk für Groß und Klein an der Feuerstelle." },
-    { tag:"mi", zeit:"11:00 – 12:30", titel:"Worldcafé Familienkultur", wer:"Rebecca Kirch", wo:"Pavillon", wen:["erwachsene"] },
-    { tag:"mi", zeit:"12:00 – 13:30", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"mi", zeit:"14:00 – 15:00", titel:"Singen für Gross und Klein", wer:"Karin Jana Beck und Matthias Gerber", wo:"Plundazelt", wen:["erwachsene"] },
-    { tag:"mi", zeit:"15:00 – 18:00", titel:"Naturtheater & Naturbasteln", wer:"Sandra Lienhard", wo:"Treff Wundazelt", wen:["kinder_ab_5"] },
-    { tag:"mi", zeit:"15:00 – 18:00", titel:"Weidenflechten", wer:"Tina Thierfelder", wo:"Plundazelt", wen:["alle"] },
-    { tag:"mi", zeit:"17:00 – 17:30", titel:"Wildkräuter sammeln & Stockbrot", wer:"Cäcilia Briem", wo:"Treff Zirkuszelt", wen:["alle"] },
+    { tag:"di", zeit:"20:00", titel:"Trommeln auf dem Dorfplatz", wer:"", wo:"Dorfplatz", wen:["alle"] },
+    { tag:"di", zeit:"19:00 – 20:30", titel:"Männerkreis", wer:"Oliver", wo:"", wen:["erwachsene"] },
+    { tag:"di", zeit:"ab 21:00", titel:"Feuershow & Akrobatik mit Trommelbegleitung", wer:"", wo:"", wen:["alle"] },
+    // Mittwoch 05.08.
+    { tag:"mi", zeit:"07:30 – 08:15", titel:"Yoga mit Anna E. / Morning Workout", wer:"Anna E. / Matze", wo:"", wen:["erwachsene"] },
+    { tag:"mi", zeit:"08:00 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
+    { tag:"mi", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"", wen:["alle"] },
+    { tag:"mi", zeit:"10:30 – 12:30", titel:"Schlangen & Zauberei filzen mit Fee", wer:"Fee", wo:"Senke", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"mi", zeit:"10:30 – 12:30", titel:"Slackline Workshop", wer:"", wo:"", wen:["alle"] },
+    { tag:"mi", zeit:"10:30 – 12:30", titel:"Wahrnehmungs- / Sinnesübungen in der Natur", wer:"", wo:"", wen:["erwachsene"] },
+    { tag:"mi", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
+    { tag:"mi", zeit:"14:00 – 16:00", titel:"Bogenbau", wer:"Laurenz", wo:"", wen:["alle"] },
+    { tag:"mi", zeit:"14:00 – 16:00", titel:"Baumklettern", wer:"Stefan", wo:"", wen:["kinder_ab_5"] },
+    { tag:"mi", zeit:"15:00 – 16:00", titel:"Eltern-Kind-Akrobatik", wer:"Susanne", wo:"", wen:["kinder_0_4"] },
+    { tag:"mi", zeit:"15:00 – 16:00", titel:"Clownspiele", wer:"Flo", wo:"Yogaraum", wen:["kinder_ab_5"] },
+    { tag:"mi", zeit:"16:00 – 17:00", titel:"Hirnhopsen für Alle", wer:"Flo", wo:"Turnhalle", wen:["alle"], hinweis:"Parallel: Schmuckworkshop mit Gabriele" },
+    { tag:"mi", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"mi", zeit:"18:00 – 19:30", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"mi", zeit:"19:30 – 21:00", titel:"Betthupferl Geschichte", wer:"Lisa Suitner", wo:"Zirkuszelt", wen:["alle"] },
-    { tag:"mi", zeit:"20:00 – 21:00", titel:"Singen für Gross und Klein", wer:"Karin Jana Beck und Matthias Gerber", wo:"Feuerstelle", wen:["alle"] },
-    { tag:"mi", zeit:"ab 21:30", titel:"Feuershow", wer:"Artistik Calimbaro", wo:"Vor Seminarhaus", wen:["alle"] },
-    // Donnerstag
-    { tag:"do", zeit:"07:30 – 08:15", titel:"Yoga / Klangmeditation", wer:"Amelie Zech / Anna Elisabeth Mayr", wo:"Yogaraum / Pavillon", wen:["erwachsene"] },
-    { tag:"do", zeit:"08:00 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur mit rotem Bändchen" },
-    { tag:"do", zeit:"09:15 – 09:45", titel:"Gemeinsamer Morgenkreis", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"], info:"Täglicher gemeinsamer Start in den Tag: Musik, Programmänderungen, Austausch. Verbindet, inspiriert, informiert." },
-    { tag:"do", zeit:"09:45 – 10:30", titel:"Clanzeit", wer:"Alle", wo:"Treff Zirkuszelt", wen:["alle"], info:"Jeden zweiten Tag treffen wir uns in unseren Clans, um in Verbindung zu kommen, Spaß zu haben und uns auf die Clan Open Stage vorzubereiten – mit Überraschungsthema!" },
-    { tag:"do", zeit:"10:30 – 12:00", titel:"Modellieren mit Ton", wer:"Josephine Winestock", wo:"Jurte", wen:["kinder_ab_5", "kinder_0_4"] },
-    { tag:"do", zeit:"10:30 – 12:00", titel:"Circleways Film mit Austausch", wer:"Fabienne Mäutner", wo:"Pavillon", wen:["erwachsene"], optional:true },
-    { tag:"do", zeit:"10:30 – 11:30", titel:"Eltern - Kind Akrobatik", wer:"Susanne Reinhard", wo:"Turnhalle", wen:["kinder_ab_5"], hinweis:"3-7 Jahre" },
-    { tag:"do", zeit:"10:30 – 11:30", titel:"Kinderschutzrap", wer:"Amelie Zech", wo:"Plundazelt", wen:["kinder_ab_5"], optional:true },
-    { tag:"do", zeit:"12:00 – 13:30", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"do", zeit:"14:30 – 16:30", titel:"Glutbrennen", wer:"Laurenz Verweyen", wo:"Pappelkinderplatz", wen:["alle"], info:"Mit Glut und Geduld Holz gestalten – ein achtsames Naturhandwerk für Groß und Klein an der Feuerstelle." },
-    { tag:"do", zeit:"14:30 – 16:00", titel:"Singen für Gross & Klein", wer:"Karin Jana Beck und Matthias Gerber", wo:"Feuerstelle", wen:["alle"] },
-    { tag:"do", zeit:"16:00 – 17:00", titel:"Hula Hoop", wer:"Natascha Herter und Jule Schneider, Glückswerk Akademie", wo:"Turnhalle", wen:["alle"] },
-    { tag:"do", zeit:"17:15 – 18:00", titel:"Jamuk", wer:"", wo:"Zirkuszelt", wen:["alle"] },
+    { tag:"mi", zeit:"19:30 – 20:30", titel:"Tribubu", wer:"", wo:"Senke", wen:["alle"] },
+    { tag:"mi", zeit:"Ganztags", titel:"Waldrallye · Spielewagen · Flying Fox", wer:"", wo:"", wen:["alle"] },
+    // Donnerstag 06.08.
+    { tag:"do", zeit:"07:30 – 08:15", titel:"Yoga", wer:"Amelie", wo:"", wen:["erwachsene"] },
+    { tag:"do", zeit:"08:00 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
+    { tag:"do", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"", wen:["alle"] },
+    { tag:"do", zeit:"09:45 – 10:30", titel:"Clanzeit", wer:"", wo:"", wen:["alle"] },
+    { tag:"do", zeit:"10:30 – 12:30", titel:"Weiden-Zauberstäbe", wer:"Tina", wo:"", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"do", zeit:"10:30 – 12:30", titel:"5 Minuten Feuer & Wilde Küche", wer:"", wo:"", wen:["alle"] },
+    { tag:"do", zeit:"10:30 – 12:30", titel:"Vortrag LAVI – erleb es", wer:"", wo:"", wen:["erwachsene"] },
+    { tag:"do", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
+    { tag:"do", zeit:"14:00 – 16:00", titel:"Kuchen Pappelkinder & Hoflädle", wer:"", wo:"Dorfplatz", wen:["alle"] },
+    { tag:"do", zeit:"15:00 – 16:00", titel:"Singen – Rolf & Margaretha", wer:"Rolf & Margaretha", wo:"", wen:["alle"], hinweis:"Auch für alle Kinder" },
+    { tag:"do", zeit:"15:30 – 17:30", titel:"Frauenkreis", wer:"Fabienne", wo:"", wen:["erwachsene"] },
+    { tag:"do", zeit:"15:30 – 17:30", titel:"Schnitzen (Schnitzführerschein)", wer:"Andreas", wo:"", wen:["kinder_ab_5"] },
+    { tag:"do", zeit:"15:30 – 17:30", titel:"Contact Kids", wer:"", wo:"", wen:["kinder_0_4"] },
+    { tag:"do", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"do", zeit:"18:00 – 19:30", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"do", zeit:"ab 20:00", titel:"Baobab Vibes", wer:"", wo:"Zirkuszelt", wen:["alle"] },
-    // Freitag
-    { tag:"fr", zeit:"07:30 – 08:15", titel:"Fit in den Tag / Achtsames Atmen", wer:"Matze Zech, Howtoathletic / Laurenz Verweyen", wo:"Treff Wundazelt / Pavillon", wen:["erwachsene"] },
-    { tag:"fr", zeit:"08:00 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur mit rotem Bändchen" },
-    { tag:"fr", zeit:"09:15 – 09:45", titel:"Gemeinsamer Morgenkreis", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"], info:"Täglicher gemeinsamer Start in den Tag: Musik, Programmänderungen, Austausch. Verbindet, inspiriert, informiert." },
-    { tag:"fr", zeit:"09:45 – 10:30", titel:"Singen für Gross & Klein", wer:"Karin Jana Beck und Matthias Gerber", wo:"Feuerstelle", wen:["alle"] },
-    { tag:"fr", zeit:"10:30 – 12:00", titel:"Papierblumen oder Fantasievolles aus Karton und Wolle basteln", wer:"Barbara Burstall", wo:"Jurte", wen:["kinder_ab_5", "kinder_0_4"] },
-    { tag:"fr", zeit:"10:30 – 11:30", titel:"Seifenblasen", wer:"Patrick Grotz", wo:"Treff Plundazelt", wen:["kinder_ab_5", "kinder_0_4"] },
-    { tag:"fr", zeit:"10:30 – 11:30", titel:"Immer diese Übergänge", wer:"Stefanie Kreuzer", wo:"Pavillon", wen:["erwachsene"] },
-    { tag:"fr", zeit:"12:00 – 13:30", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"fr", zeit:"14:30 – 16:00", titel:"Tiere des Waldes - Spuren lesen und die Sprache der Vögel", wer:"Ralph Müller", wo:"Treff Wundazelt", wen:["alle"] },
-    { tag:"fr", zeit:"14:30 – 16:00", titel:"Sulzbrunner Bienenbesuch", wer:"Josef Günther", wo:"Treff Plundazelt", wen:["alle"], optional:true },
-    { tag:"fr", zeit:"16:00 – 16:30", titel:"Diabolo Jongliershow", wer:"Jakob Bauer", wo:"Vor Seminarhaus / Turnhalle", wen:["alle"] },
-    { tag:"fr", zeit:"16:30 – 18:30", titel:"Vogelsprache - Sprache des Waldes und der Natur", wer:"Ralph Müller", wo:"Treff Wundazelt", wen:["alle"] },
-    { tag:"fr", zeit:"16:30 – 18:00", titel:"Besuch der Sulzbrunner Schafe", wer:"Imke Winestock", wo:"Treff Zirkuszelt", wen:["alle"], optional:true },
+    { tag:"do", zeit:"19:30 – 20:30", titel:"Singkreis – Rolf & Margaretha", wer:"Rolf & Margaretha", wo:"Senke", wen:["alle"] },
+    { tag:"do", zeit:"19:00 – 20:30", titel:"Männerkreis", wer:"Oliver", wo:"", wen:["erwachsene"] },
+    { tag:"do", zeit:"ab 20:30", titel:"Lagerfeuerabend", wer:"", wo:"", wen:["kinder_ab_5","erwachsene"], hinweis:"Instrumente mitbringen" },
+    { tag:"do", zeit:"Ganztags", titel:"Waldrallye · Spielewagen · Flying Fox", wer:"", wo:"", wen:["alle"] },
+    // Freitag 07.08.
+    { tag:"fr", zeit:"07:30 – 08:15", titel:"Yoga mit Anna E.", wer:"Anna E.", wo:"", wen:["erwachsene"] },
+    { tag:"fr", zeit:"08:00 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
+    { tag:"fr", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"", wen:["alle"] },
+    { tag:"fr", zeit:"10:30 – 12:30", titel:"Basteljurte – offenes Basteln", wer:"", wo:"Jurte", wen:["alle"] },
+    { tag:"fr", zeit:"10:30 – 12:30", titel:"Papier machen / Pilzworkshop", wer:"", wo:"Senkenzelt mit Boden", wen:["alle"] },
+    { tag:"fr", zeit:"10:30 – 12:30", titel:"Ton brennen", wer:"", wo:"Senke Feuerstelle", wen:["kinder_ab_5"] },
+    { tag:"fr", zeit:"10:30 – 12:30", titel:"Vortrag LAVI – erleb es", wer:"", wo:"", wen:["erwachsene"] },
+    { tag:"fr", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
+    { tag:"fr", zeit:"14:00 – 16:00", titel:"Bogenbau", wer:"Laurenz", wo:"", wen:["alle"] },
+    { tag:"fr", zeit:"14:00 – 16:00", titel:"Baumklettern", wer:"Stefan", wo:"", wen:["kinder_ab_5"] },
+    { tag:"fr", zeit:"14:00 – 16:00", titel:"Deo-Seife / Pilzworkshop", wer:"", wo:"", wen:["erwachsene"] },
+    { tag:"fr", zeit:"15:00 – 16:00", titel:"Contact Kids", wer:"", wo:"", wen:["kinder_0_4"] },
+    { tag:"fr", zeit:"15:00 – 16:00", titel:"Seifenblasen", wer:"Patrick", wo:"", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"fr", zeit:"16:00 – 18:00", titel:"Open Space", wer:"", wo:"", wen:["alle"] },
+    { tag:"fr", zeit:"17:30 – 18:00", titel:"Amelie liest Geschichte", wer:"Amelie", wo:"", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"fr", zeit:"18:00 – 19:30", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"fr", zeit:"ab 20:00", titel:"Singen für Gross und Klein am Lagerfeuer", wer:"Karin Jana Beck und Matthias Gerber", wo:"Feuerstelle", wen:["alle"] },
-    // Samstag
-    { tag:"sa", zeit:"07:30 – 08:15", titel:"Yoga", wer:"Amelie Zech", wo:"Pavillon", wen:["erwachsene"] },
-    { tag:"sa", zeit:"08:00 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur mit rotem Bändchen" },
-    { tag:"sa", zeit:"09:15 – 09:45", titel:"Gemeinsamer Morgenkreis", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"], info:"Täglicher gemeinsamer Start in den Tag: Musik, Programmänderungen, Austausch. Verbindet, inspiriert, informiert." },
-    { tag:"sa", zeit:"09:45 – 10:30", titel:"Clanzeit", wer:"Alle", wo:"Treff Zirkuszelt", wen:["alle"], info:"Jeden zweiten Tag treffen wir uns in unseren Clans, um in Verbindung zu kommen, Spaß zu haben und uns auf die Clan Open Stage vorzubereiten – mit Überraschungsthema!" },
-    { tag:"sa", zeit:"10:30 – 12:00", titel:"Waldkrone basteln", wer:"Josephine Winestock", wo:"Jurte", wen:["kinder_ab_5", "kinder_0_4"] },
-    { tag:"sa", zeit:"11:00 – 12:30", titel:"Waldspiele", wer:"Cäcilia Briem", wo:"Treff Plundazelt", wen:["kinder_ab_5", "kinder_0_4"] },
-    { tag:"sa", zeit:"11:00 – 12:00", titel:"Waldnaturpacour (Sport)", wer:"Matthias Zech", wo:"Treff Wundazelt", wen:["kinder_ab_5", "erwachsene"], optional:true },
-    { tag:"sa", zeit:"12:00 – 13:30", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"sa", zeit:"14:00 – 15:00", titel:"Clan Open Stage", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"] },
-    { tag:"sa", zeit:"15:00 – 16:00", titel:"Abschlusskreis", wer:"Wundaplunda Team", wo:"Plundazelt", wen:["alle"] },
-    { tag:"sa", zeit:"16:00", titel:"Abreise", wer:"", wo:"", wen:["alle"], hinweis:"Wer mag ist gerne zum Abbau Samstag und Sonntag eingeladen und am Samstagabend ab 19 Uhr zum Pizzahelfendenfest" },
+    { tag:"fr", zeit:"19:30 – 20:30", titel:"Funkenflug Band", wer:"", wo:"", wen:["alle"] },
+    { tag:"fr", zeit:"Ganztags", titel:"Waldrallye · Spielewagen · Flying Fox", wer:"", wo:"", wen:["alle"] },
+    // Samstag 08.08.
+    { tag:"sa", zeit:"07:30 – 08:15", titel:"Yoga", wer:"Amelie", wo:"", wen:["erwachsene"] },
+    { tag:"sa", zeit:"08:00 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
+    { tag:"sa", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"", wen:["alle"] },
+    { tag:"sa", zeit:"09:45 – 10:30", titel:"Probe Clanzeit", wer:"", wo:"", wen:["alle"] },
+    { tag:"sa", zeit:"10:00 – 11:00", titel:"Kids Singen, Tanzen, Bewegen", wer:"Amelie", wo:"", wen:["kinder_0_4"] },
+    { tag:"sa", zeit:"10:30 – 12:30", titel:"Schnitzen (Schnitzführerschein)", wer:"Andreas", wo:"", wen:["alle"] },
+    { tag:"sa", zeit:"10:30 – 12:30", titel:"Wetterkunde", wer:"", wo:"", wen:["erwachsene"] },
+    { tag:"sa", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
+    { tag:"sa", zeit:"14:00 – 14:30", titel:"Clown Malab Show", wer:"", wo:"", wen:["alle"] },
+    { tag:"sa", zeit:"14:30 – 15:30", titel:"Clan Show", wer:"", wo:"", wen:["alle"] },
+    { tag:"sa", zeit:"15:30 – 16:30", titel:"Abschlussrunde", wer:"Wundaplunda Team", wo:"", wen:["alle"] },
+    { tag:"sa", zeit:"16:30", titel:"Abreise / Ende des Camps", wer:"", wo:"", wen:["alle"] },
   ],
 
   /* --- KATALOG 2026 (aus wundaplunda.de/programm-2026): Leitung, Foto & Beschreibung,
-         nach Programmpunkt-Titel zugeordnet. Wird automatisch in die passenden
-         Tagesplan-Kacheln eingeblendet (Foto + Text beim Aufklappen). --- */
+         nach Programmpunkt-Titel zugeordnet. Fotos liegen in assets/img/programm/. --- */
   katalog: {
     "Geländeführung": {
       wer: "Oliver, Carmen & Fabienne (Gemeinschaft Sulzbrunn)",
       foto: "gelaendefuehrung.png",
       beschreibung: "Bei der Tour über das rund 15,5 Hektar große Gelände zeigen euch Sulzbrunn-Bewohner:innen Wald, Wiesen und die zehn Gebäude des kleinen Dorfs – inklusive der Geschichte rund um die Sulzbrunner Jodquelle (Kurbetrieb seit 1852)."
     },
-    "Kinderkreis": {
-      wer: "Wundaplunda Team",
-      foto: "kinderkreis.png",
-      beschreibung: "Während die Großen ihren Frauen- und Männerkreis haben, schaffen wir für die Kinder einen eigenen Raum zum Ankommen: Wir finden heraus, worauf ihr euch am meisten freut, lernen erste neue Freund:innen kennen und reden über alles, was den Lageralltag schön macht. Dieses Jahr mit Überraschungsgast mit roter Nase!"
+    "Seifenblasen": {
+      foto: "riesenseifenblasen.png",
+      beschreibung: "Hier machen wir die größten Blasen aller Zeiten! Sie steigen hoch in den Himmel und schimmern in allen Farben. Komm vorbei und probier es aus – wer schafft die größte Blase?"
     },
-    "Musik am Lagerfeuer": {
+    "Impro Show Kids": {
+      wer: "EingangAusgang Impro-Theater",
+      foto: "improtheater.png",
+      beschreibung: "Kommt mit auf eine fantastische Heldenreise! Beim Improvisations-Theater bestimmt ihr, das Publikum, was passiert – eure Ideen verwandeln sich live auf der Bühne in eine einzigartige Geschichte. Keine Vorstellung ist wie die andere."
+    },
+    "Kinderkreis mit Clown Malab": {
+      foto: "kinderkreis.png",
+      beschreibung: "Während die Großen ihren Frauen- und Männerkreis haben, schaffen wir für die Kinder einen eigenen Raum zum Ankommen: Wir finden heraus, worauf ihr euch am meisten freut, und lernen erste neue Freund:innen kennen. Dieses Jahr mit Überraschungsgast mit roter Nase – Clown Malab!"
+    },
+    "Singkreis – Rolf & Margaretha": {
+      wer: "Rolf & Margaretha (Gemeinschaft Sulzbrunn)",
+      foto: "jodruf.jpg",
+      beschreibung: "Rolf und Margaretha laden zum gemeinsamen Singen: mit Akkordeon, Gitarren, Schlagwerk und ihren Stimmen erklingen Lieder aus aller Welt. Ob Singen, Zuhören oder Tanzen – alle sind willkommen."
+    },
+    "Singen – Rolf & Margaretha": {
+      wer: "Rolf & Margaretha (Gemeinschaft Sulzbrunn)",
+      foto: "jodruf.jpg",
+      beschreibung: "Gemeinsames Singen mit Rolf und Margaretha: Lieder aus aller Welt mit Akkordeon, Gitarren und Schlagwerk, die Lust machen mitzuschwingen. Ob Singen, Zuhören oder Tanzen – jede:r ist willkommen."
+    },
+    "Trommeln auf dem Dorfplatz": {
+      wer: "Alex & Trommelgruppe (Allikée)",
+      foto: "allikee.png",
+      beschreibung: "„Allikée“ heißt so viel wie „Auf geht's!“ – westafrikanische Trommelmusik, gewürzt mit europäischen und lateinamerikanischen Einflüssen. Mal traditionell, mal modern, immer mit Freude und Groove."
+    },
+    "Lagerfeuerabend": {
       foto: "lagerfeuerabende.png",
       beschreibung: "Wenn die Nacht hereinbricht, versammeln wir uns am knisternden Feuer. Mitgebrachte Instrumente – Trommel, Gitarre, Rassel – sind herzlich willkommen. Gemeinsam singen, musizieren und erzählen wir Geschichten unter dem Sternenhimmel."
+    },
+    "Waldrallye · Spielewagen · Flying Fox": {
+      foto: "waldrallye.jpg",
+      beschreibung: "Ganztägige Entdecker-Angebote: Auf der Waldrallye zieht ihr mit Entdeckerrucksäcken (Hase, Eule, Fuchs …) los und löst spannende Aufgaben in der Natur. Dazu der Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen – und die Flying Fox für ein kleines Abenteuer mit Schwung."
     },
     "Yoga": {
       wer: "Amelie Zech (Stimmtherapeutin & Yogalehrerin)",
       foto: "yoga.png",
       beschreibung: "Beim Yoga am Morgen mobilisieren wir den ganzen Körper, entspannen und lassen die Gedanken los – kraftvoll und entspannt in den Wundaplunda-Tag mit Amelie Zech."
     },
-    "Gemeinsamer Morgenkreis": {
+    "Morgenkreis mit dem Wundaplunda Team": {
       wer: "Wundaplunda Team",
       foto: "morgenkreis.png",
       beschreibung: "Der Lagerruf holt die Letzten aus den Federn und bringt uns alle zusammen. Jeden Morgen begrüßen wir den neuen Tag, besprechen, was uns erwartet, und singen die ersten Lieder."
@@ -178,53 +214,159 @@ const WUNDA = {
       foto: "clanzeit.png",
       beschreibung: "Findet euren Clan für die Woche! In kleiner Gemeinschaft verbringt ihr Zeit miteinander, tauscht euch aus und kommt in Verbindung – mit ein paar überraschenden Impulsen vom Team. So entsteht Vertrautheit und ganz viel Miteinander."
     },
+    "Probe Clanzeit": {
+      foto: "clanzeit.png",
+      beschreibung: "Generalprobe für die Clan-Show: Zeit, in eurem Clan die letzten Ideen zu proben und euch gemeinsam auf den großen Auftritt am Nachmittag vorzubereiten."
+    },
+    "Pois basteln": {
+      wer: "Barbara & Patty",
+      foto: "poi.png",
+      beschreibung: "Wir basteln Pois aus Upcycling-Materialien. Die an Schnüren geschwungenen Bälle aus der Māori-Kultur Neuseelands machen Spaß und fördern Beweglichkeit, Koordination und Kraft. Nachmittags gibt es den passenden Workshop dazu."
+    },
+    "Poi-Workshop": {
+      wer: "Susanne & Patty",
+      foto: "poi.png",
+      beschreibung: "Passend zu den selbstgebastelten Pois schwingen wir die an Schnüren geführten Bälle und üben Beweglichkeit, Koordination und Kraft – Spiel und Bewegung aus der Māori-Kultur Neuseelands."
+    },
+    "Wir entdecken den Wald": {
+      wer: "Kristina Wolf (Pilzfreunde Altusried e.V.)",
+      foto: "walderlebnis.png",
+      beschreibung: "Bei dieser familiengerechten Waldexkursion erleben Kinder und Erwachsene den Wald mit allen Sinnen. Spielerisch entdecken wir, welche Baumarten heimisch sind und warum der Wald für Mensch, Tier und Klima so wichtig ist – mit Lupen, Waldbingo und Entdeckerkarten."
+    },
+    "Knotenkunde & Tarpaufbau": {
+      wer: "Laurenz (Wildnispädagoge)",
+      foto: "knoten.png",
+      beschreibung: "Wie entsteht aus einer Plane und ein paar Seilen ein wetterfester Unterschlupf? Wir lernen die Grundlagen des Tarpbaus und der Knotenkunde, üben verschiedene Knoten und bauen unterschiedliche Tarp-Konstruktionen auf. Praktisches Wissen für Outdoor und Bushcraft."
+    },
+    "Kuchen Pappelkinder & Hoflädle": {
+      foto: "markt.png",
+      beschreibung: "Kaffee, Kuchen und ein kleiner, feiner Wundaplunda-Markt mit liebevoll ausgewähltem Kunsthandwerk aus Sulzbrunn: Honig, Bienenwachskerzen, Weidenkörbe, Getöpfertes, Schmuck und mehr. Mit Kinderschminken und Kuchen der Pappelkinder (Verein Füreinander Miteinander e.V.)."
+    },
     "Frauenkreis": {
       wer: "Fabienne (Gemeinschaft Sulzbrunn)",
       foto: "frauenkreis.png",
       beschreibung: "Wir legen bewusst die vielen Alltagsrollen ab – Mutter, Partnerin, Tochter – und kommen zur Essenz des Frauseins. Durch Körperübungen, Austausch, Singen und Energiearbeit verbinden wir uns miteinander und mit uns selbst. Ein Raum für dich – komm so, wie du bist."
     },
-    "Seifenblasen": {
-      foto: "riesenseifenblasen.png",
-      beschreibung: "Hier machen wir die größten Blasen aller Zeiten! Sie steigen hoch in den Himmel und schimmern in allen Farben. Komm vorbei und probier es aus – wer schafft die größte Blase?"
+    "Kinderband 'Die leicht verschwitzten Zwerge'": {
+      foto: "zwergig.png",
+      beschreibung: "Mitreißende Musik, strahlende Kinderaugen und ganz viel gute Laune: Das Rockquartett „Leicht Verschwitzt Und Zwergig“ spielt tanzbare (Kinder-)Lieder für alle – egal ob mit Maxi-Cosi, Retro-Rennrad oder neuer Hüfte."
+    },
+    "Lisa liest Geschichte": {
+      wer: "Lisa Suitner",
+      foto: "abendgeschichten.png",
+      beschreibung: "Schnapp dir dein Kuscheltier, mach's dir gemütlich und lass den Tag mit einem Lächeln ausklingen. Lisa – Clownin, Musikerin und Geschichtenerzählerin aus Vorarlberg – bringt ihre liebsten Geschichten samt Humor und Musik mit."
     },
     "Männerkreis": {
       wer: "Oliver (Gemeinschaft Sulzbrunn)",
       foto: "maennerkreis.png",
       beschreibung: "Im geschützten Raum tauschen wir uns über Themen aus, die uns als Mann der heutigen Zeit bewegen oder herausfordern. Wild, sanft und authentisch – ein Raum, in dem wir uns hören, begegnen und berühren."
     },
-    "Betthupferl Geschichte": {
-      wer: "Lisa Suitner",
-      foto: "abendgeschichten.png",
-      beschreibung: "Schnapp dir dein Kuscheltier, mach's dir gemütlich und lass den Tag mit einem Lächeln ausklingen. Lisa – Clownin, Musikerin und Geschichtenerzählerin aus Vorarlberg – bringt ihre liebsten Geschichten samt Humor und Musik mit."
-    },
-    "Fit in den Tag / Achtsames Atmen": {
-      wer: "Matthias Zech (Fachtrainer Ausdauersport & Triathlet)",
-      foto: "morgen-workout.png",
-      beschreibung: "Raus aus dem Schlafmodus, rein in die Bewegung: Mit einer Mischung aus Ausdauer-, Kraft- und Koordinationsübungen starten wir aktiv in den Tag – ganz ohne Leistungsdruck, jede:r im eigenen Tempo. Für Erwachsene; bequeme Kleidung und etwas zu trinken mitbringen."
-    },
-    "Weidenflechten": {
-      wer: "Tina Thierfelder (Naturgestalterin & Weidenflechterin)",
-      foto: "weiden.png",
-      beschreibung: "Aus frischen Weidenruten gestalten wir wunderschöne Weidenzauberstäbe oder dekorative Weidenfische. Für Groß und Klein, ganz ohne Vorkenntnisse – kreative Kunst aus der Natur."
-    },
-    "Feuershow": {
+    "Feuershow & Akrobatik mit Trommelbegleitung": {
       wer: "Artistik Calimbaro",
       foto: "feuer-akrobatikshow.jpg",
-      beschreibung: "Artistik Calimbaro ist seit 2019 fester Bestandteil des Wundaplunda. Freut euch auf die bezaubernde Feuer-Akrobatikshow von Florian & Susanne – Leidenschaft, Energie und pure Magie in der Nacht."
+      beschreibung: "Artistik Calimbaro ist seit 2019 fester Bestandteil des Wundaplunda. Freut euch auf die bezaubernde Feuer-Akrobatikshow von Florian & Susanne – Leidenschaft, Energie und pure Magie in der Nacht, begleitet von der Trommelgruppe."
     },
-    "Eltern - Kind Akrobatik": {
+    "Schlangen & Zauberei filzen mit Fee": {
+      wer: "Fee",
+      foto: "filzen.jpg",
+      beschreibung: "Im Nassfilz-Workshop entstehen bunte Filzkugeln mit funkelndem Muggelstein im Inneren und eine charmante Filzschlange – zwei Projekte zum Mitnehmen. Keine Vorkenntnisse nötig, alle Materialien werden gestellt."
+    },
+    "Wahrnehmungs- / Sinnesübungen in der Natur": {
+      wer: "Lena (Wildnispädagogin)",
+      foto: "wahrnehmung.png",
+      beschreibung: "Wie können bewusste Wahrnehmung und intuitive Zugänge unser Erleben in der Natur vertiefen? Durch Übungen und Spiele aus der Wildnispädagogik schärfen wir die Sinne, stärken die Aufmerksamkeit für feine Signale und erleben unsere Intuition. Nur für Erwachsene."
+    },
+    "Bogenbau": {
+      wer: "Laurenz (Wildnispädagoge)",
+      foto: "bogenbau.png",
+      beschreibung: "Wie entsteht aus einem Stück Holz ein Bogen? Mit Schnitzmesser und Geduld gestalten wir kleine funktionsfähige Bögen und entdecken, wie Form, Spannung und Funktion vom Holz abhängen. Bitte eigenes Schnitzmesser mitbringen."
+    },
+    "Baumklettern": {
+      wer: "Stefan (Baumkletterer & Erlebnispädagoge)",
+      foto: "baumklettern.png",
+      beschreibung: "Hoch hinaus, Äste unter den Händen und die Welt von oben sehen: Baumklettern ist Abenteuer pur. Jedes Kind, das möchte, darf sicher und begleitet von Stefan in die Baumwipfel."
+    },
+    "Eltern-Kind-Akrobatik": {
       wer: "Susanne (Artistik Calimbaro)",
       foto: "eltern-kind-akrobatik.png",
       beschreibung: "Gemeinsam lachen, balancieren und Vertrauen stärken: In spielerischen Übungen lernen Groß und Klein einfache akrobatische Elemente – ob fliegende Kinder oder tragende Eltern. Keine Vorkenntnisse nötig, für Kinder von 3–6 Jahren."
     },
-    "Clan Open Stage": {
-      foto: "clan-open-stage.png",
-      beschreibung: "Bühne frei für die Clans! In bunter, unterstützender Atmosphäre zeigt ihr, was in euch steckt – lustig, kreativ, wild oder überraschend. Es geht nicht um Perfektion, sondern um Freude, Mut und gemeinsames Erleben."
+    "Clownspiele": {
+      wer: "Florian (Artistik Calimbaro, ausgebildeter Clown)",
+      foto: "clownspiele.png",
+      beschreibung: "Lachen, spielen und gemeinsam kreativ sein! Mit lustigen Clownspielen entdecken Kinder ab 6 Jahren spielerisch Ausdruck, Fantasie und Bewegung – und stärken nebenbei Selbstvertrauen und Teamgeist. Begrenzte Plätze, bitte pünktlich kommen."
     },
-    "Modellieren mit Ton": {
+    "Hirnhopsen für Alle": {
+      wer: "Florian (Artistik Calimbaro)",
+      foto: "hirnhopsen.png",
+      beschreibung: "Jede:r bekommt zwei Bälle: Durch rhythmische Koordinationsübungen werden beide Gehirnhälften aktiviert – Konzentration, Reaktion und Motorik spielerisch gefördert, mit viel Spaß und Bewegung."
+    },
+    "Tribubu": {
+      foto: "tribubu.png",
+      beschreibung: "Weltmusik in einer fesselnden Rumba-Afro-Folk-Fusion. Mit Mitgliedern aus Spanien, England und der Elfenbeinküste verbindet TRIBUBU seit 2018 Kulturen und Talente über Sprachgrenzen hinweg – ein unverwechselbarer, mitreißender Sound."
+    },
+    "Weiden-Zauberstäbe": {
+      wer: "Tina (Naturgestalterin & Weidenflechterin)",
+      foto: "weiden.png",
+      beschreibung: "Aus frischen Weidenruten gestalten wir wunderschöne Weidenzauberstäbe oder dekorative Weidenfische. Für Groß und Klein, ganz ohne Vorkenntnisse – kreative Kunst aus der Natur."
+    },
+    "5 Minuten Feuer & Wilde Küche": {
+      wer: "Lena (Wildnispädagogin)",
+      foto: "feuermachen.png",
+      beschreibung: "Groß und Klein lernen verschiedene Techniken des Feuermachens mit Magnesiumstab und Feuerstein. Wir entzünden ein Feuer, erfahren Wissenswertes über Zunder und bereiten anschließend eine einfache Leckerei über der Glut zu."
+    },
+    "Vortrag LAVI – erleb es": {
+      wer: "Anouk & Regina (erLEBes Familie)",
+      foto: "lavi.png",
+      beschreibung: "erLEBes Familie öffnet Räume für Eltern und Familien: Wie wirkt meine innere Welt auf meine Beziehungen? Wie gestalte ich Verbindung im Familienalltag bewusst? Ein Impuls rund um Kommunikation, Bedürfnisse und das WIR in der Familie."
+    },
+    "Schnitzen (Schnitzführerschein)": {
+      wer: "Andreas Eckl (Natur-, Umwelt- & Erlebnispädagoge)",
+      foto: "schnitzen.png",
+      beschreibung: "Im Outdoor-Schnitzkurs lernt ihr den sicheren Umgang mit dem Taschen- oder Kinderschnitzmesser und schnitzt eigene kleine Kreationen aus Frischholz. Zum Abschluss gibt's den „Messerführer:innenschein“. Messer können vor Ort ausgeliehen werden."
+    },
+    "Contact Kids": {
+      wer: "Natalie Zeitler",
+      foto: "contakids.jpg",
+      beschreibung: "„ContaKids“ ist eine spielerische Bewegungsmethode für Eltern und Kinder (2–5 Jahre). Durch Bewegung, Berührung und gemeinsames Spiel entsteht eine neue Form körperlicher Kommunikation – Kinder stärken Motorik und Selbstvertrauen, Eltern das Vertrauen in sich und ihr Kind."
+    },
+    "Papier machen / Pilzworkshop": {
+      wer: "Larissa & Corinna (ausgebildete Pilzcoaches)",
+      foto: "pilzpapier.png",
+      beschreibung: "Faszination Baumpilze: Wir lernen, was Baumpilze sind, wie man sie erkennt und welche Rolle sie im Wald spielen – und schöpfen dann gemeinsam Papier aus Pilzen, wahlweise mit getrockneten Blüten und Samen. Ein Workshop für die ganze Familie."
+    },
+    "Ton brennen": {
       wer: "Amelie & Matthias",
       foto: "ton-brennen.png",
       beschreibung: "Kinder ab 6 Jahren gestalten gemeinsam mit einem Elternteil eigene kleine Objekte aus Ton. Anschließend brennen wir die Werke im Feuer und beobachten, wie der Ton fest und zum Werkstück wird."
+    },
+    "Deo-Seife / Pilzworkshop": {
+      wer: "Larissa & Corinna (ausgebildete Pilzcoaches)",
+      foto: "deo-salbe.png",
+      beschreibung: "Baumpilze – das stille Wunder des Waldes: Wir lernen sie kennen, verstehen ihre Rolle im Wald und nutzen die Kraft des Zunderschwamms, um gemeinsam eine Salbe und ein Deo herzustellen. Natur pur zum Mitnehmen."
+    },
+    "Funkenflug Band": {
+      foto: "funkenflug.png",
+      beschreibung: "Die Münchner Band Funkenflug bringt mit ihrem Album „Durch die Blume“ das Gefühl eines ewigen Sommerabends auf die Bühne – eine lebendige Mischung aus Folk, Swing und Pop mit Gitarre, Geige, Kontrabass und mehrstimmigem Gesang."
+    },
+    "Kids Singen, Tanzen, Bewegen": {
+      wer: "Amelie (Stimmtherapeutin)",
+      foto: "singen-bewegen.png",
+      beschreibung: "Musikalischer Mitmach-Workshop für Kinder von 3 bis 6 Jahren: Wir singen kindgerechte Lieder und erwecken sie mit Bewegungen, Gesten und kleinen Rollenspielen zum Leben. Freude, Fantasie und gemeinsames Erleben stehen im Mittelpunkt."
+    },
+    "Wetterkunde": {
+      wer: "Laurenz (Wildnis- & Erlebnispädagoge)",
+      foto: "wetterkunde.png",
+      beschreibung: "Grundkurs Wetterkunde – Natur lesen lernen: Wolkenbilder, Windveränderungen und typische Wetterlagen werden verständlich erklärt. Ein sicherer Einstieg, um zu verstehen, was Wolken, Wind und Atmosphäre über kommendes Wetter verraten."
+    },
+    "Clown Malab Show": {
+      wer: "Clown Malab",
+      foto: "clownsshow.png",
+      beschreibung: "Señor Malab betritt die Bühne und lässt mit clownesker Artistik Keulen und Bälle durch die Luft tanzen. Nicht alles bleibt in der Luft – aber garantiert wird viel gelacht. Ein magisches Erlebnis für die ganze Familie."
+    },
+    "Clan Show": {
+      foto: "clan-open-stage.png",
+      beschreibung: "Bühne frei für die Clans! In bunter, unterstützender Atmosphäre zeigen die Clans, was in ihnen steckt – lustig, kreativ, wild oder überraschend. Es geht nicht um Perfektion, sondern um Freude, Mut und gemeinsames Erleben."
     }
   },
 
