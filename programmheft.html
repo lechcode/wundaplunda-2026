@@ -70,11 +70,6 @@ footer .foot-logo{width:min(80%,330px);height:auto}
 .cover .datumzeile .pill{background:var(--creme);border:2px solid var(--line);border-radius:99px;padding:.25em .9em;font-size:.95rem}
 .cover p.intro{max-width:54ch;margin-top:1rem;color:var(--ink-soft);font-size:1.05rem}
 .cover .demo-tag{display:inline-block;margin-top:1rem;background:var(--sand);color:var(--ink-soft);font-family:var(--hand);font-size:1.25rem;padding:.1em .8em;border-radius:99px;transform:rotate(-1deg)}
-.seitentabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.3rem}
-.seitentabs a{display:inline-flex;align-items:center;font-weight:700;font-size:.95rem;text-decoration:none;color:var(--blau-tief);background:var(--hell);border:2px solid var(--line);border-radius:99px;padding:.5em 1.1em;transition:transform .15s var(--ease),background .15s,border-color .15s,color .15s}
-.seitentabs a:hover{transform:translateY(-1px);border-color:var(--blau);background:var(--creme)}
-.seitentabs a:first-child{background:var(--blau);border-color:var(--blau);color:#fff}
-.seitentabs a:first-child:hover{background:var(--blau-tief)}
 /* Konfetti */
 .konfetti{position:absolute;inset:0;z-index:1;pointer-events:none}
 .konfetti polygon{opacity:.95}
@@ -441,13 +436,6 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     <div class="datumzeile" id="cover-datum"></div>
     <p class="intro">Dein Tagesplaner für die Wundaplunda-Woche: Hier findest du <strong>alle Infos übersichtlich an einem Ort</strong> — jeden Tag mit Programm, Leitung, Ort und für wen es gedacht ist. Du kannst alles <strong>online abrufen</strong> oder dir den Tagesplan einfach <strong>selbst ausdrucken</strong>.</p>
     <span class="demo-tag" id="demo-tag"></span>
-    <nav class="seitentabs" aria-label="Seitenbereiche">
-      <a href="#programm" data-nav="programm">Programm</a>
-      <a href="#view-infos" data-nav="verpflegung">Essen &amp; Trinken</a>
-      <a href="#view-infos" data-nav="gelaende">Geländeplan</a>
-      <a href="#view-infos" data-nav="packen">Packliste</a>
-      <a href="#view-infos" data-nav="sicher">Gut zu wissen</a>
-    </nav>
   </div>
 </header>
 
@@ -978,11 +966,6 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   }
   document.querySelectorAll(".viewnav button").forEach(function(b){
     b.addEventListener("click", function(){ setNav(b.dataset.nav); });
-  });
-
-  /* ---- Cover-Tabs: springen in denselben Bereich ---- */
-  document.querySelectorAll(".seitentabs a[data-nav]").forEach(function(a){
-    a.addEventListener("click", function(e){ e.preventDefault(); setNav(a.dataset.nav); });
   });
 
   /* ---- Info-Bereich drucken (nur der gewählte Reiter) ---- */
