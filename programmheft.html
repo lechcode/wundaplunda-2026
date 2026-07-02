@@ -57,6 +57,9 @@ footer .foot-logo{width:min(80%,330px);height:auto}
 
 /* ---------- Cover ---------- */
 .cover{position:relative;overflow:hidden;background:var(--hell);border-bottom:3px solid var(--line)}
+.cover-deko{position:absolute;z-index:1;pointer-events:none;user-select:none}
+.deko-hund{top:.4rem;right:2.5%;width:clamp(140px,18vw,240px)}
+@media(max-width:760px){.cover-deko{display:none}}
 .cover .wrap{padding-top:clamp(2.2rem,5vw,3.4rem);padding-bottom:clamp(2rem,4vw,3rem);position:relative;z-index:2}
 .cover .kicker{font-family:var(--hand);font-size:clamp(1.4rem,1.1rem+1.3vw,2rem);color:var(--rot);display:block;transform:rotate(-2deg);margin-bottom:.3rem}
 .cover .wortmarke{font-size:clamp(1.5rem, 0.7rem + 4.4vw, 4.8rem);margin:.1rem 0 .5rem;flex-wrap:nowrap;max-width:100%}
@@ -162,7 +165,10 @@ main{padding:clamp(1.6rem,4vw,2.8rem) 0 1rem}
 .empty{background:var(--hell);border:2px dashed var(--line);border-radius:var(--radius);padding:1.6rem;text-align:center;color:var(--muted);font-size:1.05rem}
 
 /* ---------- Info-Bereich ---------- */
-.info-wrap{background:var(--hell);border-top:3px solid var(--line);margin-top:2rem;padding:clamp(2rem,5vw,3.4rem) 0}
+.info-wrap{background:var(--hell);border-top:3px solid var(--line);margin-top:2rem;padding:clamp(2rem,5vw,3.4rem) 0;position:relative;overflow:hidden}
+.info-wrap>.wrap{position:relative;z-index:2}
+.info-deko{position:absolute;z-index:1;pointer-events:none;user-select:none;top:1.4rem;right:2%;width:clamp(150px,17vw,230px)}
+@media(max-width:760px){.info-deko{display:none}}
 .info-wrap h2.titel{font-size:clamp(1.7rem,1.3rem+1.8vw,2.4rem);color:var(--blau-tief);text-align:center;margin-bottom:.3rem}
 .info-wrap .titel-sub{text-align:center;color:var(--muted);font-family:var(--hand);font-size:1.4rem;margin-bottom:1.6rem}
 .acc{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:.6rem}
@@ -324,6 +330,7 @@ footer a{color:var(--gold-hell);font-weight:700}
     <polygon points="40,360 130,360 70,300" fill="#195591"/>
     <polygon points="600,8 628,30 600,52" fill="#E1971F" opacity=".5"/>
   </svg>
+  <img class="cover-deko deko-hund" src="assets/img/deko/deko-hund-ballon.png" alt="" aria-hidden="true" loading="lazy">
   <div class="wrap">
     <span class="kicker">Schön, dass du da bist!</span>
     <h1><span class="sr-only">Wundaplunda – Programmheft &amp; Tagesplaner</span><img class="cover-logo" src="assets/img/wortmarke.png" alt="WUNDAPLUNDA" width="1368" height="154"></h1>
@@ -368,6 +375,7 @@ footer a{color:var(--gold-hell);font-weight:700}
 
 <!-- ===== Info-Bereich (Geländeplan · Verpflegung · Gut zu wissen) ===== -->
 <section class="info-wrap" id="info" aria-label="Infos rund ums Wundaplunda">
+  <img class="info-deko" src="assets/img/deko/deko-voegel.png" alt="" aria-hidden="true" loading="lazy">
   <div class="wrap">
     <h2 class="titel">Alles fürs Wundaplunda</h2>
     <p class="titel-sub">Geländeplan, Essen & Trinken, gut zu wissen — alles an einem Ort</p>
