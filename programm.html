@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programm 2026 · WUNDAPLUNDA – Das Sommererlebnis für Groß und Klein</title>
+<meta name="description" content="Diese Künstler:innen, Bands und Shows erwarten euch beim Wundaplunda 2026 im Ökodorf Sulzbrunn – 03.–08. August 2026.">
+<!-- ENTFERNEN sobald live & freigegeben -->
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#FBF4E6">
+<link rel="icon" type="image/png" href="assets/img/marke-quadrat.png">
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+:root{
+  --creme:#FBF4E6; --sand:#F4E9D2; --hell:#FFFDF8;
+  --blau:#195591; --blau-tief:#103F6E; --blau-mittel:#2C6CA4;
+  --koralle:#EE8469; --rot:#E0431F; --rot-tief:#B23311;
+  --gold:#E1971F; --gold-hell:#F1B53C; --gruen:#5E8C57;
+  --ink:#33291F; --ink-soft:#5C5142; --muted:#6F6249; --line:#E7D9BC;
+  --display:'Nunito',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --sans:'Nunito',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; --hand:'Caveat',cursive;
+  --radius:1.2rem; --radius-s:.7rem;
+  --shadow:0 14px 40px -18px rgba(51,41,31,.30); --shadow-s:0 6px 18px -10px rgba(51,41,31,.28);
+  --ease:cubic-bezier(.22,.8,.3,1); --wrap:1080px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:var(--sans);font-size:clamp(1rem,.96rem+.25vw,1.1rem);line-height:1.6;color:var(--ink);background:var(--creme);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:var(--display);line-height:1.12;font-weight:900;color:var(--ink)}
+a{color:var(--blau)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+.skip{position:absolute;left:-999px;top:0;background:var(--rot);color:#fff;padding:.7rem 1.2rem;z-index:300;border-radius:0 0 .6rem 0;font-weight:700;text-decoration:none}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--blau);outline-offset:2px;border-radius:5px}
+
+/* ---------- Kopf ---------- */
+.kopf{background:var(--hell);border-bottom:3px solid var(--line);position:relative;overflow:hidden}
+.kopf .wrap{position:relative;z-index:2;padding-top:clamp(2.2rem,5vw,3.6rem);padding-bottom:clamp(2rem,4vw,3rem);display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.2rem,4vw,3rem);align-items:center}
+.kicker{font-family:var(--hand);font-size:clamp(1.4rem,1.1rem+1.3vw,2rem);color:var(--rot);display:block;transform:rotate(-2deg);margin-bottom:.3rem}
+.kopf-logo{width:min(100%,520px);height:auto;margin:.1rem 0 .6rem}
+.untertitel{font-weight:800;font-size:clamp(1.1rem,1rem+.7vw,1.5rem);color:var(--blau-tief)}
+.datumzeile{display:flex;flex-wrap:wrap;gap:.5rem .9rem;align-items:center;margin-top:.9rem;font-weight:700;color:var(--ink-soft)}
+.pill{background:var(--creme);border:2px solid var(--line);border-radius:99px;padding:.25em .9em;font-size:.95rem}
+.kopf p.intro{max-width:52ch;margin-top:1rem;color:var(--ink-soft)}
+.szene{width:100%;height:auto;filter:drop-shadow(0 18px 36px rgba(51,41,31,.18))}
+.ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem}
+.btn{display:inline-block;font-weight:800;text-decoration:none;border-radius:99px;padding:.85em 1.7em;transition:transform .2s var(--ease),background .2s;border:2.5px solid transparent}
+.btn-rot{background:var(--rot);color:#fff;box-shadow:0 10px 26px -12px rgba(224,67,31,.6)}
+.btn-rot:hover{background:var(--rot-tief);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--blau);color:var(--blau)}
+.btn-ghost:hover{background:rgba(25,85,145,.07);transform:translateY(-2px)}
+@media (max-width:820px){.kopf .wrap{grid-template-columns:1fr}.szene{max-width:420px;margin:0 auto}}
+
+/* ---------- Sektionen ---------- */
+section{padding:clamp(2.6rem,6vw,4.5rem) 0}
+h2{font-size:clamp(1.7rem,1.3rem+1.8vw,2.5rem);color:var(--blau-tief);margin-bottom:.4rem}
+.sub{color:var(--muted);max-width:60ch;margin-bottom:1.8rem;font-family:var(--hand);font-size:1.35rem}
+
+/* ---------- Acts ---------- */
+.acts{background:var(--creme)}
+.act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.act{background:var(--hell);border:2px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-s);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.act:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.act img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#fff}
+.act .pad{padding:1rem 1.15rem 1.2rem}
+.act h3{font-size:1.18rem;color:var(--blau-tief)}
+.act .genre{font-family:var(--hand);font-size:1.2rem;color:var(--rot);display:block;margin-top:.1em}
+@media (max-width:860px){.act-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.act-grid{grid-template-columns:1fr}}
+
+/* ---------- Wochen-Überblick (grob) ---------- */
+.woche{background:var(--hell);border-top:3px solid var(--line);border-bottom:3px solid var(--line);position:relative;overflow:hidden}
+.woche .wrap{position:relative;z-index:2}
+.woche-deko{position:absolute;z-index:1;pointer-events:none;right:1.5%;bottom:.5rem;width:clamp(130px,15vw,210px);opacity:.9}
+@media (max-width:760px){.woche-deko{display:none}}
+.tage{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.tagk{background:var(--creme);border:2px solid var(--line);border-radius:var(--radius);padding:1.2rem 1.3rem}
+.tagk h3{font-size:1.2rem;color:var(--blau-tief)}
+.tagk .datum{font-family:var(--hand);font-size:1.25rem;color:var(--rot);display:block;margin-bottom:.4rem}
+.tagk ul{list-style:none;margin-top:.3rem}
+.tagk li{padding:.22em 0 .22em 1.5em;position:relative;color:var(--ink-soft);font-size:.98rem}
+.tagk li::before{content:"✺";position:absolute;left:.1em;color:var(--gold)}
+@media (max-width:860px){.tage{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.tage{grid-template-columns:1fr}}
+.woche-note{margin-top:1.6rem;font-family:var(--hand);font-size:1.35rem;color:var(--muted);text-align:center;transform:rotate(-1deg)}
+
+/* ---------- Mitte-CTA ---------- */
+.cta-band{background:var(--blau-tief);color:var(--creme);text-align:center}
+.cta-band h2{color:var(--creme)}
+.cta-band p{color:rgba(251,244,230,.85);max-width:52ch;margin:0 auto}
+.cta-band .ctas{justify-content:center}
+.cta-band .btn-ghost{border-color:rgba(251,244,230,.6);color:var(--creme)}
+.cta-band .btn-ghost:hover{background:rgba(251,244,230,.12)}
+
+/* ---------- Footer ---------- */
+footer{background:var(--blau-tief);color:#EAF0F6;padding:clamp(2rem,5vw,3rem) 0;border-top:2px solid rgba(251,244,230,.15)}
+footer .foot-logo{width:min(80%,320px);height:auto;margin-bottom:.8rem}
+footer p{color:#C7D6E6;font-size:.95rem}
+footer a{color:var(--gold-hell);font-weight:700}
+.lcband{background:var(--creme);border-top:2px solid var(--line);text-align:center;padding:1rem;font-size:.85rem;color:var(--muted)}
+.lcband a{color:var(--blau);font-weight:700}
+</style>
+</head>
+<body>
+<a class="skip" href="#acts">Zu den Acts springen</a>
+
+<!-- ===== Kopf mit großer Camp-Szene ===== -->
+<header class="kopf">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Schaut mal, wer diesen Sommer kommt!</span>
+      <a href="index.html" aria-label="Zur Wundaplunda-Startseite"><img class="kopf-logo" src="assets/img/wortmarke.png" alt="WUNDAPLUNDA" width="1368" height="154"></a>
+      <div class="untertitel">Programm 2026 — der Vorgeschmack</div>
+      <div class="datumzeile">
+        <span class="pill">03.–08. August 2026</span>
+        <span class="pill">Ökodorf Sulzbrunn · Allgäu</span>
+      </div>
+      <p class="intro">Sechs Tage draußen mit Musik, Shows, Workshops und Lagerfeuer. Hier siehst du schon mal, welche Künstler:innen und Bands dieses Jahr dabei sind — den ausführlichen Tagesplaner bekommen alle angemeldeten Familien direkt von uns.</p>
+      <div class="ctas">
+        <a class="btn btn-rot" href="https://booking.seminardesk.de/de/seminarhaus-sulzbrunn/8b8ed1b63b72471cb3b406b1a7a41290/wundaplunda-2026---das-sommererlebnis-fur-gro--klein" target="_blank" rel="noopener">Tickets &amp; Anmeldung ↗</a>
+        <a class="btn btn-ghost" href="index.html">Was ist das Wundaplunda?</a>
+      </div>
+    </div>
+    <img class="szene" src="assets/img/deko/deko-szene.png" alt="Illustrierte Wundaplunda-Camp-Szene mit Zelten, Lagerfeuer, Musik und Tieren" width="1080" height="1080">
+  </div>
+</header>
+
+<!-- ===== Acts ===== -->
+<section class="acts" id="acts">
+  <div class="wrap">
+    <h2>Diese Acts sind 2026 dabei</h2>
+    <p class="sub">Bühne frei — Musik, Shows &amp; Geschichten für Groß und Klein</p>
+    <div class="act-grid">
+      <article class="act"><img src="assets/img/programm/funkenflug.png" alt="Band Funkenflug" loading="lazy"><div class="pad"><h3>Funkenflug</h3><span class="genre">Folk · Swing · Pop</span></div></article>
+      <article class="act"><img src="assets/img/programm/tribubu.png" alt="Band Tribubu" loading="lazy"><div class="pad"><h3>Tribubu</h3><span class="genre">Rumba · Afro · Folk</span></div></article>
+      <article class="act"><img src="assets/img/programm/allikee.png" alt="Trommelgruppe Allikée" loading="lazy"><div class="pad"><h3>Allikée</h3><span class="genre">Westafrikanische Trommelmusik</span></div></article>
+      <article class="act"><img src="assets/img/programm/feuer-akrobatikshow.jpg" alt="Feuershow von Artistik Calimbaro" loading="lazy"><div class="pad"><h3>Artistik Calimbaro</h3><span class="genre">Feuer- &amp; Akrobatikshow</span></div></article>
+      <article class="act"><img src="assets/img/programm/clownsshow.png" alt="Clown Malab" loading="lazy"><div class="pad"><h3>Clown Malab</h3><span class="genre">Clownsshow für die ganze Familie</span></div></article>
+      <article class="act"><img src="assets/img/programm/abendgeschichten.png" alt="Lisa Suitner erzählt Geschichten" loading="lazy"><div class="pad"><h3>Lisa Suitner</h3><span class="genre">Geschichten, Humor &amp; Musik</span></div></article>
+      <article class="act"><img src="assets/img/programm/zwergig.png" alt="Kinderband Leicht Verschwitzt Und Zwergig" loading="lazy"><div class="pad"><h3>Leicht Verschwitzt Und Zwergig</h3><span class="genre">Kinderband — tanzbar für alle</span></div></article>
+      <article class="act"><img src="assets/img/programm/improtheater.png" alt="Improvisationstheater EingangAusgang" loading="lazy"><div class="pad"><h3>EingangAusgang</h3><span class="genre">Improvisations-Theater</span></div></article>
+      <article class="act"><img src="assets/img/programm/jodruf.jpg" alt="Jodruf Sulzbrunn — Rolf und Margaretha" loading="lazy"><div class="pad"><h3>Jodruf Sulzbrunn</h3><span class="genre">Singkreis mit Rolf &amp; Margaretha</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Grobe Wochenübersicht ===== -->
+<section class="woche">
+  <img class="woche-deko" src="assets/img/deko/deko-fuchs.png" alt="" aria-hidden="true" loading="lazy">
+  <div class="wrap">
+    <h2>So sieht die Woche grob aus</h2>
+    <p class="sub">Nur ein Vorgeschmack — den genauen Tagesplan gibt's für angemeldete Familien</p>
+    <div class="tage">
+      <div class="tagk"><h3>Montag</h3><span class="datum">03.08. · Ankommen</span><ul><li>Anreise &amp; Eröffnung mit Crêpes</li><li>Geländeführung &amp; Bienenführung</li><li>Impro-Show für Kids</li><li>Lagerfeuerabend</li></ul></div>
+      <div class="tagk"><h3>Dienstag</h3><span class="datum">04.08.</span><ul><li>Workshops für Groß &amp; Klein</li><li>Markt mit Kinderschminken</li><li>Kinderband-Konzert</li><li>Trommeln &amp; Feuershow</li></ul></div>
+      <div class="tagk"><h3>Mittwoch</h3><span class="datum">05.08.</span><ul><li>Filzen, Slackline &amp; Naturworkshops</li><li>Bogenbau &amp; Baumklettern</li><li>Konzert: Tribubu</li></ul></div>
+      <div class="tagk"><h3>Donnerstag</h3><span class="datum">06.08.</span><ul><li>Weiden-Zauberstäbe &amp; Feuerküche</li><li>Schnitzführerschein für Kinder</li><li>Singkreis am Abend</li></ul></div>
+      <div class="tagk"><h3>Freitag</h3><span class="datum">07.08.</span><ul><li>Pilz-, Papier- &amp; Bastelworkshops</li><li>Open Space</li><li>Konzert: Funkenflug</li></ul></div>
+      <div class="tagk"><h3>Samstag</h3><span class="datum">08.08. · Abschied</span><ul><li>Clown Malab Show</li><li>Clan-Show der Familien</li><li>Abschlussrunde</li></ul></div>
+    </div>
+    <p class="woche-note">… dazu jeden Tag: Waldrallye, Spielewagen, Flying Fox, Morgenkreis &amp; Yoga. Änderungen möglich!</p>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Lust bekommen?</h2>
+    <p>Sichert euch euren Platz beim Sommererlebnis für Groß und Klein — oder lest erst mal, wie sich eine Woche Wundaplunda anfühlt.</p>
+    <div class="ctas">
+      <a class="btn btn-rot" href="https://booking.seminardesk.de/de/seminarhaus-sulzbrunn/8b8ed1b63b72471cb3b406b1a7a41290/wundaplunda-2026---das-sommererlebnis-fur-gro--klein" target="_blank" rel="noopener">Tickets &amp; Anmeldung ↗</a>
+      <a class="btn btn-ghost" href="index.html#erlebnis">Das Erlebnis entdecken</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img class="foot-logo" src="assets/img/logo-wundaplunda-creme.png" alt="WUNDAPLUNDA – Das Sommererlebnis für Groß und Klein" width="1640" height="301" loading="lazy">
+    <p>Eine Veranstaltung des Fördervereins Gemeinschaft Sulzbrunn e.V. · <a href="mailto:info@seminarhaus-sulzbrunn.de">info@seminarhaus-sulzbrunn.de</a></p>
+    <p style="margin-top:.4rem"><a href="index.html">Startseite</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+  </div>
+</footer>
+<div class="lcband">Design-Vorschau, handgebaut mit ♥ in Landsberg am Lech von <a href="https://lechcode.de" target="_blank" rel="noopener">Lechcode</a> — cookiefrei.</div>
+</body>
+</html>
