@@ -34,7 +34,7 @@ const WUNDA = {
     untertitel: "Familien-Sommercamp im Ökodorf Sulzbrunn",
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
-    hinweis_jahr: "Programm & Zeiten Stand Sommer 2026 – Änderungen möglich",
+    hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
