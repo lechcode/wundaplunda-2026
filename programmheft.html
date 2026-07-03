@@ -199,10 +199,12 @@ main{padding:clamp(1.6rem,4vw,2.8rem) 0 1rem}
 .modal-overlay.open .modal{transform:none}
 .modal-close{position:absolute;top:.6rem;right:.6rem;z-index:2;width:2.3rem;height:2.3rem;border-radius:99px;border:none;background:rgba(255,255,255,.92);color:var(--ink);font-size:1.6rem;line-height:1;cursor:pointer;box-shadow:var(--shadow-s);display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
 .modal-close:hover{background:#fff;color:var(--rot)}
-.modal-media{background:var(--hell);border-radius:var(--radius) var(--radius) 0 0;padding:1.1rem 1rem .2rem;display:flex;justify-content:center;align-items:flex-start}
+.modal-media{position:relative;background:var(--sand);border-radius:var(--radius) var(--radius) 0 0;overflow:hidden;line-height:0}
 .modal-media[hidden]{display:none}
-/* Fotos sind quadratische Design-Karten (300x300) – ganze Karte zeigen, nie ueber native Groesse hochskalieren = scharf */
-.modal-media img{width:min(300px,100%);height:auto;object-fit:contain;display:block}
+.modal-media #dm-foto{width:100%;height:clamp(210px,42vh,320px);object-fit:cover;display:block}
+/* WUNDAPLUNDA-Logo dezent ins Foto überlappend */
+.modal-logo{position:absolute;left:.9rem;bottom:.7rem;width:clamp(120px,32%,185px);height:auto;filter:drop-shadow(0 1px 5px rgba(0,0,0,.6));pointer-events:none}
+.modal-logo[hidden]{display:none}
 .modal-body{padding:clamp(1.1rem,3vw,1.9rem)}
 .modal-time{font-family:var(--display);font-weight:700;color:var(--rot);font-size:1.02rem;margin-bottom:.1rem}
 .modal-body h3{font-size:clamp(1.4rem,1.1rem+1.2vw,1.95rem);color:var(--blau-tief);line-height:1.15;margin-bottom:.65rem}
@@ -747,7 +749,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
 <div class="modal-overlay" id="detail-modal" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dm-title">
     <button class="modal-close" type="button" aria-label="Schließen">&times;</button>
-    <div class="modal-media" id="dm-media" hidden><img id="dm-foto" alt="" loading="lazy"></div>
+    <div class="modal-media" id="dm-media" hidden><img id="dm-foto" alt="" loading="lazy"><img class="modal-logo" id="dm-logo" src="assets/img/wortmarke.png" alt="" aria-hidden="true"></div>
     <div class="modal-body">
       <p class="modal-time" id="dm-time"></p>
       <h3 id="dm-title"></h3>
@@ -958,7 +960,10 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     document.getElementById("dm-time").textContent = p.zeit || "";
     document.getElementById("dm-title").textContent = p.titel || "";
     var media=document.getElementById("dm-media"), foto=document.getElementById("dm-foto");
-    if(d.foto){ foto.src="assets/img/programm/"+d.foto; foto.alt=p.titel||""; media.hidden=false; }
+    var logo=document.getElementById("dm-logo");
+    // Diese Bilder haben bereits ihr eigenes Logo/Rahmen -> kein Overlay
+    var eigenesLogo={"allikee.png":1,"clanzeit.png":1,"clownsshow.png":1};
+    if(d.foto){ foto.src="assets/img/programm/"+d.foto; foto.alt=p.titel||""; media.hidden=false; logo.hidden=!!eigenesLogo[d.foto]; }
     else { foto.removeAttribute("src"); media.hidden=true; }
     // Tags: Zielgruppe (mit Text) + Status
     var tags=document.getElementById("dm-tags"); tags.innerHTML="";
