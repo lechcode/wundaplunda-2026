@@ -58,15 +58,12 @@ footer .foot-logo{width:min(80%,330px);height:auto}
 /* ---------- Cover ---------- */
 .cover{position:relative;overflow:hidden;background:var(--hell);border-bottom:3px solid var(--line)}
 .cover-deko{position:absolute;z-index:1;pointer-events:none;user-select:none}
-/* eine grosse Szene rechts im Header (Desktop) */
+/* eine grosse Szene rechts im Header (nur Desktop; mobil aus = kurzer Header) */
 .cover-szene{top:50%;right:1.5%;transform:translateY(-50%);width:clamp(230px,30vw,410px)}
-/* Mobil: Szene als zentrierter Block unter dem Header-Text */
-.cover-szene-mobile{display:none}
-@media(max-width:820px){
-  .cover-szene{display:none}
-  .cover-szene-mobile{display:block;width:min(74%,300px);margin:1.1rem auto .1rem}
-}
-.cover .wrap{padding-top:clamp(2.2rem,5vw,3.4rem);padding-bottom:clamp(2rem,4vw,3rem);position:relative;z-index:2}
+@media(max-width:820px){ .cover-szene{display:none} }
+.cover .wrap{padding-top:clamp(1.8rem,4vw,3rem);padding-bottom:clamp(1.4rem,3vw,2.2rem);position:relative;z-index:2}
+.cover .cover-traeger{margin-top:.5rem;color:var(--muted);font-size:.95rem}
+.cover .cover-traeger a{color:var(--blau);font-weight:700}
 .cover .kicker{font-family:var(--hand);font-size:clamp(1.4rem,1.1rem+1.3vw,2rem);color:var(--rot);display:block;transform:rotate(-2deg);margin-bottom:.3rem}
 .cover .wortmarke{font-size:clamp(1.5rem, 0.7rem + 4.4vw, 4.8rem);margin:.1rem 0 .5rem;flex-wrap:nowrap;max-width:100%}
 .cover .untertitel{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,1rem+.7vw,1.6rem);color:var(--blau-tief)}
@@ -268,8 +265,12 @@ details[open] summary::after{content:"–"}
 .viewnav .nav-emoji{font-size:1.05em;line-height:1;flex:none}
 .viewnav button:hover{background:rgba(255,255,255,.12);color:#fff}
 .viewnav button[aria-selected="true"]{background:var(--creme);color:var(--blau-tief)}
-body.view-infos .bar,body.view-infos #programm{display:none}
-body.view-programm #view-infos{display:none}
+/* 3 Ansichten: jede Sektion nur sichtbar, wenn ihre Body-Klasse aktiv ist */
+body:not(.view-willkommen) #view-willkommen{display:none}
+body:not(.view-infos) #view-infos{display:none}
+body:not(.view-programm) .bar,body:not(.view-programm) #programm{display:none}
+.willkommen-intro{max-width:60ch;margin:0 auto 1.3rem;text-align:center;color:var(--ink-soft);font-size:1.08rem}
+.tg-banner-wk{margin:0 auto 1.5rem}
 
 /* ---------- Info-Kacheln (Sprung-Navigation) ---------- */
 .info-kacheln{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:.7rem;max-width:920px;margin:0 auto 2rem}
@@ -395,7 +396,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
 .print-foot b{color:#103F6E}
 </style>
 </head>
-<body class="view-programm">
+<body class="view-willkommen">
 <a class="skip" href="#programm">Zum Programm springen</a>
 
 <!-- ===== Icon-Definitionen (einmal, unsichtbar) ===== -->
@@ -434,6 +435,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" stroke-linecap="round"/></symbol>
   <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></symbol>
+  <symbol id="i-herz" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9C1.3 9 2.7 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.3 0 4.7 3.5 3.3 6.5C19 16.4 12 21 12 21z" fill="currentColor"/></symbol>
 </defs></svg>
 
 <!-- ===== Cover ===== -->
@@ -449,27 +451,47 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   </svg>
   <img class="cover-deko cover-szene" src="assets/img/deko/deko-szene.png" alt="" aria-hidden="true" loading="lazy">
   <div class="wrap">
-    <span class="kicker">Schön, dass du da bist!</span>
     <h1><span class="sr-only">Wundaplunda – Programmheft &amp; Tagesplaner</span><img class="cover-logo" src="assets/img/wortmarke.png" alt="WUNDAPLUNDA" width="1368" height="154"></h1>
-    <img class="cover-szene-mobile" src="assets/img/deko/deko-szene.png" alt="" aria-hidden="true" loading="lazy">
-    <div class="untertitel" id="cover-sub">Familien-Sommercamp im Ökodorf Sulzbrunn</div>
-    <div class="datumzeile" id="cover-datum"></div>
-    <p class="intro">Dein Tagesplaner für die Wundaplunda-Woche: Hier findest du <strong>alle Infos übersichtlich an einem Ort</strong> — jeden Tag mit Programm, Leitung, Ort und für wen es gedacht ist. Du kannst alles <strong>online abrufen</strong> oder dir den Tagesplan einfach <strong>selbst ausdrucken</strong>.</p>
-    <span class="demo-tag" id="demo-tag"></span>
-    <a class="tg-banner" href="https://t.me/+2eFOve-k0_E1NWUy" target="_blank" rel="noopener" aria-label="Der Wundaplunda-Telegram-Gruppe beitreten">
-      <svg aria-hidden="true"><use href="#i-send"/></svg>
-      <span><strong>Telegram-Gruppe beitreten</strong><small>Unser Infoportal während dem Festival</small></span>
-    </a>
+    <div class="untertitel">Sommererlebnis für Groß und Klein</div>
+    <p class="cover-traeger">Eine Veranstaltung des <a href="https://sulzbrunn.org/gemeinschaft/der-verein/" target="_blank" rel="noopener">Fördervereins Gemeinschaft Sulzbrunn e.&nbsp;V.</a></p>
   </div>
 </header>
 
-<!-- ===== Navigationsleiste: Programm / Alle Infos ===== -->
+<!-- ===== Navigationsleiste: Willkommen / Programm / Alle Infos ===== -->
 <nav class="viewnav" aria-label="Bereich wählen">
   <div class="wrap" role="tablist">
-    <button type="button" data-nav="programm" role="tab" aria-selected="true"><svg><use href="#i-clock"/></svg> Programm</button>
+    <button type="button" data-nav="willkommen" role="tab" aria-selected="true"><svg><use href="#i-herz"/></svg> Willkommen</button>
+    <button type="button" data-nav="programm" role="tab" aria-selected="false"><svg><use href="#i-clock"/></svg> Programm</button>
     <button type="button" data-nav="infos" role="tab" aria-selected="false"><svg><use href="#i-pin"/></svg> Alle Infos A–Z</button>
   </div>
 </nav>
+
+<!-- ===== Willkommen (Startreiter) ===== -->
+<section class="info-wrap" id="view-willkommen" aria-label="Willkommen beim Wundaplunda">
+  <div class="wrap">
+    <h2 class="titel">Schön, dass du da bist!</h2>
+    <p class="willkommen-intro">Dein Tagesplaner für die Wundaplunda-Woche. Hier findest du alle Infos übersichtlich an einem Ort — oben über die Reiter <strong>Programm</strong> und <strong>Alle Infos A–Z</strong>.</p>
+
+    <a class="tg-banner tg-banner-wk" href="https://t.me/+2eFOve-k0_E1NWUy" target="_blank" rel="noopener" aria-label="Der Wundaplunda-Telegram-Gruppe beitreten">
+      <svg aria-hidden="true"><use href="#i-send"/></svg>
+      <span><strong>Telegram-Gruppe beitreten</strong><small>Unser Infoportal während dem Festival</small></span>
+    </a>
+
+    <div class="hinweis-box">
+      <h2><svg><use href="#i-gruppe"/></svg> Unser Konzept &amp; die Aufsichtspflicht</h2>
+      <p class="kurz">Wundaplunda ist ein <strong>gemeinsames Erlebnis für die ganze Familie</strong> — kein Betreuungsangebot. Auch wenn ein Workshop z. B. „für Kinder ab 6 Jahren" ausgeschrieben ist, heißt das nicht, dass Kinder dort ohne Begleitung teilnehmen.</p>
+      <p>Das Wundaplunda-Team übernimmt <strong>keine Kinderbetreuung und keine Aufsichtspflicht</strong>. Die Aufsichtspflicht liegt während des gesamten Aufenthalts – also rund um die Uhr – bei den Eltern bzw. Erziehungsberechtigten und nicht bei den Workshopleitungen oder dem Wundaplunda-Team.</p>
+      <details>
+        <summary>Mehr zu unserem Familien-Konzept &amp; für ein entspanntes Workshop-Erlebnis</summary>
+        <p>Diese Haltung ist ein wichtiger Bestandteil unserer Philosophie: Wir möchten Familien einladen, Zeit miteinander zu verbringen, gemeinsam kreativ zu sein und Aktivitäten als Gemeinschaft zu erleben. Wundaplunda ist ein Ort, an dem Eltern und Kinder gemeinsam teilnehmen und unvergessliche Erlebnisse schaffen.</p>
+        <h3>Gemeinsam für ein entspanntes Workshop-Erlebnis</h3>
+        <p>Unsere Workshopleitungen geben ihr Bestes, allen Teilnehmenden genügend Zeit und Aufmerksamkeit zu schenken. Damit das gut gelingt, bitten wir euch, möglichst <strong>pünktlich</strong> zu den Workshops zu kommen und nicht erst mitten im Kurs einzusteigen.</p>
+        <p>Einige Workshops haben eine <strong>begrenzte Teilnehmerzahl</strong>. Ist ein Workshop bereits voll, bitten wir euch, dies zu respektieren und eines unserer vielen anderen Angebote zu entdecken – zum Beispiel einen anderen Workshop, die Waldrallye, unsere Flying Fox oder viele weitere Erlebnisse auf dem Gelände.</p>
+        <p>Vielen Dank für eure Rücksichtnahme – so schaffen wir gemeinsam eine entspannte Atmosphäre für alle.</p>
+      </details>
+    </div>
+  </div>
+</section>
 
 <!-- ===== Filterleiste ===== -->
 <nav class="bar" aria-label="Programm filtern">
@@ -490,21 +512,6 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
 
 <main id="programm">
   <div class="wrap">
-
-    <div class="hinweis-box">
-      <h2><svg><use href="#i-gruppe"/></svg> Wichtig: Aufsichtspflicht liegt bei den Eltern</h2>
-      <p class="kurz">Auch wenn ein Workshop z. B. „für Kinder ab 6 Jahren" ausgeschrieben ist, heißt das nicht, dass Kinder dort ohne Begleitung teilnehmen können.</p>
-      <p>Das Wundaplunda-Team übernimmt <strong>keine Kinderbetreuung und keine Aufsichtspflicht</strong>. Die Aufsichtspflicht liegt während des gesamten Aufenthalts – also rund um die Uhr – bei den Eltern bzw. Erziehungsberechtigten und nicht bei den Workshopleitungen oder dem Wundaplunda-Team.</p>
-      <details>
-        <summary>Mehr zu unserem Familien-Konzept &amp; für ein entspanntes Workshop-Erlebnis</summary>
-        <p>Diese Haltung ist ein wichtiger Bestandteil unserer Philosophie: Wundaplunda soll ein gemeinsames Erlebnis für die ganze Familie sein. Wir möchten Familien einladen, Zeit miteinander zu verbringen, gemeinsam kreativ zu sein und Aktivitäten als Gemeinschaft zu erleben.</p>
-        <p>Wundaplunda ist daher kein Betreuungsangebot für Kinder, sondern ein Ort, an dem Eltern und Kinder gemeinsam teilnehmen und unvergessliche Erlebnisse schaffen. Wir bitten um Verständnis und freuen uns auf Familien, die unser Konzept des gemeinsamen Erlebens mittragen.</p>
-        <h3>Gemeinsam für ein entspanntes Workshop-Erlebnis</h3>
-        <p>Unsere Workshopleitungen geben ihr Bestes, allen Teilnehmenden genügend Zeit und Aufmerksamkeit zu schenken. Damit das gut gelingt, bitten wir euch, möglichst <strong>pünktlich</strong> zu den Workshops zu kommen und nicht erst mitten im Kurs einzusteigen.</p>
-        <p>Einige Workshops haben eine <strong>begrenzte Teilnehmerzahl</strong>. Ist ein Workshop bereits voll, bitten wir euch, dies zu respektieren und eines unserer vielen anderen Angebote zu entdecken – zum Beispiel einen anderen Workshop, die Waldrallye, unsere Flying Fox oder viele weitere Erlebnisse auf dem Gelände.</p>
-        <p>Vielen Dank für eure Rücksichtnahme – so schaffen wir gemeinsam eine entspannte Atmosphäre für alle.</p>
-      </details>
-    </div>
 
     <p class="tagezahl" id="tagezahl"></p>
     <div id="programm-liste"></div>
@@ -786,17 +793,10 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     return { desc:desc, wer:(kat && kat.wer)?kat.wer:p.wer, mitbringen:(kat && kat.mitbringen)?kat.mitbringen:p.mitbringen, foto:(kat && kat.foto)?kat.foto:null };
   }
 
-  /* ---- Cover ---- */
+  /* ---- Footer-Info ---- */
   (function(){
-    document.getElementById("cover-sub").textContent = D.festival.untertitel || "";
-    var dz = document.getElementById("cover-datum");
-    var t = D.festival.tage;
-    var spanne = t.length ? (t[0].datum + "–" + t[t.length-1].datum + (D.festival.jahr?(" "+D.festival.jahr):"")) : "";
-    dz.appendChild(el("span","pill", spanne));
-    if(D.festival.ort) dz.appendChild(el("span","pill", esc(D.festival.ort)));
-    if(D.festival.stand) dz.appendChild(el("span","pill","Stand: "+esc(D.festival.stand)));
-    document.getElementById("demo-tag").textContent = D.festival.hinweis_jahr || "";
-    document.getElementById("foot-info").textContent = (D.festival.name||"") + " · " + (D.festival.adresse||"") + (D.festival.stand?(" · Programm-Stand: "+D.festival.stand):"");
+    var fi=document.getElementById("foot-info");
+    if(fi) fi.textContent = (D.festival.name||"") + " · " + (D.festival.adresse||"") + (D.festival.stand?(" · Programm-Stand: "+D.festival.stand):"");
   })();
 
   /* ---- Tag-Tabs ---- */
@@ -1106,11 +1106,11 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     window.print();
   });
 
-  /* ---- Ansicht-Umschalter: Programm / Alle Infos ---- */
+  /* ---- Ansicht-Umschalter: Willkommen / Programm / Alle Infos ---- */
   function setNav(key){
-    var programm = (key==="programm");
-    document.body.classList.toggle("view-programm", programm);
-    document.body.classList.toggle("view-infos", !programm);
+    var views=["willkommen","programm","infos"];
+    if(views.indexOf(key)<0) key="willkommen";
+    views.forEach(function(v){ document.body.classList.toggle("view-"+v, v===key); });
     document.querySelectorAll(".viewnav button").forEach(function(b){ b.setAttribute("aria-selected", b.dataset.nav===key); });
     window.scrollTo({top:0, behavior:"smooth"});
   }
