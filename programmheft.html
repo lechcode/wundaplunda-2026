@@ -858,18 +858,18 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   }
   function allWenOn(){ return state.wen.size===0; }
 
-  /* ---- Programm rendern (STRIKTER Filter) ---- */
+  /* ---- Programm rendern (Filter) ---- */
   function matchWen(p){
     if(state.wen.size===0) return true;           // "Alle" → alles zeigen
     var w = p.wen||["alle"];
-    // Punkt passt, wenn er für MINDESTENS eine gewählte Gruppe (strikt) gedacht ist
+    // Punkt passt, wenn er für MINDESTENS eine gewählte Gruppe gedacht ist
     return Array.from(state.wen).some(function(k){
       if(k==="erwachsene"){
-        // "Nur Erwachsene": enthält erwachsene UND keine Kindergruppe (und nicht "alle")
+        // "Nur Erwachsene": nur reine Erwachsenen-Kurse – keine Kinder, kein "alle"
         return w.indexOf("erwachsene")>=0 && w.indexOf("kinder_0_4")<0 && w.indexOf("kinder_ab_5")<0 && w.indexOf("alle")<0;
       }
-      // Kindergruppe: der Punkt ist genau für diese Gruppe ausgeschrieben
-      return w.indexOf(k)>=0;
+      // Kindergruppe: Kurse für genau diese Gruppe ODER altersübergreifend "für alle"
+      return w.indexOf(k)>=0 || w.indexOf("alle")>=0;
     });
   }
   function zeitParts(z){ // "14:00–15:00" -> {a:"14:00", b:"15:00"}
