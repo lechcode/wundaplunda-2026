@@ -268,13 +268,15 @@ details[open] summary::after{content:"–"}
 body.view-infos .bar,body.view-infos #programm{display:none}
 body.view-programm #view-infos{display:none}
 
-/* ---------- Info-Reiter (A–Z) ---------- */
-.info-tabs{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-bottom:1.4rem}
-.info-tabs button{display:inline-flex;align-items:center;gap:.4em;font-family:var(--display);font-weight:700;font-size:.95rem;border:2px solid var(--line);background:var(--hell);color:var(--ink-soft);border-radius:99px;padding:.45em 1em;cursor:pointer;transition:transform .15s var(--ease),background .15s,border-color .15s,color .15s}
-.info-tabs button svg{width:1.2em;height:1.2em;flex:none}
-.info-tabs button:hover{transform:translateY(-1px);border-color:var(--koralle)}
-.info-tabs button[aria-selected="true"]{background:var(--blau);border-color:var(--blau);color:#fff}
-.info-panel{max-width:840px;margin:0 auto;background:var(--creme);border:2px solid var(--line);border-radius:var(--radius-s);padding:clamp(1rem,3vw,1.6rem)}
+/* ---------- Info-Kacheln (Sprung-Navigation) ---------- */
+.info-kacheln{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:.7rem;max-width:920px;margin:0 auto 2rem}
+.info-kachel{position:relative;display:flex;flex-direction:column;gap:.35rem;text-decoration:none;background:var(--hell);border:2px solid var(--line);border-radius:var(--radius-s);padding:.9rem 1rem;color:var(--ink);box-shadow:var(--shadow-s);transition:transform .15s var(--ease),border-color .15s,box-shadow .15s}
+.info-kachel:hover{transform:translateY(-2px);border-color:var(--koralle);box-shadow:var(--shadow)}
+.info-kachel .k-emoji{font-size:1.8rem;line-height:1}
+.info-kachel .k-label{font-family:var(--display);font-weight:700;font-size:1.02rem;color:var(--blau-tief);line-height:1.15}
+.info-kachel .k-num{position:absolute;top:.5rem;right:.75rem;font-family:var(--hand);font-size:1.15rem;color:var(--muted)}
+@media print{.info-kacheln{display:none!important}}
+.info-panel{max-width:840px;margin:0 auto 1.4rem;scroll-margin-top:1rem;background:var(--creme);border:2px solid var(--line);border-radius:var(--radius-s);padding:clamp(1rem,3vw,1.6rem)}
 .info-panel[hidden]{display:none}
 .info-panel-head{display:flex;align-items:center;gap:.6rem;border-bottom:2px dotted var(--line);padding-bottom:.6rem;margin-bottom:.9rem}
 .info-panel-head h3{font-size:1.3rem;color:var(--blau-tief);display:flex;align-items:center;gap:.5rem;margin:0}
@@ -452,20 +454,11 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   </div>
 </header>
 
-<!-- ===== Navigationsleiste: Programm + 10 Infoheft-Kategorien ===== -->
+<!-- ===== Navigationsleiste: Programm / Alle Infos ===== -->
 <nav class="viewnav" aria-label="Bereich wählen">
   <div class="wrap" role="tablist">
     <button type="button" data-nav="programm" role="tab" aria-selected="true"><svg><use href="#i-clock"/></svg> Programm</button>
-    <button type="button" data-nav="anreise" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🧭</span> Anreise &amp; Orientierung</button>
-    <button type="button" data-nav="gelaende" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🏕️</span> Unterkunft &amp; Gelände</button>
-    <button type="button" data-nav="verpflegung" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🥗</span> Versorgung &amp; Verpflegung</button>
-    <button type="button" data-nav="hygiene" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🧼</span> Hygiene &amp; Gesundheit</button>
-    <button type="button" data-nav="sicher" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🛟</span> Sicherheit &amp; Notfälle</button>
-    <button type="button" data-nav="familien" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">👨‍👩‍👧</span> Familien &amp; Kinder</button>
-    <button type="button" data-nav="umwelt" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🌱</span> Nachhaltigkeit &amp; Umwelt</button>
-    <button type="button" data-nav="gemeinschaft" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🌈</span> Gemeinschaft &amp; Programm</button>
-    <button type="button" data-nav="packen" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🎒</span> Ausstattung &amp; Mitbringliste</button>
-    <button type="button" data-nav="organisatorisches" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">📋</span> Organisatorisches &amp; Kontakt</button>
+    <button type="button" data-nav="infos" role="tab" aria-selected="false"><svg><use href="#i-pin"/></svg> Alle Infos A–Z</button>
   </div>
 </nav>
 
@@ -516,7 +509,20 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   <img class="info-deko" src="assets/img/deko/deko-voegel.png" alt="" aria-hidden="true" loading="lazy">
   <div class="wrap">
     <h2 class="titel">Dein Wundaplunda-Infoheft</h2>
-    <p class="titel-sub">Alles Wichtige von A–Z · jeder Bereich lässt sich einzeln ausdrucken</p>
+    <p class="titel-sub">Tippe auf eine Kachel — du springst direkt zum Bereich · jeder ist einzeln ausdruckbar</p>
+
+    <nav class="info-kacheln" aria-label="Info-Bereiche">
+      <a class="info-kachel" href="#panel-anreise"><span class="k-num">1</span><span class="k-emoji" aria-hidden="true">🧭</span><span class="k-label">Anreise &amp; Orientierung</span></a>
+      <a class="info-kachel" href="#panel-gelaende"><span class="k-num">2</span><span class="k-emoji" aria-hidden="true">🏕️</span><span class="k-label">Unterkunft &amp; Gelände</span></a>
+      <a class="info-kachel" href="#panel-verpflegung"><span class="k-num">3</span><span class="k-emoji" aria-hidden="true">🥗</span><span class="k-label">Versorgung &amp; Verpflegung</span></a>
+      <a class="info-kachel" href="#panel-hygiene"><span class="k-num">4</span><span class="k-emoji" aria-hidden="true">🧼</span><span class="k-label">Hygiene &amp; Gesundheit</span></a>
+      <a class="info-kachel" href="#panel-sicher"><span class="k-num">5</span><span class="k-emoji" aria-hidden="true">🛟</span><span class="k-label">Sicherheit &amp; Notfälle</span></a>
+      <a class="info-kachel" href="#panel-familien"><span class="k-num">6</span><span class="k-emoji" aria-hidden="true">👨‍👩‍👧</span><span class="k-label">Familien &amp; Kinder</span></a>
+      <a class="info-kachel" href="#panel-umwelt"><span class="k-num">7</span><span class="k-emoji" aria-hidden="true">🌱</span><span class="k-label">Nachhaltigkeit &amp; Umwelt</span></a>
+      <a class="info-kachel" href="#panel-gemeinschaft"><span class="k-num">8</span><span class="k-emoji" aria-hidden="true">🌈</span><span class="k-label">Gemeinschaft &amp; Programm</span></a>
+      <a class="info-kachel" href="#panel-packen"><span class="k-num">9</span><span class="k-emoji" aria-hidden="true">🎒</span><span class="k-label">Ausstattung &amp; Mitbringliste</span></a>
+      <a class="info-kachel" href="#panel-organisatorisches"><span class="k-num">10</span><span class="k-emoji" aria-hidden="true">📋</span><span class="k-label">Organisatorisches &amp; Kontakt</span></a>
+    </nav>
 
     <!-- 1 -->
     <section class="info-panel" id="panel-anreise" role="tabpanel">
@@ -534,7 +540,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     </section>
 
     <!-- 2 -->
-    <section class="info-panel" id="panel-gelaende" role="tabpanel" hidden>
+    <section class="info-panel" id="panel-gelaende" role="tabpanel">
       <div class="info-panel-head"><h3>🏕️ Unterkunft &amp; Gelände</h3><button class="act ghost" type="button" data-print-info="gelaende"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
         <h4>Zeltplatz</h4>
@@ -555,7 +561,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     </section>
 
     <!-- 3 -->
-    <section class="info-panel" id="panel-verpflegung" role="tabpanel" hidden>
+    <section class="info-panel" id="panel-verpflegung" role="tabpanel">
       <div class="info-panel-head"><h3>🥗 Versorgung &amp; Verpflegung</h3><button class="act ghost" type="button" data-print-info="verpflegung"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body" id="verpflegung-body">
         <h4>Selbstverpflegung</h4>
@@ -580,7 +586,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     </section>
 
     <!-- 4 -->
-    <section class="info-panel" id="panel-hygiene" role="tabpanel" hidden>
+    <section class="info-panel" id="panel-hygiene" role="tabpanel">
       <div class="info-panel-head"><h3>🧼 Hygiene &amp; Gesundheit</h3><button class="act ghost" type="button" data-print-info="hygiene"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
         <h4>Toiletten &amp; Duschen</h4>
@@ -598,7 +604,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     </section>
 
     <!-- 5 -->
-    <section class="info-panel" id="panel-sicher" role="tabpanel" hidden>
+    <section class="info-panel" id="panel-sicher" role="tabpanel">
       <div class="info-panel-head"><h3>🛟 Sicherheit &amp; Notfälle</h3><button class="act ghost" type="button" data-print-info="sicher"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
         <h4>Gewitter &amp; Sturm</h4>
@@ -612,7 +618,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     </section>
 
     <!-- 6 -->
-    <section class="info-panel" id="panel-familien" role="tabpanel" hidden>
+    <section class="info-panel" id="panel-familien" role="tabpanel">
       <div class="info-panel-head"><h3>👨‍👩‍👧 Familien &amp; Kinder</h3><button class="act ghost" type="button" data-print-info="familien"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
         <h4>Aufsichtspflicht</h4>
@@ -625,7 +631,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     </section>
 
     <!-- 7 -->
-    <section class="info-panel" id="panel-umwelt" role="tabpanel" hidden>
+    <section class="info-panel" id="panel-umwelt" role="tabpanel">
       <div class="info-panel-head"><h3>🌱 Nachhaltigkeit &amp; Umwelt</h3><button class="act ghost" type="button" data-print-info="umwelt"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
         <h4>Müll</h4>
@@ -636,7 +642,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     </section>
 
     <!-- 8 -->
-    <section class="info-panel" id="panel-gemeinschaft" role="tabpanel" hidden>
+    <section class="info-panel" id="panel-gemeinschaft" role="tabpanel">
       <div class="info-panel-head"><h3>🌈 Gemeinschaft &amp; Programm</h3><button class="act ghost" type="button" data-print-info="gemeinschaft"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
         <h4>Morgenkreis</h4>
@@ -653,7 +659,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     </section>
 
     <!-- 9 -->
-    <section class="info-panel" id="panel-packen" role="tabpanel" hidden>
+    <section class="info-panel" id="panel-packen" role="tabpanel">
       <div class="info-panel-head"><h3>🎒 Ausstattung &amp; Mitbringliste</h3><button class="act ghost" type="button" data-print-info="packen"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
         <p>Packliste (bitte individuell anpassen):</p>
@@ -676,7 +682,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     </section>
 
     <!-- 10 -->
-    <section class="info-panel" id="panel-organisatorisches" role="tabpanel" hidden>
+    <section class="info-panel" id="panel-organisatorisches" role="tabpanel">
       <div class="info-panel-head"><h3>📋 Organisatorisches &amp; Kontakt</h3><button class="act ghost" type="button" data-print-info="organisatorisches"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
         <h4>Tickets &amp; Bändchen</h4>
@@ -1080,20 +1086,25 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     window.print();
   });
 
-  /* ---- Navigationsleiste: Programm + Info-Bereiche in einer Leiste ---- */
-  function setInfoTab(id){
-    document.querySelectorAll(".info-panel").forEach(function(p){ p.hidden = (p.id !== "panel-"+id); });
-  }
+  /* ---- Ansicht-Umschalter: Programm / Alle Infos ---- */
   function setNav(key){
     var programm = (key==="programm");
     document.body.classList.toggle("view-programm", programm);
     document.body.classList.toggle("view-infos", !programm);
-    if(!programm) setInfoTab(key);
     document.querySelectorAll(".viewnav button").forEach(function(b){ b.setAttribute("aria-selected", b.dataset.nav===key); });
     window.scrollTo({top:0, behavior:"smooth"});
   }
   document.querySelectorAll(".viewnav button").forEach(function(b){
     b.addEventListener("click", function(){ setNav(b.dataset.nav); });
+  });
+
+  /* ---- Info-Kacheln: sanft zum jeweiligen Abschnitt scrollen ---- */
+  document.querySelectorAll(".info-kachel").forEach(function(a){
+    a.addEventListener("click", function(e){
+      e.preventDefault();
+      var el=document.getElementById(a.getAttribute("href").slice(1));
+      if(el){ var y=el.getBoundingClientRect().top+window.pageYOffset-12; window.scrollTo({top:Math.max(0,y), behavior:"smooth"}); }
+    });
   });
 
   /* ---- Info-Bereich drucken (nur der gewählte Reiter) ---- */
