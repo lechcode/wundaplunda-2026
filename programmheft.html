@@ -355,7 +355,8 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   .print-head .pdatum{font-size:1.5rem}
   .day-head{display:none!important}
   /* Aushang 1: großer, gut lesbarer Tagesplan (ein Tag darf mehrere Blätter füllen) */
-  .slots{column-count:2;column-gap:8mm}
+  /* column-width statt column-count: Querformat = 2 Spalten, Hochformat (Mobil) = 1 Spalte, jeweils korrekt umbrochen */
+  .slots{column-width:118mm;column-gap:8mm}
   .slot{grid-template-columns:78px 1fr;gap:0 .5rem;break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 2.6mm}
   .slot .zeit{color:#103F6E;padding-top:.3rem;font-size:11pt;font-weight:700}
   .slot .zeit small{font-size:9pt}
@@ -374,7 +375,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   .pk-head{display:flex;align-items:center;gap:.6rem;border-bottom:2.5px solid #195591;margin-bottom:4mm;padding-bottom:2mm}
   .pk-head .print-logo{height:1.6rem;width:auto}
   .pk-head .pdatum{font-family:var(--hand);font-size:1.5rem;color:#E0431F}
-  .pk-grid{column-count:2;column-gap:8mm}
+  .pk-grid{column-width:118mm;column-gap:8mm}
   .pk-card{break-inside:avoid;-webkit-column-break-inside:avoid;border:1.5px solid #D8C9A8;border-radius:8px;padding:3mm 4mm;margin:0 0 4mm;background:#fff!important;display:flex;gap:4mm;align-items:flex-start}
   .pk-text{flex:1;min-width:0}
   .pk-foto{width:30mm;height:30mm;flex:none;object-fit:cover;border-radius:6px;border:1px solid #D8C9A8}
@@ -1005,8 +1006,9 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     if(p.status==="geaendert") hinweise.push("Programmänderung – bitte aktuelle Hinweise beachten.");
     if(p.status==="entfaellt") hinweise.push("Dieser Programmpunkt entfällt.");
     if(p.hinweis) hinweise.unshift(p.hinweis.trim().replace(/\.?$/,"."));
+    var link=(kat&&kat.link)?kat.link:p.link;
     return { kat:kat, wer:werTxt, woMain:(woParts[0]||"").trim(), woAlt:woParts.slice(1).join(" / ").trim(),
-             mitbringen:mitbringen, foto:foto, desc:desc, hinweise:hinweise };
+             mitbringen:mitbringen, foto:foto, desc:desc, hinweise:hinweise, link:link };
   }
   function wenLabel(wen){
     var w=wen||["alle"];
@@ -1090,6 +1092,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     fact("Ort","i-pin",d.woMain);
     fact("Wetter-Alternative","i-pin",d.woAlt);
     fact("Mitbringen",null,d.mitbringen);
+    if(d.link){ var href=/^https?:\/\//i.test(d.link)?d.link:("https://"+d.link); facts.innerHTML += '<div style="display:contents"><dt>'+svgUse("i-send")+'Mehr</dt><dd><a href="'+esc(href)+'" target="_blank" rel="noopener">Website / Social Media</a></dd></div>'; }
     // Beschreibung + Hinweise
     var descEl=document.getElementById("dm-desc"); descEl.innerHTML="";
     if(d.desc) descEl.appendChild(el("p",null,esc(d.desc)));
