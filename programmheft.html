@@ -262,6 +262,7 @@ details[open] summary::after{content:"–"}
 .viewnav .wrap{display:flex;gap:.4rem;padding-top:.5rem;padding-bottom:.5rem;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
 .viewnav button{flex:0 0 auto;display:inline-flex;align-items:center;gap:.4em;font-family:var(--display);font-weight:700;font-size:.98rem;white-space:nowrap;border:none;background:transparent;color:#CFE0F0;border-radius:99px;padding:.5em 1em;cursor:pointer;transition:background .15s,color .15s}
 .viewnav button svg{width:1.15em;height:1.15em;flex:none}
+.viewnav .nav-emoji{font-size:1.05em;line-height:1;flex:none}
 .viewnav button:hover{background:rgba(255,255,255,.12);color:#fff}
 .viewnav button[aria-selected="true"]{background:var(--creme);color:var(--blau-tief)}
 body.view-infos .bar,body.view-infos #programm{display:none}
@@ -368,8 +369,13 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   body[data-printinfo="anreise"] #panel-anreise,
   body[data-printinfo="gelaende"] #panel-gelaende,
   body[data-printinfo="verpflegung"] #panel-verpflegung,
+  body[data-printinfo="hygiene"] #panel-hygiene,
+  body[data-printinfo="sicher"] #panel-sicher,
+  body[data-printinfo="familien"] #panel-familien,
+  body[data-printinfo="umwelt"] #panel-umwelt,
+  body[data-printinfo="gemeinschaft"] #panel-gemeinschaft,
   body[data-printinfo="packen"] #panel-packen,
-  body[data-printinfo="sicher"] #panel-sicher{display:block!important}
+  body[data-printinfo="organisatorisches"] #panel-organisatorisches{display:block!important}
   body[data-printinfo] .info-panel-head{border-bottom:2.5px solid #195591}
   body[data-printinfo] .info-panel-head .act{display:none!important}
   body[data-printinfo] .info-panel-head h3{color:#103F6E}
@@ -446,15 +452,20 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   </div>
 </header>
 
-<!-- ===== Navigationsleiste: Programm + Info-Bereiche ===== -->
+<!-- ===== Navigationsleiste: Programm + 10 Infoheft-Kategorien ===== -->
 <nav class="viewnav" aria-label="Bereich wählen">
   <div class="wrap" role="tablist">
     <button type="button" data-nav="programm" role="tab" aria-selected="true"><svg><use href="#i-clock"/></svg> Programm</button>
-    <button type="button" data-nav="anreise" role="tab" aria-selected="false"><svg><use href="#i-pin"/></svg> Ankommen</button>
-    <button type="button" data-nav="gelaende" role="tab" aria-selected="false"><svg><use href="#i-pin"/></svg> Geländeplan</button>
-    <button type="button" data-nav="verpflegung" role="tab" aria-selected="false"><svg><use href="#i-falter"/></svg> Essen &amp; Trinken</button>
-    <button type="button" data-nav="packen" role="tab" aria-selected="false"><svg><use href="#i-gruppe"/></svg> Packliste</button>
-    <button type="button" data-nav="sicher" role="tab" aria-selected="false"><svg><use href="#i-kaefer"/></svg> Gut zu wissen</button>
+    <button type="button" data-nav="anreise" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🧭</span> Anreise &amp; Orientierung</button>
+    <button type="button" data-nav="gelaende" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🏕️</span> Unterkunft &amp; Gelände</button>
+    <button type="button" data-nav="verpflegung" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🥗</span> Versorgung &amp; Verpflegung</button>
+    <button type="button" data-nav="hygiene" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🧼</span> Hygiene &amp; Gesundheit</button>
+    <button type="button" data-nav="sicher" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🛟</span> Sicherheit &amp; Notfälle</button>
+    <button type="button" data-nav="familien" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">👨‍👩‍👧</span> Familien &amp; Kinder</button>
+    <button type="button" data-nav="umwelt" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🌱</span> Nachhaltigkeit &amp; Umwelt</button>
+    <button type="button" data-nav="gemeinschaft" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🌈</span> Gemeinschaft &amp; Programm</button>
+    <button type="button" data-nav="packen" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">🎒</span> Ausstattung &amp; Mitbringliste</button>
+    <button type="button" data-nav="organisatorisches" role="tab" aria-selected="false"><span class="nav-emoji" aria-hidden="true">📋</span> Organisatorisches &amp; Kontakt</button>
   </div>
 </nav>
 
@@ -500,70 +511,182 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   </div>
 </main>
 
-<!-- ===== Info-Bereich: eigener Reiter "Alle Infos A–Z" ===== -->
+<!-- ===== Info-Bereich: 10 Kategorien aus dem Infoheft ===== -->
 <section class="info-wrap" id="view-infos" aria-label="Infos rund ums Wundaplunda">
   <img class="info-deko" src="assets/img/deko/deko-voegel.png" alt="" aria-hidden="true" loading="lazy">
   <div class="wrap">
-    <h2 class="titel">Alle Infos fürs Wundaplunda</h2>
-    <p class="titel-sub">Jeder Bereich lässt sich einzeln ausdrucken &amp; aushängen</p>
+    <h2 class="titel">Dein Wundaplunda-Infoheft</h2>
+    <p class="titel-sub">Alles Wichtige von A–Z · jeder Bereich lässt sich einzeln ausdrucken</p>
 
+    <!-- 1 -->
     <section class="info-panel" id="panel-anreise" role="tabpanel">
-      <div class="info-panel-head"><h3><svg><use href="#i-pin"/></svg> Ankommen &amp; Orientierung</h3><button class="act ghost" type="button" data-print-info="anreise"><svg><use href="#i-print"/></svg> Drucken</button></div>
+      <div class="info-panel-head"><h3>🧭 Anreise &amp; Orientierung</h3><button class="act ghost" type="button" data-print-info="anreise"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
-        <p>Unser gemeinsames Abenteuer beginnt offiziell ab <strong>11:00 Uhr</strong>. Anreisezeit ist zwischen <strong>11–14 Uhr</strong> — bitte nicht früher anreisen (auch nicht am Vortag).</p>
-        <p><strong>Adresse fürs Navi:</strong> Gemeinschaft Sulzbrunn, Sulzbrunn 1–8, 87477 Sulzberg.</p>
-        <p>Mittagessen gibt's von 12:00–13:30 Uhr. Um <strong>14:00 Uhr</strong> Willkommenskreis, um <strong>15:00 Uhr</strong> Geländeführung. Bei späterer Ankunft kurz Bescheid geben: <a href="mailto:gaeste@seminarhaus-sulzbrunn.de">gaeste@seminarhaus-sulzbrunn.de</a>.</p>
+        <h4>Ankommen</h4>
+        <p>Unser gemeinsames Abenteuer beginnt offiziell <strong>ab 11:00 Uhr</strong>. Die Anreisezeit ist zwischen <strong>11–14 Uhr</strong>! Wir bitten euch von Herzen, nicht früher anzureisen – weder am Vortag noch deutlich vor der Einlasszeit. Die letzten Vorbereitungen auf dem Gelände brauchen Raum und Ruhe, daher können wir keine Ausnahmen machen.</p>
+        <p><strong>Adresse fürs Navi:</strong> Gemeinschaft Sulzbrunn, Sulzbrunn 1–8, 87477 Sulzberg</p>
+        <p>Mittagessen gibt's von <strong>12:00–13:30 Uhr</strong>, damit ihr entspannt ankommen könnt, ohne euch gleich ums Kochen kümmern zu müssen.</p>
+        <p>Um <strong>14:00 Uhr</strong> laden wir euch herzlich zum Willkommenskreis ein, um gemeinsam zu starten. Um <strong>15:00 Uhr</strong> folgt eine Geländeführung.</p>
+        <p>Solltet ihr später oder außerhalb der Anreisezeit 11–14 Uhr ankommen, schreibt uns bitte kurz an <a href="mailto:gaeste@seminarhaus-sulzbrunn.de">gaeste@seminarhaus-sulzbrunn.de</a>, damit wir euch einplanen können.</p>
+        <h4>Geländeplan</h4>
+        <p>Einen Geländeplan mit den wichtigsten Punkten findest du im Bereich <strong>„Unterkunft &amp; Gelände"</strong> (farbliche Markierungen im Plan bitte beachten).</p>
       </div>
     </section>
 
+    <!-- 2 -->
     <section class="info-panel" id="panel-gelaende" role="tabpanel" hidden>
-      <div class="info-panel-head"><h3><svg><use href="#i-pin"/></svg> Geländeplan</h3><button class="act ghost" type="button" data-print-info="gelaende"><svg><use href="#i-print"/></svg> Drucken</button></div>
+      <div class="info-panel-head"><h3>🏕️ Unterkunft &amp; Gelände</h3><button class="act ghost" type="button" data-print-info="gelaende"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
+        <h4>Zeltplatz</h4>
+        <p>Wenn ihr im Zelt übernachtet, nutzt bitte die <strong>rosa markierten Flächen</strong> auf dem Geländeplan zum Be- und Entladen (max. 15 Minuten). Danach fahrt euer Auto bitte zügig auf die <strong>lila markierte Fläche</strong>, damit andere auch ausladen können. Anschließend kommt bitte zur Kasse, wo ihr euer Wundaplunda-Bändchen bekommt.</p>
+        <h4>Wohnmobile &amp; Busse</h4>
+        <p>Für Camper ist die <strong>grün markierte Fläche</strong> im Geländeplan vorgesehen. Wir weisen euch direkt vor Ort ein. Auch hier: erst parken, dann zur Kasse zur Anmeldung.</p>
+        <h4>Zimmer</h4>
+        <p>Wer ein Zimmer gebucht hat, nutzt bitte den <strong>Lieferanteneingang</strong> des Seminarhauses (nicht den Haupteingang!) – die <strong>orange markierte Fläche</strong> auf dem Geländeplan – zum kurzen Entladen. Danach bitte zur Kasse zur Anmeldung und ebenfalls auf der lila markierten Fläche parken.</p>
+        <h4>Privatbereiche</h4>
+        <p>Bitte respektiert die im Plan markierten <strong>Privatbereiche</strong> der Gemeinschaft. Ihr seid herzlich eingeladen, das Wundaplunda-Gelände zu entdecken und an der Geländeführung teilzunehmen – aber bitte nicht in Bereiche gehen, die klar als „privat" gekennzeichnet sind.</p>
         <figure class="plan-fig">
           <img src="assets/img/gelaendeplan-1500.jpg" width="1500" height="1060" alt="Illustrierter Geländeplan des Wundaplunda-Geländes in Sulzbrunn mit Zeltplätzen, Zirkuszelt, Seminarhaus, Pavillon, Kinderjurte, Küchenpavillon, Feuerstelle, WCs und Parkflächen." loading="lazy">
-          <figcaption>Farbige Markierungen beachten · rosa = Zelt be-/entladen (max 15 Min) · grün = Busse/Camper · rote Flächen = privat</figcaption>
+          <figcaption>Farbige Markierungen beachten · rosa = Zelt be-/entladen (max 15 Min) · lila = parken · grün = Wohnmobile &amp; Busse · orange = Zimmer entladen · rot = privat</figcaption>
         </figure>
         <h4>Wichtige Orte</h4>
         <ul id="gelaende-liste"><li>Zirkuszelt (Lounge, Kaffeebar, Infoboard) · Plundazelt · Pavillon &amp; Yogaraum · Kinderjurte · Wundazelt · Küchenpavillon · Seminarhaus (Essen, Kiosk) · Feuerstelle · Kasse &amp; Hoflädle</li></ul>
-        <p><strong>Bitte privat lassen:</strong> Bewohner-Parkplatz, Garten, Dorfplatz, Bauwagenplatz, Kreisbeet.</p>
       </div>
     </section>
 
+    <!-- 3 -->
     <section class="info-panel" id="panel-verpflegung" role="tabpanel" hidden>
-      <div class="info-panel-head"><h3><svg><use href="#i-falter"/></svg> Essen &amp; Trinken</h3><button class="act ghost" type="button" data-print-info="verpflegung"><svg><use href="#i-print"/></svg> Drucken</button></div>
+      <div class="info-panel-head"><h3>🥗 Versorgung &amp; Verpflegung</h3><button class="act ghost" type="button" data-print-info="verpflegung"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body" id="verpflegung-body">
+        <h4>Selbstverpflegung</h4>
+        <p>Für alle, die sich selbst versorgen, gibt es einen überdachten <strong>Küchenpavillon</strong> mit Gaskochern, Kühlschränken, Feuerstelle, Spülstation und Waschbecken. Einige Töpfe und Pfannen sowie ein Muurikka-Grill sind vorhanden. Eigene mitgebrachte Kühlakkus können in unserem Gefrierfach im Küchenpavillon wieder aufgeladen werden.</p>
+        <p><strong>Wichtig:</strong> Beschriftet bitte alle Lebensmittel, die ihr im Gemeinschaftskühlschrank lagert.</p>
+        <h4>Hoflädle</h4>
+        <p>Unser Hoflädle-Stand hat am <strong>Dienstag und Donnerstag von 13:30–14:30 Uhr</strong> geöffnet und bietet biologische Grundnahrungsmittel wie Nudeln, Saucen, Käse, Müsli, Aufstriche, Gemüse, Eier und Co.</p>
+        <h4>Seminarhaus-Küche</h4>
+        <p>Das Seminarhaus bereitet alle Speisen mit frisch gekochten, biologischen Lebensmitteln zu – alles vegetarisch/vegan. Zahlung per bar oder PayPal möglich (nur an der Essensausgabe!).</p>
+        <h4>Mittag- und Abendessen</h4>
+        <p>Zur Mittagszeit (<strong>12:00–13:30 Uhr</strong>) und am Abend (<strong>18:00–19:30 Uhr</strong>) könnt ihr euch flexibel und ohne Voranmeldung an unserer Foodstation versorgen. Es erwarten euch täglich wechselnde, leckere vegane und vegetarische Speisen – alles in Bio-Qualität, teilweise aus eigenem Anbau. Auch hausgemachte Pizza, Pommes und frische Salate sind im Angebot.</p>
+        <p>Die Bezahlung ist in bar oder via PayPal (per QR-Code direkt an der Essensausgabe) möglich. <strong>Achtung:</strong> PayPal-Zahlung ist nur an der Foodstation möglich – nicht an der Bar im Zirkuszelt oder am Kiosk! Bitte bringt ausreichend <strong>Bargeld</strong> für die Woche mit.</p>
+        <p><strong>Wichtig:</strong> Aus Rücksicht auf Küche, Service und Spülschichten – bitte seid pünktlich und kommt nicht erst kurz vor Ende der Essenszeiten.</p>
+        <h4>Frühstück</h4>
+        <p>Das Frühstück wird täglich von <strong>8:00–9:00 Uhr</strong> angeboten – allerdings nur nach vorheriger Buchung für die gesamte Woche. Eine spontane Teilnahme ist leider nicht möglich. Nachbuchen könnt ihr per Mail an <a href="mailto:gaeste@seminarhaus-sulzbrunn.de">gaeste@seminarhaus-sulzbrunn.de</a>. Zum Frühstück erwartet euch ein Bio-Buffet mit Kaffee, Tee, Brot, verschiedenen Aufstrichen, Bananen und Äpfeln – natürlich alles vegan und vegetarisch.</p>
+        <h4>Bar &amp; Kiosk</h4>
+        <p>Im Zirkuszelt befindet sich unsere Lounge-Area mit Kaffeebar, Waffeln, Eis und alkoholfreien Getränken. Die Bar öffnet täglich zu bestimmten Zeiten und zusätzlich an Konzertabenden. Das Kiosk im Seminarhaus hat zu den Essenszeiten geöffnet und bietet Snacks, Getränke und kleine Leckereien.</p>
+        <h4>Essenszeiten &amp; Preise</h4>
         <div class="zeiten" id="essenszeiten"></div>
-        <p>Alles <strong>Bio, vegetarisch/vegan</strong> — teils aus eigenem Anbau. Zahlung bar oder per PayPal (QR-Code) an der Essensausgabe. Bitte ausreichend Bargeld für die Woche mitbringen und pünktlich zum Essen kommen.</p>
         <div id="preise-mount"></div>
       </div>
     </section>
 
-    <section class="info-panel" id="panel-packen" role="tabpanel" hidden>
-      <div class="info-panel-head"><h3><svg><use href="#i-gruppe"/></svg> Packliste &amp; Mitbringen</h3><button class="act ghost" type="button" data-print-info="packen"><svg><use href="#i-print"/></svg> Drucken</button></div>
+    <!-- 4 -->
+    <section class="info-panel" id="panel-hygiene" role="tabpanel" hidden>
+      <div class="info-panel-head"><h3>🧼 Hygiene &amp; Gesundheit</h3><button class="act ghost" type="button" data-print-info="hygiene"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
+        <h4>Toiletten &amp; Duschen</h4>
+        <p>Auf dem Gelände stehen <strong>8 Komposttoiletten</strong> bereit, die regelmäßig gereinigt werden. Oberflächendesinfektion, Handdesinfektion und Wasser mit Seife stehen an jeder Toilette bereit. Zusätzlich gibt es eine barrierefreie Toilette mit Waschbecken im Seminarhaus (EG). Für das kleine Geschäft gibt es Pipiecken, um die Toiletten zu entlasten – nutzt die Komposttoiletten eher für Feststoff! Bitte erklärt euren Kindern das Komposttoilettensystem und wie wichtig es für die Gesundheit aller ist, sich nach jedem Toilettengang die Hände zu waschen.</p>
+        <p>Die Duschen befinden sich im autarken <strong>Solarduschwagen</strong> (bitte nur ökologische Seife &amp; Shampoo verwenden – diese wird auch bereitgestellt). Wer sich wohler fühlt, kann auch im Seminarhaus (2. UG) duschen.</p>
+        <h4>Waschen</h4>
+        <p>Stoffwindeln oder Kleidung können im UG des Seminarhauses gewaschen werden. Fürs schnelle Ausspülen von Flecken o. Ä. gibt es einen Waschplatz bei der Hackschnitzelhalle (Kassenbereich).</p>
+        <h4>Erste Hilfe &amp; Krankheit</h4>
+        <p>Erste-Hilfe-Sets befinden sich im <strong>Zirkuszelt</strong>, der <strong>Kinderjurte</strong> und im <strong>Seminarhaus</strong>. Eine*r unserer Ersthelfer*innen ist jederzeit erreichbar – die Nummer findet ihr am Infoboard im Zirkuszelt. (Krankenhaus &amp; Notrufnummern siehe „Sicherheit &amp; Notfälle".)</p>
+        <h4>Gesundheit &amp; Verantwortung</h4>
+        <p>Wenn du oder dein Kind sich am Anreisetag nicht wohlfühlt (Fieber, Durchfall, Erbrechen etc.) oder kürzlich krank wart mit evtl. Ansteckungsgefahr, bleibt bitte zu Hause. Ein Virus verbreitet sich im Camp schnell – danke, dass ihr auf alle Rücksicht nehmt! Solltet ihr während Wundaplunda mit Ansteckungsgefahr krank werden, legen wir euch zum Wohle aller anderen Gäste sehr ans Herz, nach Hause zu fahren.</p>
+        <h4>Rauchen</h4>
+        <p>Wir haben einen ausgewiesenen <strong>Raucherbereich</strong> auf dem Gelände eingerichtet. Bitte nutzt ausschließlich diesen Bereich zum Rauchen. Aus Rücksicht auf die vielen Kinder und eure Mitmenschen sowie aufgrund der aktuellen Waldbrandgefahr ist das Rauchen auf dem restlichen Festgelände nicht gestattet. Vielen Dank für euer Verständnis!</p>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="info-panel" id="panel-sicher" role="tabpanel" hidden>
+      <div class="info-panel-head"><h3>🛟 Sicherheit &amp; Notfälle</h3><button class="act ghost" type="button" data-print-info="sicher"><svg><use href="#i-print"/></svg> Drucken</button></div>
+      <div class="box-body">
+        <h4>Gewitter &amp; Sturm</h4>
+        <p>Bei Sturm oder Gewitter informieren wir rechtzeitig. In diesem Fall findet ihr Unterschlupf in der <strong>Turnhalle im Seminarhaus</strong>.</p>
+        <h4>Feuerstellen</h4>
+        <p>Feuer bitte nur an den dafür vorgesehenen Stellen machen – diese könnt ihr selbst betreuen, z. B. für Stockbrot oder Lagerfeuer. Bei akuter Waldbrandgefahr informieren wir rechtzeitig.</p>
+        <h4>Strom &amp; Laden</h4>
+        <p>Bitte kommt so autark wie möglich. Es gibt eine kleine <strong>Solarstation mit USB-Anschlüssen</strong> auf dem Gelände.</p>
+        <div class="notruf">Notruf: Feuerwehr/Rettung 112 · Polizei 110<br>Krankenhaus Kempten, Robert-Weixler-Str. 50, Tel. 0831 530-0</div>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="info-panel" id="panel-familien" role="tabpanel" hidden>
+      <div class="info-panel-head"><h3>👨‍👩‍👧 Familien &amp; Kinder</h3><button class="act ghost" type="button" data-print-info="familien"><svg><use href="#i-print"/></svg> Drucken</button></div>
+      <div class="box-body">
+        <h4>Aufsichtspflicht</h4>
+        <p>Wir übernehmen <strong>keine Kinderbetreuung</strong>, d. h. Eltern haften für ihre Kinder und haben die Aufsichtspflicht – seid achtsam und gebt die Verantwortung nicht unabgesprochen ab. Das Wundaplunda-Gelände liegt an einer nur wenig befahrenen Straße und ist auch nicht sehr weitläufig – und trotzdem ist es wichtig, dass wir achtsam sind. Schließt euch zusammen, wechselt euch mit der Kinderbetreuung ab und tauscht euch aus. Hierfür könnt ihr auch die Clanzeit nutzen, um euch besser kennenzulernen und Vertrauen aufzubauen.</p>
+        <h4>Wickeln</h4>
+        <p>Im EG des Seminarhauses befindet sich ein Wickeltisch.</p>
+        <h4>Sand &amp; Spiel</h4>
+        <p>Es gibt einen Sandkasten – gerne Sandspielzeug mitbringen.</p>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="info-panel" id="panel-umwelt" role="tabpanel" hidden>
+      <div class="info-panel-head"><h3>🌱 Nachhaltigkeit &amp; Umwelt</h3><button class="act ghost" type="button" data-print-info="umwelt"><svg><use href="#i-print"/></svg> Drucken</button></div>
+      <div class="box-body">
+        <h4>Müll</h4>
+        <p>Unser Ansatz ist, das WUNDAPLUNDA so ökologisch wie möglich zu gestalten. Wir bitten euch, euch vorher Gedanken zu machen, wie viele Plastikverpackungen etc. ihr mitbringt. Bitte lasst sie zu Hause und/oder packt die Lebensmittel in Tupperdosen, Gläser oder andere Behälter. Wir stellen einen <strong>Komposteimer</strong> im Küchenzelt für Essensreste zur Verfügung. Der Kompost landet bei uns im Garten – bitte daher <strong>kein Fleisch oder Fisch</strong> reinwerfen (das geht in den Restmüll, ebenfalls im Küchenzelt). Den weiteren Müll wie Papier und Plastik bitte an unserer Müllstation entsorgen.</p>
+        <h4>Spülen</h4>
+        <p>Wir haben eine separate <strong>Spülstation</strong> und ein Spülbecken in der Draußenküche. Nutzt zum Spülen vorwiegend die Spülstation, da dort mehr Platz ist als im Küchenpavillon. Bitte hinterlasst die Spülstation sauber für die Nächsten. Essensreste zuvor in die Tonne.</p>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="info-panel" id="panel-gemeinschaft" role="tabpanel" hidden>
+      <div class="info-panel-head"><h3>🌈 Gemeinschaft &amp; Programm</h3><button class="act ghost" type="button" data-print-info="gemeinschaft"><svg><use href="#i-print"/></svg> Drucken</button></div>
+      <div class="box-body">
+        <h4>Morgenkreis</h4>
+        <p>Wir laden ein zum täglichen gemeinsamen Start in den Tag: Musik, Programmänderungen, Austausch. Verbindet, inspiriert, informiert.</p>
+        <h4>Clanzeit</h4>
+        <p>Jeden zweiten Tag treffen wir uns in unseren Clans, um in Verbindung zu kommen, Spaß zu haben und uns auf die Clan Open Stage vorzubereiten. Freut euch auf ein schönes Programm und ein Überraschungsthema!</p>
+        <h4>Willkommenskreis</h4>
+        <p>Am Anreisetag um 14:00 Uhr starten wir gemeinsam – mit offenen Herzen und einem Lächeln!</p>
+        <h4>Programmänderungen</h4>
+        <p>Werden beim Morgenkreis, in unserem Telegram-Kanal und an der Infotafel kommuniziert.</p>
+        <h4>Pizzaofen &amp; Grillpfanne</h4>
+        <p>Unser Pizzaofen pausiert dieses Jahr – stattdessen gibt es eine Muurikka-Grillpfanne, auf der ihr niederschwellig Calzone &amp; Co. zaubern könnt. Einfach, lecker, draußen! Calzone-/Stockbrotteig könnt ihr an unserer Bar erwerben.</p>
+      </div>
+    </section>
+
+    <!-- 9 -->
+    <section class="info-panel" id="panel-packen" role="tabpanel" hidden>
+      <div class="info-panel-head"><h3>🎒 Ausstattung &amp; Mitbringliste</h3><button class="act ghost" type="button" data-print-info="packen"><svg><use href="#i-print"/></svg> Drucken</button></div>
+      <div class="box-body">
+        <p>Packliste (bitte individuell anpassen):</p>
         <ul>
-          <li>Gummistiefel &amp; Regensachen · Sonnenschutz, ggf. Sonnensegel</li>
-          <li>Eigene Tasse für Kaffee/Bar · Geschirr, Besteck, Trockentuch · Trinkflasche</li>
-          <li>Bargeld (Essen/Kiosk/Bar) · ökologische Seife &amp; Shampoo</li>
-          <li>Erste-Hilfe-Set &amp; Zeckenzange · Taschenlampe · eigenes Schnitzmesser</li>
-          <li>Yogamatte, Decken, Hängematte · Sitzkissen · Sandspielzeug &amp; Musikinstrumente</li>
-          <li>Naturmaterialien (Federn, Muscheln, Schwemmholz, schöne Stoffe…) zum Basteln</li>
+          <li>Gummistiefel, Regensachen</li>
+          <li>Bargeld (für Essen/Kiosk/Bar)</li>
+          <li>Ökologische Seife &amp; Shampoo (!)</li>
+          <li>Geschirr, Besteck, Trockentuch</li>
+          <li>Eigene Tasse für deinen Kaffee an unserer Bar</li>
+          <li>Sonnenschutz, ggf. Sonnensegel</li>
+          <li>Erste-Hilfe-Set &amp; Zeckenzange</li>
+          <li>Sandspielzeug &amp; Musikinstrumente</li>
+          <li>Yogamatte, Decken, Hängematte</li>
+          <li>Sitzkissen, Trinkflasche</li>
+          <li>Taschenlampe</li>
+          <li>Eigenes Schnitzmesser</li>
+          <li>Naturmaterialien (Federn, Muscheln, Naturperlen, Schwemmholz, schöne Stoffe…) zum Basteln – wer davon zu Hause hat, darf sie gerne mitbringen.</li>
         </ul>
       </div>
     </section>
 
-    <section class="info-panel" id="panel-sicher" role="tabpanel" hidden>
-      <div class="info-panel-head"><h3><svg><use href="#i-kaefer"/></svg> Gut zu wissen &amp; Notfälle</h3><button class="act ghost" type="button" data-print-info="sicher"><svg><use href="#i-print"/></svg> Drucken</button></div>
+    <!-- 10 -->
+    <section class="info-panel" id="panel-organisatorisches" role="tabpanel" hidden>
+      <div class="info-panel-head"><h3>📋 Organisatorisches &amp; Kontakt</h3><button class="act ghost" type="button" data-print-info="organisatorisches"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
-        <h4>Aufsichtspflicht</h4>
-        <p>Es gibt keine Kinderbetreuung — Eltern haften für ihre Kinder. Schließt euch zusammen und wechselt euch ab. Die Clanzeit hilft beim Kennenlernen.</p>
-        <h4>Bei Sturm &amp; Gewitter</h4>
-        <p>Wir informieren rechtzeitig. Unterschlupf ist die Turnhalle im Seminarhaus.</p>
-        <h4>Krankheit</h4>
-        <p>Bei Magen-Darm oder Ansteckungsgefahr bitte zu Hause bleiben bzw. heimfahren — im Camp verbreitet sich ein Virus schnell.</p>
-        <h4>Programmänderungen</h4>
-        <p>Werden beim Morgenkreis, an der Infotafel und in der Telegram-Gruppe kommuniziert.</p>
-
+        <h4>Tickets &amp; Bändchen</h4>
+        <p>Wer noch offene Rechnungen hat: bitte schnell überweisen. Bringt eure Buchungsbestätigung mit – ihr bekommt vor Ort euer Wundaplunda-Ticket, je nach Buchung.</p>
+        <h4>Lost &amp; Found</h4>
+        <p>Verloren oder gefunden? Bitte alles zur Bar im Zirkuszelt bringen oder dort nachsehen.</p>
+        <h4>Kontakt</h4>
+        <p>Fragen zur Anreise, Buchung oder Frühstück? <a href="mailto:gaeste@seminarhaus-sulzbrunn.de">gaeste@seminarhaus-sulzbrunn.de</a><br>Fragen zum Programm? <a href="mailto:carmen@wundaplunda.de">carmen@wundaplunda.de</a> (Carmen)</p>
+        <h4>Kommunikation während Wundaplunda</h4>
+        <p>Schnelles Infoportal zu Programmänderungen, Lost &amp; Found etc.: Komm in unsere Telegramgruppe!</p>
         <div class="tg-box">
           <h4><svg style="width:1.2em;height:1.2em;vertical-align:-.15em"><use href="#i-send"/></svg> Telegram-Gruppe</h4>
           <p>Vor und während dem Wundaplunda nutzen wir eine Telegram-Gruppe — für Mitfahrgelegenheiten, spontane Infos und Wetterwarnungen (z. B. bei Gewitter). Wir empfehlen allen Familien, beizutreten.</p>
@@ -571,8 +694,6 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
           <a class="tg-btn" id="tg-link" href="#" aria-disabled="true"><svg><use href="#i-send"/></svg> Zur Telegram-Gruppe</a>
           <p class="tg-note" id="tg-note">Der Einladungslink wird noch ergänzt.</p>
         </div>
-
-        <div class="notruf">Notruf: Feuerwehr/Rettung 112 · Polizei 110<br>Krankenhaus Kempten, Robert-Weixler-Str. 50, Tel. 0831 530-0</div>
       </div>
     </section>
 
