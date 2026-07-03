@@ -119,11 +119,6 @@ footer .foot-logo{width:min(80%,330px);height:auto}
 /* ---------- Programm ---------- */
 main{padding:clamp(1.6rem,4vw,2.8rem) 0 1rem}
 .tagezahl{font-family:var(--hand);color:var(--muted);font-size:1.2rem;margin-bottom:.4rem}
-.legende{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem;margin:0 0 1.1rem;padding:.6rem .9rem;background:var(--hell);border:2px solid var(--line);border-radius:var(--radius-s)}
-.legende .lg-title{font-family:var(--hand);font-size:1.15rem;color:var(--rot);margin-right:.2rem}
-.legende .item{display:inline-flex;align-items:center;gap:.4em;font-weight:700;font-size:.9rem;color:var(--ink-soft)}
-.legende .item svg{width:1.55em;height:1.55em;flex:none}
-@media print{.legende{display:none!important}}
 .day{margin-bottom:clamp(2rem,5vw,3.4rem);scroll-margin-top:180px}
 .day-head{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;border-bottom:3px dotted var(--line);padding-bottom:.5rem;margin-bottom:1.1rem;position:relative}
 .day-head h2{font-size:clamp(1.7rem,1.3rem+1.8vw,2.5rem);color:var(--blau-tief)}
@@ -511,7 +506,6 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
       </details>
     </div>
 
-    <div class="legende" id="legende" aria-label="Was die Symbole bedeuten"></div>
     <p class="tagezahl" id="tagezahl"></p>
     <div id="programm-liste"></div>
     <div class="empty" id="empty" hidden>Für diese Auswahl gibt es keine Programmpunkte. <button class="act ghost" type="button" id="reset" style="margin-top:.6rem">Filter zurücksetzen</button></div>
@@ -1170,14 +1164,6 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   })();
 
   document.getElementById("reset").addEventListener("click",function(){ state.tag="alle"; state.wen.clear(); syncTabs(); syncZG(); render(); });
-
-  /* ---- Legende (Symbol-Erklärung, immer sichtbar) ---- */
-  (function(){
-    var lg=document.getElementById("legende"); if(!lg) return;
-    lg.innerHTML='<span class="lg-title">Symbole:</span>';
-    D.zielgruppen.forEach(function(z){ lg.innerHTML += '<span class="item">'+svgUse(ICON[z.icon])+esc(z.label)+'</span>'; });
-    lg.innerHTML += '<span class="item"><span class="badge parallel">⇄ läuft gleichzeitig</span></span>';
-  })();
 
   buildTabs(); buildZG(); render();
 
