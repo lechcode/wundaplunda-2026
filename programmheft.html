@@ -317,7 +317,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
 .lcband a{color:var(--blau);font-weight:700}
 
 /* ---------- Responsive ---------- */
-@media (max-width:640px){
+@media screen and (max-width:640px){
   html{scroll-padding-top:calc(236px + var(--vnav,0px))}
   .tabs{flex-wrap:nowrap}
   .slot{grid-template-columns:64px 1fr;gap:0 .6rem}
@@ -339,7 +339,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
    DRUCK — Pro-Tag-Blatt für die Infowand (jetzt MIT Leitung!)
    ============================================================ */
 @media print{
-  @page{size:A4 landscape;margin:8mm}
+  @page{size:A4 portrait;margin:8mm}
   html{scroll-padding-top:0}
   body{background:#fff;font-size:10pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .cover,.viewnav,.bar,.info-wrap,footer,.lcband,.skip,.day-head .tagdruck,.badge.mehr,.card-chev,.tagezahl,.info-text,.empty{display:none!important}
@@ -362,9 +362,9 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   .print-head .pdatum{font-size:1.5rem}
   .day-head{display:none!important}
   /* Aushang 1: großer, gut lesbarer Tagesplan (ein Tag darf mehrere Blätter füllen) */
-  /* column-width statt column-count: Querformat = 2 Spalten, Hochformat (Mobil) = 1 Spalte, jeweils korrekt umbrochen */
-  .slots{column-width:118mm;column-gap:8mm}
-  .slot{grid-template-columns:78px 1fr;gap:0 .5rem;break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 2.6mm}
+  /* EINSPALTIG (Hochformat): keine CSS-Mehrspaltigkeit -> robust auf JEDEM Browser/Drucker
+     (Safari/Firefox rendern column-* im Druck sonst verzogen). Volle Blattbreite wird genutzt. */
+  .slot{grid-template-columns:96px 1fr;gap:0 .7rem;break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;margin:0 0 3mm}
   .slot .zeit{color:#103F6E;padding-top:.3rem;font-size:11pt;font-weight:700}
   .slot .zeit small{font-size:9pt}
   .card{box-shadow:none;border:1.4px solid #D8C9A8;border-radius:7px;padding:.4rem .6rem;background:#fff!important}
@@ -382,8 +382,8 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   .pk-head{display:flex;align-items:center;gap:.6rem;border-bottom:2.5px solid #195591;margin-bottom:4mm;padding-bottom:2mm}
   .pk-head .print-logo{height:1.6rem;width:auto}
   .pk-head .pdatum{font-family:var(--hand);font-size:1.5rem;color:#E0431F}
-  .pk-grid{column-width:118mm;column-gap:8mm}
-  .pk-card{break-inside:avoid;-webkit-column-break-inside:avoid;border:1.5px solid #D8C9A8;border-radius:8px;padding:3mm 4mm;margin:0 0 4mm;background:#fff!important;display:flex;gap:4mm;align-items:flex-start}
+  /* Workshop-Kacheln ebenfalls einspaltig (volle Breite, robust im Druck) */
+  .pk-card{break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;border:1.5px solid #D8C9A8;border-radius:8px;padding:3mm 4mm;margin:0 0 4mm;background:#fff!important;display:flex;gap:5mm;align-items:flex-start}
   .pk-text{flex:1;min-width:0}
   .pk-foto{width:30mm;height:30mm;flex:none;object-fit:cover;border-radius:6px;border:1px solid #D8C9A8}
   .pk-card h3{font-size:14pt;line-height:1.12;color:#103F6E;margin-bottom:1mm}
