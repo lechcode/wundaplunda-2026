@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "08.07.2026, 14:06 Uhr",
+    stand: "08.07.2026, 14:51 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -81,7 +81,7 @@ const WUNDA = {
     { tag:"di", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"di", zeit:"14:00 – 16:00", titel:"Kuchen Pappelkinder & Hoflädle", wer:"", wo:"Dorfplatz", wen:["alle"], hinweis:"Kaffee & Kuchen (NATÜRLICH.MITEINANDER) + Hoflädle + kleiner Markt: Kinderschminken (Pappelkinder), Töpfern (Ayshe), Weiden (Tina), Schmuck (Fabienne), Karten (Lena), Kerzen (Birgit), Honig (Josef)" },
     { tag:"di", zeit:"14:15 – 15:00", titel:"Singen – Jodruf Sulzbrunn", wer:"", wo:"Dorfplatz", wen:["alle"] },
-    { tag:"di", zeit:"15:00 – 16:00", titel:"Poi-Workshop", wer:"Susanne & Patty", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"di", zeit:"15:00 – 16:00", titel:"Poi-Workshop", wer:"Susanne & Paty", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"di", zeit:"16:00 – 18:00", titel:"Frauenkreis", wer:"Fabienne", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"di", zeit:"16:30 – 17:30", titel:"Kinderband 'Die leicht verschwitzten Zwerge'", wer:"", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"di", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
@@ -408,9 +408,9 @@ const WUNDA = {
   verpflegung: {
     hinweis: "Alles Bio, vegetarisch/vegan – teils aus eigenem Anbau. Zahlung bar oder per PayPal (QR) an der Essensausgabe. Bitte Bargeld für die Woche mitbringen.",
     essenszeiten: [
-      { mahlzeit:"Frühstück", zeit:"08:00–09:00", hinweis:"Nur mit gelbem Bändchen · Woche vorab buchen" },
-      { mahlzeit:"Mittag", zeit:"12:00–14:00", hinweis:"Wer mag, ohne Anmeldung (Infoheft nennt 12:00–13:30)" },
-      { mahlzeit:"Abend", zeit:"17:30–19:30", hinweis:"Wer mag, ohne Anmeldung (Infoheft nennt 18:00–19:30)" },
+      { mahlzeit:"Frühstück", zeit:"07:45–09:00", hinweis:"Nur mit gelbem Bändchen · Woche vorab buchen" },
+      { mahlzeit:"Mittag", zeit:"12:15–15:00", hinweis:"Wer mag, ohne Anmeldung (Infoheft nennt 12:00–13:30)" },
+      { mahlzeit:"Abend", zeit:"17:45–19:15", hinweis:"Wer mag, ohne Anmeldung (Infoheft nennt 18:00–19:30)" },
     ],
     preise_essen: [
       { gruppe:"Bio Pizza Ø 40 cm (immer mittags)", name:"Bio Pizza Spinata mit Feta & Oliven (Ø 40 cm, immer mittags)", preis:"14 €" },
