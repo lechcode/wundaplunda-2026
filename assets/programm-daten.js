@@ -192,6 +192,7 @@ const WUNDA = {
     "Trommeln auf dem Dorfplatz": {
       wer: "Alex & Trommelgruppe (Allikée)",
       foto: "allikee.png",
+      web: "kakilambe.de",
       beschreibung: "„Allikée“ heißt so viel wie „Auf geht's!“ – westafrikanische Trommelmusik, gewürzt mit europäischen und lateinamerikanischen Einflüssen. Mal traditionell, mal modern, immer mit Freude und Groove."
     },
     "Lagerfeuerabend": {
@@ -205,6 +206,7 @@ const WUNDA = {
     "Yoga": {
       wer: "Amelie Zech (Stimmtherapeutin & Yogalehrerin)",
       foto: "yoga.png",
+      web: "akademie-rueckenwind.de", insta: "@akademie_rueckenwind",
       beschreibung: "Beim Yoga am Morgen mobilisieren wir den ganzen Körper, entspannen und lassen die Gedanken los – kraftvoll und entspannt in den Wundaplunda-Tag mit Amelie Zech."
     },
     "Morgenkreis mit dem Wundaplunda Team": {
@@ -223,16 +225,19 @@ const WUNDA = {
     "Pois basteln": {
       wer: "Barbara & Patty",
       foto: "poi.png",
+      web: "barbaraburstall.com", insta: "@patyk.liebe",
       beschreibung: "Wir basteln Pois aus Upcycling-Materialien. Die an Schnüren geschwungenen Bälle aus der Māori-Kultur Neuseelands machen Spaß und fördern Beweglichkeit, Koordination und Kraft. Nachmittags gibt es den passenden Workshop dazu."
     },
     "Poi-Workshop": {
       wer: "Susanne & Patty",
       foto: "poi.png",
+      insta: "@patyk.liebe",
       beschreibung: "Passend zu den selbstgebastelten Pois schwingen wir die an Schnüren geführten Bälle und üben Beweglichkeit, Koordination und Kraft – Spiel und Bewegung aus der Māori-Kultur Neuseelands."
     },
     "Wir entdecken den Wald": {
       wer: "Kristina Wolf (Pilzfreunde Altusried e.V.)",
       foto: "walderlebnis.png",
+      insta: "@mykorrhina",
       beschreibung: "Bei dieser familiengerechten Waldexkursion erleben Kinder und Erwachsene den Wald mit allen Sinnen. Spielerisch entdecken wir, welche Baumarten heimisch sind und warum der Wald für Mensch, Tier und Klima so wichtig ist – mit Lupen, Waldbingo und Entdeckerkarten."
     },
     "Knotenkunde & Tarpaufbau": {
@@ -242,6 +247,7 @@ const WUNDA = {
     },
     "Kuchen Pappelkinder & Hoflädle": {
       foto: "markt.png",
+      web: "natuerlich-miteinander.net",
       beschreibung: "Kaffee, Kuchen und ein kleiner, feiner Wundaplunda-Markt mit liebevoll ausgewähltem Kunsthandwerk aus Sulzbrunn: Honig, Bienenwachskerzen, Weidenkörbe, Getöpfertes, Schmuck und mehr. Mit Kinderschminken und Kuchen der Pappelkinder (Verein Füreinander Miteinander e.V.)."
     },
     "Frauenkreis": {
@@ -251,11 +257,13 @@ const WUNDA = {
     },
     "Kinderband 'Die leicht verschwitzten Zwerge'": {
       foto: "zwergig.png",
+      insta: "@leichtverschwitztundzwergig",
       beschreibung: "Mitreißende Musik, strahlende Kinderaugen und ganz viel gute Laune: Das Rockquartett „Leicht Verschwitzt Und Zwergig“ spielt tanzbare (Kinder-)Lieder für alle – egal ob mit Maxi-Cosi, Retro-Rennrad oder neuer Hüfte."
     },
     "Lisa liest Geschichte": {
       wer: "Lisa Suitner",
       foto: "abendgeschichten.png",
+      insta: "@lisa.suitner",
       beschreibung: "Schnapp dir dein Kuscheltier, mach's dir gemütlich und lass den Tag mit einem Lächeln ausklingen. Lisa – Clownin, Musikerin und Geschichtenerzählerin aus Vorarlberg – bringt ihre liebsten Geschichten samt Humor und Musik mit."
     },
     "Männerkreis": {
@@ -266,27 +274,32 @@ const WUNDA = {
     "Feuershow & Akrobatik mit Trommelbegleitung": {
       wer: "Artistik Calimbaro",
       foto: "feuer-akrobatikshow.jpg",
+      web: "artistik-calimbaro.de", insta: "@artistik_calimbaro",
       beschreibung: "Artistik Calimbaro ist seit 2019 fester Bestandteil des Wundaplunda. Freut euch auf die bezaubernde Feuer-Akrobatikshow von Florian & Susanne – Leidenschaft, Energie und pure Magie in der Nacht, begleitet von der Trommelgruppe."
     },
     "Schlangen & Zauberei filzen mit Fee": {
       wer: "Fee",
       foto: "filzen.jpg",
+      insta: "@fees_musikgaertchen",
       beschreibung: "Im Nassfilz-Workshop entstehen bunte Filzkugeln mit funkelndem Muggelstein im Inneren und eine charmante Filzschlange – zwei Projekte zum Mitnehmen. Keine Vorkenntnisse nötig, alle Materialien werden gestellt."
     },
     "Wahrnehmungs- / Sinnesübungen in der Natur": {
       wer: "Lena (Wildnispädagogin)",
       foto: "wahrnehmung.png",
+      web: "wild-und-weiter.de",
       beschreibung: "Wie können bewusste Wahrnehmung und intuitive Zugänge unser Erleben in der Natur vertiefen? Durch Übungen und Spiele aus der Wildnispädagogik schärfen wir die Sinne, stärken die Aufmerksamkeit für feine Signale und erleben unsere Intuition. Nur für Erwachsene."
     },
     "Bogenbau": {
       wer: "Laurenz (Wildnispädagoge)",
       foto: "bogenbau.png",
+      web: "wild-und-weiter.de",
       mitbringen: "eigenes Schnitzmesser",
       beschreibung: "Wie entsteht aus einem Stück Holz ein Bogen? Mit Schnitzmesser und Geduld gestalten wir kleine funktionsfähige Bögen und entdecken, wie Form, Spannung und Funktion vom Holz abhängen."
     },
     "Baumklettern": {
       wer: "Stefan (Baumkletterer & Erlebnispädagoge)",
       foto: "baumklettern.png",
+      web: "new-institut.com/ueber-uns/team/stefan-lipp",
       beschreibung: "Hoch hinaus, Äste unter den Händen und die Welt von oben sehen: Baumklettern ist Abenteuer pur. Jedes Kind, das möchte, darf sicher und begleitet von Stefan in die Baumwipfel."
     },
     "Eltern-Kind-Akrobatik": {
@@ -297,15 +310,18 @@ const WUNDA = {
     "Clownspiele": {
       wer: "Florian (Artistik Calimbaro, ausgebildeter Clown)",
       foto: "clownspiele.png",
+      web: "artistik-calimbaro.de", insta: "@artistik_calimbaro",
       beschreibung: "Lachen, spielen und gemeinsam kreativ sein! Mit lustigen Clownspielen entdecken Kinder ab 6 Jahren spielerisch Ausdruck, Fantasie und Bewegung – und stärken nebenbei Selbstvertrauen und Teamgeist. Begrenzte Plätze, bitte pünktlich kommen."
     },
     "Hirnhopsen für Alle": {
       wer: "Florian (Artistik Calimbaro)",
       foto: "hirnhopsen.png",
+      web: "artistik-calimbaro.de", insta: "@artistik_calimbaro",
       beschreibung: "Jede:r bekommt zwei Bälle: Durch rhythmische Koordinationsübungen werden beide Gehirnhälften aktiviert – Konzentration, Reaktion und Motorik spielerisch gefördert, mit viel Spaß und Bewegung."
     },
     "Tribubu": {
       foto: "tribubu.png",
+      web: "tribubu.com", insta: "@tribubumusic",
       beschreibung: "Weltmusik in einer fesselnden Rumba-Afro-Folk-Fusion. Mit Mitgliedern aus Spanien, England und der Elfenbeinküste verbindet TRIBUBU seit 2018 Kulturen und Talente über Sprachgrenzen hinweg – ein unverwechselbarer, mitreißender Sound."
     },
     "Weiden-Zauberstäbe": {
@@ -321,6 +337,7 @@ const WUNDA = {
     "Vortrag LAVI – erleb es": {
       wer: "Anouk & Regina (erLEBes Familie)",
       foto: "lavi.png",
+      web: "lavi-schule.de/Wer-wir-sind",
       beschreibung: "erLEBes Familie öffnet Räume für Eltern und Familien: Wie wirkt meine innere Welt auf meine Beziehungen? Wie gestalte ich Verbindung im Familienalltag bewusst? Ein Impuls rund um Kommunikation, Bedürfnisse und das WIR in der Familie."
     },
     "Schnitzen (Schnitzführerschein)": {
@@ -328,6 +345,7 @@ const WUNDA = {
       foto: "schnitzen.png",
       mitbringen: "Schnitzmesser (kann vor Ort ausgeliehen werden), wetterfeste Kleidung, geschlossene Schuhe, lange Hose",
       hinweis: "Kinder ab 8 Jahren, jüngere nur mit Begleitperson · max. 16 Kinder",
+      web: "naturnase.de/referenten.html",
       beschreibung: "Im Outdoor-Schnitzkurs lernt ihr den sicheren Umgang mit dem Taschen- oder Kinderschnitzmesser und schnitzt eigene kleine Kreationen aus Frischholz. Zum Abschluss gibt's den „Messerführer:innenschein“."
     },
     "Contact Kids": {
@@ -352,11 +370,13 @@ const WUNDA = {
     },
     "Funkenflug Band": {
       foto: "funkenflug.png",
+      web: "funkenflugmusik.de", insta: "@funkenflugmusik",
       beschreibung: "Die Münchner Band Funkenflug bringt mit ihrem Album „Durch die Blume“ das Gefühl eines ewigen Sommerabends auf die Bühne – eine lebendige Mischung aus Folk, Swing und Pop mit Gitarre, Geige, Kontrabass und mehrstimmigem Gesang."
     },
     "Kids Singen, Tanzen, Bewegen": {
       wer: "Amelie (Stimmtherapeutin)",
       foto: "singen-bewegen.png",
+      web: "akademie-rueckenwind.de", insta: "@akademie_rueckenwind",
       beschreibung: "Musikalischer Mitmach-Workshop für Kinder von 3 bis 6 Jahren: Wir singen kindgerechte Lieder und erwecken sie mit Bewegungen, Gesten und kleinen Rollenspielen zum Leben. Freude, Fantasie und gemeinsames Erleben stehen im Mittelpunkt."
     },
     "Wetterkunde": {
