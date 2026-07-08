@@ -1010,7 +1010,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     var kat=(D.katalog && D.katalog[p.titel])||null;
     var werTxt=(kat&&kat.wer)?kat.wer:p.wer;
     var mitbringen=(kat&&kat.mitbringen)?kat.mitbringen:p.mitbringen;
-    var foto=(kat&&kat.foto)?kat.foto:null;
+    var foto=(kat&&kat.foto)?kat.foto:((p.foto)?p.foto:null);
     var desc=(kat&&kat.beschreibung)?kat.beschreibung:((p.info&&p.info.trim())?p.info.trim():"");
     var hinweise=[];
     if(p.optional) hinweise.push("Optionales Angebot – die Teilnahme ist freiwillig.");

@@ -76,6 +76,11 @@ textarea{min-height:60px;resize:vertical}
 .btn.gruen:hover{background:var(--gruen-tief)}
 .actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;align-items:center}
 .ok{color:var(--gruen-tief);font-weight:700}
+.foto-upload{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap}
+.foto-preview{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex:none;background:#fff}
+.foto-btns{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+#foto-hint{font-weight:700;font-size:.85rem}
+#foto-hint.err{color:var(--rot)}
 
 /* Tipp-Chip „als Geändert markieren" */
 #tip-geaendert{display:none;margin-top:.5rem;background:#FCE9B8;border:1.5px dashed var(--gold);border-radius:.6rem;padding:.45rem .7rem;font-size:.85rem;color:#8A5A00}
@@ -267,6 +272,18 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
         <label for="f-insta">Instagram der Leitung (optional)</label>
         <input type="text" id="f-insta" placeholder="z. B. @name oder instagram.com/name">
 
+        <label>Foto / Icon zum Workshop (optional)</label>
+        <input type="hidden" id="f-foto">
+        <input type="file" id="f-foto-input" accept="image/*" hidden>
+        <div class="foto-upload">
+          <img id="f-foto-preview" class="foto-preview" alt="Vorschau" hidden>
+          <div class="foto-btns">
+            <button type="button" class="btn ghost" id="btn-foto-pick">Bild auswählen …</button>
+            <button type="button" class="btn ghost rot" id="btn-foto-remove" hidden>Entfernen</button>
+            <span id="foto-hint" class="ok"></span>
+          </div>
+        </div>
+
         <div class="actions">
           <button type="submit" class="btn gruen" id="btn-save">Punkt hinzufügen</button>
           <button type="button" class="btn ghost" id="btn-new">Leeren / Neu</button>
@@ -337,7 +354,7 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
   var GH = { owner:"lechcode", repo:"wundaplunda-vorschau", branch:"main",
              path:"assets/programm-daten.js", apiVersion:"2022-11-28" };
   var TOKEN_KEY="wunda-schluessel", DRAFT_KEY="wunda-entwurf", HELP_KEY="wunda-hilfe-gesehen";
-  var KNOWN=["tag","zeit","titel","wer","wo","wen","anmeldung","optional","hinweis","info","status","web","insta"];
+  var KNOWN=["tag","zeit","titel","wer","wo","wen","anmeldung","optional","hinweis","info","status","web","insta","foto"];
   var ICON={feder:"i-feder",kaefer:"i-kaefer",falter:"i-falter",gruppe:"i-gruppe"};
 
   /* ============ Kleine Helfer ============ */
@@ -472,6 +489,17 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     try{
       r=await fetch(url,{method:"PUT",headers:ghHeaders(token),
         body:JSON.stringify({message:message,content:contentB64,sha:sha,branch:GH.branch})});
+    }catch(err){ var e=new Error("net"); e.code="net"; throw e; }
+    if(!r.ok) throw ghError(r.status, r);
+    return r.json();
+  }
+  /* Binär-Upload (Bild) an beliebigen Pfad — spiegelt ghPutFile, ohne sha (immer neue Datei). */
+  async function ghPutBinary(token, path, contentB64, message){
+    var url="https://api.github.com/repos/"+GH.owner+"/"+GH.repo+"/contents/"+path;
+    var r;
+    try{
+      r=await fetch(url,{method:"PUT",headers:ghHeaders(token),
+        body:JSON.stringify({message:message,content:contentB64,branch:GH.branch})});
     }catch(err){ var e=new Error("net"); e.code="net"; throw e; }
     if(!r.ok) throw ghError(r.status, r);
     return r.json();
@@ -665,6 +693,7 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     var info=$("f-info").value.trim(); if(info) p.info=info;
     var web=$("f-web").value.trim(); if(web) p.web=web;
     var insta=$("f-insta").value.trim(); if(insta) p.insta=insta;
+    var foto=$("f-foto").value.trim(); if(foto) p.foto=foto;
     var st=$("f-status").value; if(st) p.status=st;
     return p;
   }
@@ -675,6 +704,7 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     $("f-anmeldung").value=(p&&p.anmeldung)||""; $("f-optional").checked=!!(p&&p.optional);
     $("f-hinweis").value=(p&&p.hinweis)||""; $("f-info").value=(p&&p.info)||"";
     $("f-web").value=(p&&p.web)||""; $("f-insta").value=(p&&p.insta)||""; $("f-status").value=(p&&p.status)||"";
+    $("f-foto").value=(p&&p.foto)||""; showFotoPreview((p&&p.foto)||null); setFotoHint("",false);
     $("tip-geaendert").style.display="none";
   }
   function clearForm(){
@@ -834,6 +864,66 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     if(!confirm("„"+t+"“ wirklich löschen?")) return;
     work.splice(sel,1);
     clearForm(); renderList(); markDirty();
+  });
+
+  /* ---- Foto/Icon: auswählen -> verkleinern -> zu GitHub hochladen -> Vorschau ---- */
+  function setFotoHint(msg, isErr){ var h=$("foto-hint"); h.textContent=msg||""; h.classList.toggle("err",!!isErr); }
+  function showFotoPreview(srcOrName){
+    var img=$("f-foto-preview"), rm=$("btn-foto-remove");
+    if(!srcOrName){ img.hidden=true; img.removeAttribute("src"); rm.hidden=true; return; }
+    img.src = /^(data:|https?:)/.test(srcOrName) ? srcOrName : ("assets/img/programm/"+srcOrName);
+    img.hidden=false; rm.hidden=false;
+  }
+  function slugify(s){
+    return (s||"").toLowerCase()
+      .replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/ß/g,"ss")
+      .replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40) || "workshop";
+  }
+  function processImage(file, cb){
+    if(!/^image\//.test(file.type)){ cb(new Error("Bitte eine Bilddatei wählen.")); return; }
+    var img=new Image(), url=URL.createObjectURL(file);
+    img.onload=function(){
+      var max=640, w=img.naturalWidth, h=img.naturalHeight;
+      if(Math.max(w,h)>max){ var s=max/Math.max(w,h); w=Math.round(w*s); h=Math.round(h*s); }
+      var c=document.createElement("canvas"); c.width=w; c.height=h;
+      var ctx=c.getContext("2d"); ctx.fillStyle="#fff"; ctx.fillRect(0,0,w,h); ctx.drawImage(img,0,0,w,h);
+      URL.revokeObjectURL(url);
+      try{ cb(null, c.toDataURL("image/jpeg",0.85)); }catch(err){ cb(new Error("Bild konnte nicht verarbeitet werden.")); }
+    };
+    img.onerror=function(){ URL.revokeObjectURL(url); cb(new Error("Bild konnte nicht gelesen werden.")); };
+    img.src=url;
+  }
+  function fotoErrMsg(e){
+    switch(e && e.code){
+      case "auth": return "Schlüssel ungültig – bitte Veröffentlichungs-Schlüssel prüfen.";
+      case "perm": return "Keine Berechtigung für dieses Repository.";
+      case "rate": return "GitHub-Limit erreicht – bitte später erneut versuchen.";
+      case "conflict": return "Konflikt beim Upload – bitte erneut versuchen.";
+      case "net": return "Netzwerkfehler – bitte Verbindung prüfen.";
+      default: return "Upload fehlgeschlagen"+(e&&e.status?(" ("+e.status+")"):"")+".";
+    }
+  }
+  $("btn-foto-pick").addEventListener("click",function(){ $("f-foto-input").click(); });
+  $("f-foto-input").addEventListener("change",function(e){
+    var file=e.target.files&&e.target.files[0]; e.target.value=""; // reset -> gleiche Datei erneut wählbar
+    if(!file) return;
+    var token=getToken();
+    if(!token){ setFotoHint("Bitte zuerst den Veröffentlichungs-Schlüssel eingeben (unten).",true); return; }
+    setFotoHint("Bild wird verkleinert …",false);
+    processImage(file,function(err,dataUrl){
+      if(err){ setFotoHint(err.message,true); return; }
+      var b64=dataUrl.split(",")[1];
+      var name=slugify($("f-titel").value||"workshop")+"-"+Date.now().toString(36)+".jpg";
+      setFotoHint("Bild wird hochgeladen …",false);
+      ghPutBinary(token,"assets/img/programm/"+name,b64,"Redaktion: Workshop-Bild "+name)
+        .then(function(){
+          $("f-foto").value=name; showFotoPreview(dataUrl); setFotoHint("✓ Bild hochgeladen – jetzt Punkt speichern & veröffentlichen.",false);
+        })
+        .catch(function(er){ setFotoHint(fotoErrMsg(er),true); });
+    });
+  });
+  $("btn-foto-remove").addEventListener("click",function(){
+    $("f-foto").value=""; showFotoPreview(null); setFotoHint("Bild entfernt (Datei bleibt im Repo).",false);
   });
   ["f-tag","f-zeit","f-titel","f-wer","f-wo","f-anmeldung","f-status","f-hinweis","f-info"].forEach(function(id){
     $(id).addEventListener("input",livePreview); $(id).addEventListener("change",livePreview);
