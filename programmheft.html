@@ -318,13 +318,21 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
 
 /* ---------- Responsive ---------- */
 @media (max-width:640px){
-  html{scroll-padding-top:236px}
+  html{scroll-padding-top:calc(236px + var(--vnav,0px))}
   .tabs{flex-wrap:nowrap}
   .slot{grid-template-columns:64px 1fr;gap:0 .6rem}
   .slot .zeit{font-size:.8rem;padding-top:.9rem}
-  .day{scroll-margin-top:236px}
+  .day{scroll-margin-top:calc(236px + var(--vnav,0px))}
   .bar-actions{margin-left:0;width:100%}
   .bar-actions .act{flex:1;justify-content:center}
+  /* Bereichs-Umschalter fest oben – 3 Tabs ohne Wischen, immer erreichbar */
+  .viewnav{position:sticky;top:0;z-index:130}
+  .viewnav .wrap{overflow-x:hidden;gap:.3rem}
+  .viewnav button{flex:1 1 0;min-width:0;justify-content:center;font-size:.82rem;padding:.55em .3em;gap:.3em}
+  .viewnav button svg{width:1em;height:1em}
+  .vn-long{display:none}
+  /* Filterleiste rückt unter den Umschalter */
+  .bar{top:var(--vnav,0px)}
 }
 
 /* ============================================================
@@ -487,7 +495,7 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   <div class="wrap" role="tablist">
     <button type="button" data-nav="willkommen" role="tab" aria-selected="true"><svg><use href="#i-herz"/></svg> Willkommen</button>
     <button type="button" data-nav="programm" role="tab" aria-selected="false"><svg><use href="#i-clock"/></svg> Programm</button>
-    <button type="button" data-nav="infos" role="tab" aria-selected="false"><svg><use href="#i-pin"/></svg> Alle Infos A–Z</button>
+    <button type="button" data-nav="infos" role="tab" aria-selected="false"><svg><use href="#i-pin"/></svg> <span class="vn-long">Alle </span>Infos A–Z</button>
   </div>
 </nav>
 
@@ -1234,6 +1242,14 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
   document.querySelectorAll(".viewnav button").forEach(function(b){
     b.addEventListener("click", function(){ setNav(b.dataset.nav); });
   });
+  /* ---- Höhe des Umschalters als --vnav: Filterleiste stapelt sauber darunter (mobil) ---- */
+  (function(){
+    var nav=document.querySelector(".viewnav");
+    function upd(){ document.documentElement.style.setProperty("--vnav", (nav?nav.offsetHeight:0)+"px"); }
+    upd();
+    window.addEventListener("resize", upd);
+    window.addEventListener("orientationchange", upd);
+  })();
 
   /* ---- Info-Kacheln: sanft zum jeweiligen Abschnitt scrollen ---- */
   document.querySelectorAll(".info-kachel").forEach(function(a){
