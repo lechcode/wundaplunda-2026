@@ -509,6 +509,7 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
 
   /* ============ Zustand ============ */
   var data=null, work=[], workEssen=[], sel=-1;
+  var workKatalog={}, baseKatalog={};   // zentrale Inhalte (Beschreibung/Leitung/Foto/Links) je Workshop-Titel
   var baseline=null;              // {sha, source, data} — Repo-Stand beim Laden/letzten Publish
   var baseProgJson=[], baseEssenJson=[];
   var busy=false, liveTimer=null, pendingPublish=false;
@@ -517,6 +518,7 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
   function resetBaselinesFrom(d){
     baseProgJson=(d.programm||[]).map(function(p){return JSON.stringify(p);});
     baseEssenJson=(((d.verpflegung||{}).essenszeiten)||[]).map(function(z){return JSON.stringify(z);});
+    baseKatalog=deepCopy(d.katalog||{});
   }
   function countChanges(){
     var mapA={}; baseProgJson.forEach(function(s){mapA[s]=(mapA[s]||0)+1;});
@@ -526,13 +528,16 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     var n=Math.max(added,removed);
     workEssen.forEach(function(z,i){ if(JSON.stringify(z)!==(baseEssenJson[i]||"")) n++; });
     if(baseEssenJson.length!==workEssen.length) n++;
+    // Katalog-Inhalte (Leitung/Beschreibung/Foto/Links)
+    Object.keys(workKatalog).forEach(function(t){ if(JSON.stringify(workKatalog[t])!==JSON.stringify(baseKatalog[t])) n++; });
+    Object.keys(baseKatalog).forEach(function(t){ if(!(t in workKatalog)) n++; });
     if(n===0 && JSON.stringify(work)!==JSON.stringify(baseProgJson.map(function(s){return JSON.parse(s);}))) n=1; // reine Umsortierung
     return n;
   }
 
   /* ============ Entwurf (Autosave) ============ */
   function saveDraft(){
-    try{ localStorage.setItem(DRAFT_KEY, JSON.stringify({p:work,e:workEssen,t:Date.now()})); }catch(e){}
+    try{ localStorage.setItem(DRAFT_KEY, JSON.stringify({p:work,e:workEssen,k:workKatalog,t:Date.now()})); }catch(e){}
   }
   function clearDraft(){ try{localStorage.removeItem(DRAFT_KEY);}catch(e){} $("draft-banner").hidden=true; }
   function applyDraftIfAny(){
@@ -540,9 +545,9 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     if(!raw) return;
     try{
       var d=JSON.parse(raw);
-      var differs = JSON.stringify(d.p)!==JSON.stringify(work) || JSON.stringify(d.e)!==JSON.stringify(workEssen);
+      var differs = JSON.stringify(d.p)!==JSON.stringify(work) || JSON.stringify(d.e)!==JSON.stringify(workEssen) || (d.k && JSON.stringify(d.k)!==JSON.stringify(workKatalog));
       if(!differs){ clearDraft(); return; }
-      work=d.p; workEssen=d.e;
+      work=d.p; workEssen=d.e; if(d.k) workKatalog=d.k;
       $("draft-zeit").textContent=fmtDraft(d.t);
       $("draft-banner").hidden=false;
     }catch(e){ clearDraft(); }
@@ -551,6 +556,7 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     if(!confirm("Wirklich alle nicht veröffentlichten Änderungen wegwerfen und den Live-Stand laden?\nDas lässt sich nicht rückgängig machen.")) return;
     work=deepCopy(baseline.data.programm||[]);
     workEssen=deepCopy(((baseline.data.verpflegung||{}).essenszeiten)||[]);
+    workKatalog=deepCopy(baseline.data.katalog||{});
     clearDraft(); sel=-1; clearForm(); renderList(); renderEssen(); updatePub();
   }
 
@@ -643,6 +649,10 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
       merged.verpflegung.essenszeiten=deepCopy(workEssen);
       merged.festival=merged.festival||{};
       merged.festival.stand=standStr;
+      // Katalog-Inhalte: nur die von mir geänderten/neuen/entfernten Titel auf den frischen Remote-Stand anwenden
+      merged.katalog=merged.katalog||{};
+      Object.keys(baseKatalog).forEach(function(t){ if(!(t in workKatalog)) delete merged.katalog[t]; });
+      Object.keys(workKatalog).forEach(function(t){ if(JSON.stringify(workKatalog[t])!==JSON.stringify(baseKatalog[t])) merged.katalog[t]=deepCopy(workKatalog[t]); });
       var newSource=serializeWunda(merged, extractHeader(remote.source));
       var re=parseWunda(newSource);
       if(JSON.stringify(re)!==JSON.stringify(merged)){ var se=new Error("roundtrip"); se.code="serialize"; throw se; }
@@ -682,31 +692,46 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
   function setWen(arr){ wenState={}; (arr||[]).forEach(function(k){wenState[k]=true;});
     Array.prototype.forEach.call($("f-wen").children,function(b){ b.setAttribute("aria-pressed",!!wenState[b.dataset.k]); }); }
   function getWen(){ return Object.keys(ZG).filter(function(k){return wenState[k];}); }
+  // Zentraler Katalog-Eintrag (Inhalt je Workshop-Titel: Leitung/Beschreibung/Foto/Links)
+  function katOf(titel){ return (titel && workKatalog[titel]) ? workKatalog[titel] : null; }
+  // Inhalts-Felder aus dem Formular in den Katalog (nach Titel) schreiben
+  function saveKatalogFromForm(titel){
+    if(!titel) return;
+    var e=workKatalog[titel]||{};
+    function put(key,val){ val=(val||"").trim(); if(val) e[key]=val; else delete e[key]; }
+    put("wer", $("f-wer").value);
+    put("beschreibung", $("f-info").value);
+    put("foto", $("f-foto").value);
+    put("web", $("f-web").value);
+    put("insta", $("f-insta").value);
+    if(Object.keys(e).length) workKatalog[titel]=e; else delete workKatalog[titel];
+  }
   function readForm(){
     var p={};
     // Unbekannte Felder des Original-Punkts mitschleppen
     if(sel>=0 && editingOrig){ Object.keys(editingOrig).forEach(function(k){ if(KNOWN.indexOf(k)===-1) p[k]=editingOrig[k]; }); }
     p.tag=$("f-tag").value; p.zeit=$("f-zeit").value.trim(); p.titel=$("f-titel").value.trim();
-    p.wer=$("f-wer").value.trim(); p.wo=$("f-wo").value.trim();
+    p.wo=$("f-wo").value.trim();
     p.wen=getWen(); if(!p.wen.length) p.wen=["alle"];
     var anm=$("f-anmeldung").value; if(anm) p.anmeldung=anm;
     if($("f-optional").checked) p.optional=true;
     var hin=$("f-hinweis").value.trim(); if(hin) p.hinweis=hin;
-    var info=$("f-info").value.trim(); if(info) p.info=info;
-    var web=$("f-web").value.trim(); if(web) p.web=web;
-    var insta=$("f-insta").value.trim(); if(insta) p.insta=insta;
-    var foto=$("f-foto").value.trim(); if(foto) p.foto=foto;
     var st=$("f-status").value; if(st) p.status=st;
+    // Leitung/Beschreibung/Foto/Links liegen zentral im Katalog (s. saveKatalogFromForm)
     return p;
   }
   function fillForm(p){
     editingOrig=p?deepCopy(p):null;
+    var k=p?katOf(p.titel):null;  // zentrale Inhalte (Katalog) haben Vorrang, sonst Punkt-Feld
+    function eff(kf,pf){ return (k&&k[kf]!=null?k[kf]:(p&&p[pf]))||""; }
     $("f-tag").value=(p&&p.tag)||$("f-tag").value||"mo"; $("f-zeit").value=(p&&p.zeit)||""; $("f-titel").value=(p&&p.titel)||"";
-    $("f-wer").value=(p&&p.wer)||""; $("f-wo").value=(p&&p.wo)||""; setWen((p&&p.wen)||["alle"]);
+    $("f-wer").value=eff("wer","wer"); $("f-wo").value=(p&&p.wo)||""; setWen((p&&p.wen)||["alle"]);
     $("f-anmeldung").value=(p&&p.anmeldung)||""; $("f-optional").checked=!!(p&&p.optional);
-    $("f-hinweis").value=(p&&p.hinweis)||""; $("f-info").value=(p&&p.info)||"";
-    $("f-web").value=(p&&p.web)||""; $("f-insta").value=(p&&p.insta)||""; $("f-status").value=(p&&p.status)||"";
-    $("f-foto").value=(p&&p.foto)||""; showFotoPreview((p&&p.foto)||null); setFotoHint("",false);
+    $("f-hinweis").value=(p&&p.hinweis)||""; $("f-info").value=eff("beschreibung","info");
+    $("f-web").value=eff("web","web"); $("f-insta").value=eff("insta","insta"); $("f-status").value=(p&&p.status)||"";
+    var foto=eff("foto","foto");
+    $("f-foto").value=foto; showFotoPreview(foto||null);
+    setFotoHint(foto?"✓ Bild vorhanden":"Noch kein Bild hinterlegt", false);
     $("tip-geaendert").style.display="none";
   }
   function clearForm(){
@@ -829,6 +854,7 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     ZG={}; (d.zielgruppen||[]).forEach(function(z){ZG[z.key]=z;});
     work=deepCopy(d.programm||[]);
     workEssen=deepCopy(((d.verpflegung||{}).essenszeiten)||[]);
+    workKatalog=deepCopy(d.katalog||{});
     baseline=base||{sha:null, source:null, data:deepCopy(d)};
     resetBaselinesFrom(baseline.data);
 
@@ -857,6 +883,7 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     var p=readForm();
     if(!p.titel||!p.zeit){ $("save-hint").style.color="var(--rot)"; $("save-hint").textContent="Bitte Titel und Zeit angeben."; return; }
     if(sel>=0){ work[sel]=p; } else { work.push(p); sel=work.length-1; }
+    saveKatalogFromForm(p.titel);   // Leitung/Beschreibung/Foto/Links zentral speichern
     editingOrig=deepCopy(p);
     $("save-hint").style.color="var(--gruen-tief)"; $("save-hint").textContent="✓ gespeichert";
     $("form-titel").textContent="Punkt bearbeiten"; $("btn-save").textContent="Änderungen speichern"; $("btn-del").hidden=false;
