@@ -331,7 +331,7 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
 <dialog id="key-dialog" aria-labelledby="kd-h">
   <div class="kd-body">
     <h2 id="kd-h">Einmal einrichten: dein Veröffentlichungs-Schlüssel</h2>
-    <p id="kd-intro">Damit die Seite weiß, dass wirklich <b>du</b> veröffentlichst, brauchst du einmalig deinen persönlichen Schlüssel. Du hast ihn von Lenny bekommen. Er wird nur auf diesem Gerät gespeichert — einmal einfügen, nie wieder dran denken.</p>
+    <p id="kd-intro">Damit die Seite weiß, dass wirklich <b>du</b> veröffentlichst, brauchst du einmalig deinen persönlichen Schlüssel. Den bekommst du von uns. Er wird nur auf diesem Gerät gespeichert — einmal einfügen, nie wieder dran denken.</p>
     <div class="kd-key">
       <input type="password" id="key-input" placeholder="Schlüssel hier einfügen" autocomplete="off" spellcheck="false" aria-label="Veröffentlichungs-Schlüssel">
       <button type="button" id="key-eye" aria-label="Schlüssel anzeigen">👁</button>
@@ -341,7 +341,7 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
       <button class="btn gruen" id="key-save" type="button">Schlüssel speichern</button>
       <button class="btn ghost" id="key-cancel" type="button">Abbrechen</button>
     </div>
-    <p class="kd-small">Schlüssel vergessen oder nie bekommen? Kein Problem — schreib Lenny kurz, du bekommst sofort einen neuen. Handy und Laptop brauchen den Schlüssel je einmal.</p>
+    <p class="kd-small">Schlüssel vergessen oder nie bekommen? Kein Problem — schreib uns kurz, du bekommst sofort einen neuen. Handy und Laptop brauchen den Schlüssel je einmal.</p>
   </div>
 </dialog>
 
@@ -580,8 +580,8 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     pendingPublish=!!fromPublish;
     $("kd-h").textContent = invalid ? "Dein Schlüssel funktioniert nicht mehr" : "Einmal einrichten: dein Veröffentlichungs-Schlüssel";
     $("kd-intro").innerHTML = invalid
-      ? "Füg ihn bitte neu ein — oder frag Lenny nach einem frischen. Deine Änderungen sind <b>nicht</b> verloren."
-      : "Damit die Seite weiß, dass wirklich <b>du</b> veröffentlichst, brauchst du einmalig deinen persönlichen Schlüssel. Du hast ihn von Lenny bekommen. Er wird nur auf diesem Gerät gespeichert — einmal einfügen, nie wieder dran denken.";
+      ? "Füg ihn bitte neu ein — oder frag uns nach einem frischen. Deine Änderungen sind <b>nicht</b> verloren."
+      : "Damit die Seite weiß, dass wirklich <b>du</b> veröffentlichst, brauchst du einmalig deinen persönlichen Schlüssel. Den bekommst du von uns. Er wird nur auf diesem Gerät gespeichert — einmal einfügen, nie wieder dran denken.";
     $("key-err").style.display="none"; $("key-input").value="";
     $("key-dialog").showModal();
     setTimeout(function(){ $("key-input").focus(); }, 50);
@@ -597,7 +597,7 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
       if(pendingPublish){ pendingPublish=false; publish(); }
     }catch(e){
       if(e.code==="net") keyErr("Keine Verbindung — bist du offline? Versuch es gleich nochmal.");
-      else keyErr("Hm, der Schlüssel scheint nicht zu stimmen. Prüfe, ob du ihn komplett kopiert hast — ohne Leerzeichen davor oder dahinter. Klappt es gar nicht, meld dich bei Lenny.");
+      else keyErr("Hm, der Schlüssel scheint nicht zu stimmen. Prüfe, ob du ihn komplett kopiert hast — ohne Leerzeichen davor oder dahinter. Klappt es gar nicht, meld dich bei uns.");
     }
     $("key-save").disabled=false; $("key-save").textContent="Schlüssel speichern";
   }
@@ -666,11 +666,11 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     }catch(e){
       busy=false;
       if(e.code==="auth"){ openKeyDialog(true, true); setPub("error","Der Veröffentlichungs-Schlüssel wird nicht akzeptiert — er ist falsch oder wurde zurückgezogen."); }
-      else if(e.code==="perm"){ setPub("error","Der Redaktions-Zugang darf gerade nicht veröffentlichen (fehlende Berechtigung). Bitte Lenny Bescheid geben."); }
+      else if(e.code==="perm"){ setPub("error","Der Redaktions-Zugang darf gerade nicht veröffentlichen (fehlende Berechtigung). Bitte uns Bescheid geben."); }
       else if(e.code==="net"){ setPub("error","Keine Verbindung zu GitHub — bist du offline? Einfach später noch einmal auf „Veröffentlichen“ klicken."); }
       else if(e.code==="rate"){ setPub("error","GitHub bremst gerade wegen zu vieler Anfragen. Bitte in ein paar Minuten noch einmal versuchen."); }
       else if(e.code==="conflict"){ setPub("error","Da hat sich gerade gleichzeitig etwas geändert. Bitte gleich noch einmal auf „Veröffentlichen“ klicken."); }
-      else if(e.code==="serialize"){ setPub("error","Technisches Problem beim Erzeugen der Datei — es wurde sicherheitshalber nichts veröffentlicht. Bitte Lenny Bescheid geben ("+esc(e.message)+")."); }
+      else if(e.code==="serialize"){ setPub("error","Technisches Problem beim Erzeugen der Datei — es wurde sicherheitshalber nichts veröffentlicht. Bitte uns Bescheid geben ("+esc(e.message)+")."); }
       else { setPub("error","Unerwarteter Fehler ("+esc(e.message||e)+")."); }
     }
   }
