@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "08.07.2026, 14:51 Uhr",
+    stand: "12.07.2026, 23:04 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -408,8 +408,8 @@ const WUNDA = {
   verpflegung: {
     hinweis: "Alles Bio, vegetarisch/vegan – teils aus eigenem Anbau. Zahlung bar oder per PayPal (QR) an der Essensausgabe. Bitte Bargeld für die Woche mitbringen.",
     essenszeiten: [
-      { mahlzeit:"Frühstück", zeit:"07:45–09:00", hinweis:"Nur mit gelbem Bändchen · Woche vorab buchen" },
-      { mahlzeit:"Mittag", zeit:"12:15–15:00", hinweis:"Wer mag, ohne Anmeldung (Infoheft nennt 12:00–13:30)" },
+      { mahlzeit:"Frühstück", zeit:"07:45–09:00", hinweis:"Nur mit gültigem Bändchen · Woche vorab buchen" },
+      { mahlzeit:"Mittag", zeit:"12:15–13:45", hinweis:"Wer mag, ohne Anmeldung (Infoheft nennt 12:00–13:30)" },
       { mahlzeit:"Abend", zeit:"17:45–19:15", hinweis:"Wer mag, ohne Anmeldung (Infoheft nennt 18:00–19:30)" },
     ],
     preise_essen: [
