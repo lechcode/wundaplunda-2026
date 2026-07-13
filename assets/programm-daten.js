@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "13.07.2026, 18:33 Uhr",
+    stand: "13.07.2026, 18:54 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -121,7 +121,7 @@ const WUNDA = {
     { tag:"do", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"do", zeit:"14:00 – 16:00", titel:"Kuchen Pappelkinder & Hoflädle", wer:"", wo:"Dorfplatz", wen:["alle"] },
     { tag:"do", zeit:"15:00 – 16:00", titel:"Singen – Jodruf Sulzbrunn", wer:"Rolf & Margaretha", wo:"Dorfplatz", wen:["alle"] },
-    { tag:"do", zeit:"15:30 – 17:30", titel:"Frauenkreis", wer:"Fabienne", wo:"Yogaraum", wen:["erwachsene"] },
+    { tag:"do", zeit:"15:30 – 17:30", titel:"Frauenkreis", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"do", zeit:"15:30 – 17:30", titel:"Schnitzen (Schnitzführerschein)", wer:"Andreas", wo:"Wundazelt", wen:["kinder_ab_5"] },
     { tag:"do", zeit:"15:30 – 17:30", titel:"Contact Kids", wer:"", wo:"", wen:["kinder_0_4"] },
     { tag:"do", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
@@ -145,19 +145,19 @@ const WUNDA = {
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Baumpilze & Naturkosmetik", wer:"", wo:"Kinderjurte", wen:["erwachsene"] },
     { tag:"fr", zeit:"15:00 – 16:00", titel:"Contact Kids", wer:"", wo:"Yogaraum", wen:["kinder_0_4"] },
     { tag:"fr", zeit:"15:00 – 16:00", titel:"Seifenblasen", wer:"Patrick", wo:"Feuerstelle", wen:["kinder_0_4","kinder_ab_5"] },
-    { tag:"fr", zeit:"16:00 – 18:00", titel:"Open Space", wer:"", wo:"", wen:["alle"], hinweis:"Alle, die etwas anbieten möchten · u. a. bietet Amelie Jodeln an" },
-    { tag:"fr", zeit:"17:30 – 18:00", titel:"Das schrecklichste Monster der Welt", wer:"Amelie", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"], web:"akademie-rueckenwind.de", insta:"@akademie_rueckenwind" },
+    { tag:"fr", zeit:"16:00 – 18:00", titel:"Open Space - Gestalte das Programm mit!", wo:"", wen:["alle"], hinweis:"Alle, die etwas anbieten möchten · u. a. bietet Amelie Jodeln an" },
+    { tag:"fr", zeit:"17:30 – 18:00", titel:"Vorlese- & Mitmachgeschichte: Das schrecklichste Monster der Welt", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"fr", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"fr", zeit:"19:30 – 20:30", titel:"Funkenflug Band", wer:"", wo:"Zirkuszelt", wen:["alle"] },
+    { tag:"fr", zeit:"19:30 – 20:30", titel:"Funkenflug Band - Folk, Swing, Pop", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"fr", zeit:"Ganztags", titel:"Waldrallye · Spielewagen · Flying Fox", wer:"", wo:"", wen:["alle"] },
     // Samstag
-    { tag:"sa", zeit:"07:30 – 08:15", titel:"Yoga", wer:"", wo:"Zirkuszelt", wen:["erwachsene"] },
+    { tag:"sa", zeit:"07:30 – 08:15", titel:"Yoga am Morgen", wo:"Zirkuszelt", wen:["erwachsene"] },
     { tag:"sa", zeit:"07:45 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
     { tag:"sa", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"sa", zeit:"09:45 – 10:30", titel:"Probe Clanzeit", wer:"", wo:"Treff Zirkuszelt", wen:["alle"] },
     { tag:"sa", zeit:"10:30 – 11:00", titel:"Kids Singen, Tanzen, Bewegen", wer:"Amelie", wo:"Zirkuszelt", wen:["kinder_0_4"] },
     { tag:"sa", zeit:"10:30 – 12:30", titel:"Schnitzen (Schnitzführerschein)", wer:"Andreas", wo:"Wundazelt", wen:["kinder_ab_5"] },
-    { tag:"sa", zeit:"10:30 – 12:00", titel:"Wetterkunde", wer:"Laurenz", wo:"Yogaraum", wen:["erwachsene"] },
+    { tag:"sa", zeit:"10:30 – 12:00", titel:"Wetterkunde", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"sa", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"sa", zeit:"14:00 – 14:30", titel:"Clown Malab Show", wer:"Clown Malab", wo:"Zirkuszelt", wen:["alle"], web:"artistik-calimbaro.de", insta:"@artistik_calimbaro" },
     { tag:"sa", zeit:"14:30 – 15:00", titel:"Clan Show", wer:"", wo:"Zirkuszelt", wen:["alle"] },
@@ -171,11 +171,17 @@ const WUNDA = {
     { tag:"di", zeit:"ganztags", titel:"Waldrallye - Spielewagen - Flying Fox", wo:"", wen:["alle"] },
     // Samstag
     { tag:"sa", zeit:"Ganztags", titel:"Waldrallye - Spielewagen - Flying Fox", wo:"", wen:["alle"] },
-    // Dienstag
-    { tag:"di", zeit:"08:00 - 11:00", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
     // Mittwoch
+    { tag:"mi", zeit:"08:00 - 11:00", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
     { tag:"mi", zeit:"19:00 - 21:30", titel:"Unsere Bar hat geöffnet!", wo:"", wen:["alle"] },
     { tag:"mi", zeit:"14:00 - 17:00", titel:"Unsere Bar hat geöffnet!", wo:"", wen:["alle"] },
+    // Donnerstag
+    { tag:"do", zeit:"08:00 - 11:00", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
+    { tag:"do", zeit:"16:00 -18:00", titel:"Unsere Bar hat geöffnet!", wo:"", wen:["alle"] },
+    // Freitag
+    { tag:"fr", zeit:"08:00 - 11:00", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
+    { tag:"fr", zeit:"14:00 - 17:00", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
+    { tag:"fr", zeit:"19:00 - 22:00", titel:"Unsere Bar hat geöffnet!", wo:"", wen:["alle"] },
   ],
 
   katalog: {
@@ -275,7 +281,7 @@ const WUNDA = {
     Frauenkreis: {
       wer: "Fabienne (Gemeinschaft Sulzbrunn)",
       foto: "frauenkreis.png",
-      beschreibung: "Frau und Natur – Zyklisches Sein, Verbundenheit und innere Jahreszeiten\nDie Natur lebt in Rhythmen. Sie kennt Zeiten des Wachsens und Blühens ebenso wie Zeiten des Rückzugs und der Regeneration. Auch wir Frauen bewegen uns durch innere Jahreszeiten – Phasen der Fülle, der Wandlung, des Loslassens und des Neubeginns. Oft vergessen wir im Alltag, wie natürlich und kraftvoll dieses zyklische Sein ist.\nIn diesem Frauenkreis erforschen wir die Verbindung zwischen der Natur und unserer eigenen inneren Landschaft. Durch achtsame Körperübungen, Reflexion, Austausch sowie kleine Rituale lassen wir uns von den Qualitäten der Jahreszeiten inspirieren und lauschen den Rhythmen, die in uns wirken.\nGemeinsam schaffen wir einen Raum, um langsamer zu werden, zu spüren und uns mit dem zu verbinden, was gerade lebendig ist. Eine Einladung, der eigenen Natur näherzukommen und die Schönheit des Wandels neu zu entdecken.\n \nIch bin Fabienne.\nEine naturverbundene Abenteurerin, die das Kind in sich noch nicht vergessen hat. Neben dem Kind in mir finden meine Wurzeln immer mehr ihren Weg und schenken mir Ruhe in meinem Leben, um daraus wundervolle Schätze entstehen lassen zu können.\nMein Wunsch ist es, Menschen auf ihrem natürlichen Weg zu begleiten und zu inspirieren und sie dort abzuholen, wo sie in ihrem Leben stehen. Ich möchte gemeinsam Schritte gehen – eingebunden in eine Gemeinschaft, die uns Menschen und die Natur gleichermaßen umfasst. In den von mir gestalteten Räumen begegnen wir uns selbst, dem anderen, der Natur und erfahren uns als Ganzes in einem lebendigen Beziehungsgeflecht mit dem Leben.  \nSo gestaltet sich auch mein Sein im Naturkindergarten und der Wildnispädagogik - ursprünglich, verbunden und bindungsorientiert. Ich liebe es am Feuer zusammen zu kommen, zu singen und in ehrlicher und authentischer Begegnung zu sein. Neben und innerhalb der Naturarbeit weitet sich mein Wirken in Räume die geprägt sind von Beziehung, Sinnlichkeit, Tanz und  wahrhaftiger Kommunikation.",
+      beschreibung: "Erster Kreis:\nFrau und Natur – Zyklisches Sein, Verbundenheit und innere Jahreszeiten\nDie Natur lebt in Rhythmen. Sie kennt Zeiten des Wachsens und Blühens ebenso wie Zeiten des Rückzugs und der Regeneration. Auch wir Frauen bewegen uns durch innere Jahreszeiten – Phasen der Fülle, der Wandlung, des Loslassens und des Neubeginns. Oft vergessen wir im Alltag, wie natürlich und kraftvoll dieses zyklische Sein ist.\nIn diesem Frauenkreis erforschen wir die Verbindung zwischen der Natur und unserer eigenen inneren Landschaft. Durch achtsame Körperübungen, Reflexion, Austausch sowie kleine Rituale lassen wir uns von den Qualitäten der Jahreszeiten inspirieren und lauschen den Rhythmen, die in uns wirken.\nGemeinsam schaffen wir einen Raum, um langsamer zu werden, zu spüren und uns mit dem zu verbinden, was gerade lebendig ist. Eine Einladung, der eigenen Natur näherzukommen und die Schönheit des Wandels neu zu entdecken.\n \nZweiter Kreis:\nWeibliche Lebendigkeit – Sinnlichkeit, Präsenz und Lebensenergie\nIn jeder Frau lebt eine natürliche Quelle von Lebendigkeit, Sinnlichkeit und schöpferischer Kraft. Manchmal fließt sie frei, manchmal gerät sie im Trubel des Alltags in den Hintergrund. Dieser Frauenkreis lädt dazu ein, wieder mehr in Kontakt mit dem eigenen Körper, den Sinnen und der eigenen Lebensenergie zu kommen.\nDurch Embodiment, Atem, Bewegung sowie Begegnungs- und Wahrnehmungsübungen erforschen wir, was uns lebendig macht und wie wir uns selbst tiefer begegnen können. Inspiriert von tantrischen Grundprinzipien wie Präsenz, Bewusstheit und Verkörperung richten wir unsere Aufmerksamkeit auf das unmittelbare Erleben – auf das, was im Moment spürbar ist.\nEin Raum für authentische Begegnung mit dir selbst und anderen und die Freude daran, ganz im eigenen Körper anzukommen. Eine Einladung, der eigenen Lebendigkeit mit Offenheit, Neugier und Wertschätzung zu begegnen.\n\nIch bin Fabienne.\nEine naturverbundene Abenteurerin, die das Kind in sich noch nicht vergessen hat. Neben dem Kind in mir finden meine Wurzeln immer mehr ihren Weg und schenken mir Ruhe in meinem Leben, um daraus wundervolle Schätze entstehen lassen zu können.\nMein Wunsch ist es, Menschen auf ihrem natürlichen Weg zu begleiten und zu inspirieren und sie dort abzuholen, wo sie in ihrem Leben stehen. Ich möchte gemeinsam Schritte gehen – eingebunden in eine Gemeinschaft, die uns Menschen und die Natur gleichermaßen umfasst. In den von mir gestalteten Räumen begegnen wir uns selbst, dem anderen, der Natur und erfahren uns als Ganzes in einem lebendigen Beziehungsgeflecht mit dem Leben.  \nSo gestaltet sich auch mein Sein im Naturkindergarten und der Wildnispädagogik - ursprünglich, verbunden und bindungsorientiert. Ich liebe es am Feuer zusammen zu kommen, zu singen und in ehrlicher und authentischer Begegnung zu sein. Neben und innerhalb der Naturarbeit weitet sich mein Wirken in Räume die geprägt sind von Beziehung, Sinnlichkeit, Tanz und  wahrhaftiger Kommunikation.",
     },
     "Kinderband 'Die leicht verschwitzten Zwerge'": {
       foto: "zwergig.png",
@@ -411,7 +417,7 @@ const WUNDA = {
     Wetterkunde: {
       wer: "Laurenz (Wildnis- & Erlebnispädagoge)",
       foto: "wetterkunde.png",
-      beschreibung: "Grundkurs Wetterkunde – Natur lesen lernen: Wolkenbilder, Windveränderungen und typische Wetterlagen werden verständlich erklärt. Ein sicherer Einstieg, um zu verstehen, was Wolken, Wind und Atmosphäre über kommendes Wetter verraten.",
+      beschreibung: "Grundkurs Wetterkunde – Natur lesen lernen\nWetter ist ständig in Bewegung – sichtbar, spürbar und voller Hinweise, die die Natur selbst gibt. In diesem Grundkurs werden die Grundlagen der Wetterkunde vermittelt und der Blick geschärft für das, was Wolken, Wind und Atmosphäre über kommende Entwicklungen verraten.\nIm Mittelpunkt steht das Lesen erster Wetterzeichen: Wolkenbilder, Windveränderungen und typische Wetterlagen werden verständlich erklärt und praktisch eingeordnet.\nZiel ist ein sicherer Einstieg in das Verständnis von Wetter – für mehr Klarheit, Orientierung und Vertrauen draußen in der Natur\n\nHallo, mein Name ist Laurenz Verweyen. \nDie vier Elemente sind ein roter Faden in meinem Leben. Ob in den Bergen, auf dem Wasser, in der Luft oder am Feuer – als Wildnispädagoge und leidenschaftlicher Natursportler durfte ich jedem von ihnen auf besondere Weise begegnen. Diese Erfahrungen haben meinen Blick auf die Natur geprägt und wecken immer wieder die Freude, draußen zu lernen, zu staunen und Wissen weiterzugeben. Ich freue mich darauf, euch auf dem Festival zu begegnen!",
     },
     "Clown Malab Show": {
       wer: "Clown Malab",
@@ -479,7 +485,7 @@ const WUNDA = {
       insta: "@artistik_calimbaro",
     },
     "Yoga am Morgen": {
-      wer: "Amelie Zech (Stimmtherapeutin & Yogalehrerin)",
+      wer: "Amelie (Stimmtherapeutin & Yogalehrerin)",
       beschreibung: "Beim Yoga am Morgen mobilisieren wir den ganzen Körper, entspannen und lassen die Gedanken los – kraftvoll und entspannt in den Wundaplunda-Tag mit Amelie Zech.",
       foto: "yoga.png",
       web: "akademie-rueckenwind.de",
@@ -524,6 +530,22 @@ const WUNDA = {
       foto: "tribubu.png",
       web: "tribubu.com",
       insta: "@tribubumusic",
+    },
+    "Vorlese- & Mitmachgeschichte: Das schrecklichste Monster der Welt": {
+      wer: "Amelie",
+      beschreibung: "Das schrecklichste Monster der Welt\n\nKreative Vorlese- und Mitmachstunde nach dem Bilderbuch von Hans-Christian Schmidt und Andreas Német\n\nDas schrecklichste Monster der Welt versucht mit Grimassen, wilden Verkleidungen und der Hilfe anderer Monster, allen Kindern Angst einzujagen. Doch die Kinder lassen sich nicht so leicht erschrecken. Gemeinsam begleiten wir das Monster durch seine verrückten Versuche und werden selbst zu mutigen Heldinnen und Helden der Geschichte. Am Ende zeigt sich: Manchmal sind die Dinge, vor denen wir uns fürchten, gar nicht so schrecklich, wie sie aussehen. Das Besondere an diesem Bilderbuch ist, dass die Kinder aktiv Teil der Handlung werden und das Monster schließlich selbst in die Flucht schlagen.",
+      web: "akademie-rueckenwind.de",
+      insta: "@akademie_rueckenwind",
+    },
+    "Open Space - Gestalte das Programm mit!": {
+      beschreibung: "Open Space – Gestalte das Programm mit!\n\nEin **Open Space** ist ein offenes Format, bei dem alle Teilnehmenden die Möglichkeit haben, selbst ein Thema, einen Workshop, eine Diskussionsrunde oder eine andere Aktivität anzubieten. So entsteht ein abwechslungsreiches Programm, das von den Ideen und Interessen der Gruppe lebt.\n\nWenn du etwas anbieten möchtest, trage dich bitte bis Donnerstag, 18:00 Uhr, in die Liste an der Bar ein - wir hängen diese aus! Gib dabei möglichst kurz an, was du anbieten möchtest.\n\nAnschließend schauen wir uns alle eingegangenen Angebote an, planen sie ein und veröffentlichen sie im Programm.\n\nWir freuen uns auf eure Ideen und eure Beiträge!",
+      foto: "open-space-gestalte-das-programm-mit-mrjgf96w.jpg",
+    },
+    "Funkenflug Band - Folk, Swing, Pop": {
+      beschreibung: "Die Münchner Band Funkenflug bringt mit ihrem Album „Durch die Blume“ das Gefühl eines ewigen Sommerabends auf die Bühne – eine lebendige Mischung aus Folk, Swing und Pop mit Gitarre, Geige, Kontrabass und mehrstimmigem Gesang.",
+      foto: "funkenflug.png",
+      web: "funkenflugmusik.de",
+      insta: "@funkenflugmusik",
     },
   },
 
