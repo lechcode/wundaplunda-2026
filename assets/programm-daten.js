@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "13.07.2026, 19:51 Uhr",
+    stand: "13.07.2026, 19:56 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -122,7 +122,7 @@ const WUNDA = {
     { tag:"do", zeit:"14:00 – 16:00", titel:"Kuchen Pappelkinder & Hoflädle", wer:"", wo:"Dorfplatz", wen:["alle"] },
     { tag:"do", zeit:"15:00 – 16:00", titel:"Singen – Jodruf Sulzbrunn", wer:"Rolf & Margaretha", wo:"Dorfplatz", wen:["alle"] },
     { tag:"do", zeit:"15:30 – 17:30", titel:"Frauenkreis", wo:"Yogaraum", wen:["erwachsene"] },
-    { tag:"do", zeit:"15:30 – 17:30", titel:"Schnitzen (Schnitzführerschein)", wer:"Andreas", wo:"Wundazelt", wen:["kinder_ab_5"] },
+    { tag:"do", zeit:"15:30 – 17:30", titel:"Kleine Schnitzereien auch für Große", wo:"Wundazelt", wen:["kinder_ab_5"], anmeldung:"begrenzt" },
     { tag:"do", zeit:"15:30 – 17:30", titel:"ContaKids - Bewegung, Spiel & Verbindung", wo:"", wen:["kinder_0_4"] },
     { tag:"do", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"do", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
@@ -380,12 +380,12 @@ const WUNDA = {
       beschreibung: "Bewusst wachsen als Familie - vom ICH zum WIR\n\nDeine innere Haltung und deine Werte prägen dein Sein und dein Handeln – und damit das Miteinander in deiner Familie.\nWas du in dir veränderst, wirkt nach außen und kann euer Familienleben nachhaltig wandeln.\n\nWir geben 2 Workshops auf dem Wundaplunda und laden ein, beide in Kombination zu besuchen und auch unabhängig voneinander.\n\nDie Workshops bieten Raum für Entwicklung und persönliches Wachstum – für dich als Mensch und damit für deine Beziehungen in der Familie. Es geht darum in die Themenfelder hinein zu spüren, sie zu bewegen und zu erLEBen.\n\nDie Workshop- Begleiterinnen sind Anouk und Regina – die Initiatorinnen von erLEBes Familie.\nGemeinsam öffnen wir Räume für Eltern und Familien, die sich entwickeln und ihr Bewusstsein erweitern wollen, um ihr Familienleben authentischer, klarer und friedvoller\ngestalten zu können.\n\nerLEBes Workshop 2: Vom ICH zum WIR – Beziehung in Familie leben\nWie wirkt meine innere Welt auf meine Beziehungen in der Familie?\nWie kann ich Verbindung im Alltag bewusst gestalten?\nIn diesem Teil geht es um unsere Begegnungen im Familienalltag und darum, wie ich das\nWIR in meiner Familie lebe. Wir bewegen im Gespräch und auf spielerische Weise die\nThemen Persönliche Sprache, Kommunikation und Bedürfnisse im Familiensystem.",
     },
     "Schnitzen (Schnitzführerschein)": {
-      wer: "Andreas Eckl (Natur-, Umwelt- & Erlebnispädagoge)",
+      wer: "Andreas",
       foto: "schnitzen.png",
       mitbringen: "Schnitzmesser (kann vor Ort ausgeliehen werden), wetterfeste Kleidung, geschlossene Schuhe, lange Hose",
       hinweis: "Kinder ab 8 Jahren, jüngere nur mit Begleitperson · max. 16 Kinder",
       web: "naturnase.de/referenten.html",
-      beschreibung: "Im Outdoor-Schnitzkurs lernt ihr den sicheren Umgang mit dem Taschen- oder Kinderschnitzmesser und schnitzt eigene kleine Kreationen aus Frischholz. Zum Abschluss gibt's den „Messerführer:innenschein“.",
+      beschreibung: "Kleine Schnitzereien auch für Große\n\nKurs für Kinder ab 8 Jahren, jüngere bitte mit Begleitperson\nIn diesem Outdoor-Schnitzkurs lernt ihr den sicheren Umgang und Techniken mit dem eigenen Taschenmesser oder Kinderschnitzmesser.\nIhr schnitzt phantasievolle eigene Kreationen, kleine Perlen und andere Ideen aus Frischholz.\n \nVorkenntnisse sind nicht nötig, die Kinder erlernen den richtigen Umgang mit dem Messer.\nZum Abschluss erhaltet Ihr einen „Messerführer*innenschein“\n \nBitte mitbringen: \nSchnitzmesser können vor Ort ausgeliehen werden, eigene Taschenmesser oder (Kinder-)Schnitzmesser dürfen gerne mitgebracht werden\nWetterfeste Kleidung, die auch schmutzig werden darf, geschlossene Schuhe und lange Hose\n \nMax. 16 Kinder.\n \nAndreas Eckl\nJahrgang 1965\nNatur- & Umwelt- & Erlebnispädagoge\n„Hab Geduld, alle Dinge sind schwierig, bevor sie einfach werden.“",
     },
     "Contact Kids": {
       wer: "Natalie Zeitler",
@@ -604,6 +604,12 @@ const WUNDA = {
       wer: "Natalie Zeitler",
       beschreibung: "Ich bin Natalie, Mutter eines vierjährigen Sohnes aus München. Nach der Babyzeit habe ich durch Contact Improvisation wieder Freude an Bewegung und einen neuen Zugang zu meinem Körper gefunden. Daraus entstand der Wunsch, den spielerischen körperlichen Austausch auch im Miteinander mit meinem Kind zu\nvertiefen – so bin ich zur ContaKids Ausbildung gekommen.\n\nIn meinem Workshop lade ich Eltern und Kinder ein, sich über Bewegung neu zu begegnen. Wir rollen, tragen, balancieren und forschen gemeinsam – mal wild, mal achtsam. Es entsteht ein Raum für Vertrauen, Nähe und Leichtigkeit jenseits\nvon Worten. Im Mittelpunkt steht nicht das „richtig machen“, sondern das gemeinsame Erleben und die Freude an Kontakt und Bewegung.",
       foto: "contakids.jpg",
+    },
+    "Kleine Schnitzereien auch für Große": {
+      wer: "Andreas",
+      beschreibung: "Kleine Schnitzereien auch für Große\n\nKurs für Kinder ab 8 Jahren, jüngere bitte mit Begleitperson\nIn diesem Outdoor-Schnitzkurs lernt ihr den sicheren Umgang und Techniken mit dem eigenen Taschenmesser oder Kinderschnitzmesser.\nIhr schnitzt phantasievolle eigene Kreationen, kleine Perlen und andere Ideen aus Frischholz.\n \nVorkenntnisse sind nicht nötig, die Kinder erlernen den richtigen Umgang mit dem Messer.\nZum Abschluss erhaltet Ihr einen „Messerführer*innenschein“\n \nBitte mitbringen: \nSchnitzmesser können vor Ort ausgeliehen werden, eigene Taschenmesser oder (Kinder-)Schnitzmesser dürfen gerne mitgebracht werden\nWetterfeste Kleidung, die auch schmutzig werden darf, geschlossene Schuhe und lange Hose\n \nMax. 16 Kinder.\n \nAndreas Eckl\nJahrgang 1965\nNatur- & Umwelt- & Erlebnispädagoge\n„Hab Geduld, alle Dinge sind schwierig, bevor sie einfach werden.“",
+      foto: "schnitzen.png",
+      web: "naturnase.de/referenten.html",
     },
   },
 
