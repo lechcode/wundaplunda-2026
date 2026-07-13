@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "13.07.2026, 19:08 Uhr",
+    stand: "13.07.2026, 19:30 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -117,7 +117,7 @@ const WUNDA = {
     { tag:"do", zeit:"09:45 – 10:30", titel:"Clanzeit", wer:"", wo:"Treff Zirkuszelt", wen:["alle"] },
     { tag:"do", zeit:"ab 10:30", titel:"Weiden-Zauberstäbe", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"do", zeit:"10:30 – 12:30", titel:"5 Minuten Feuer & Wilde Küche", wo:"Kinderjurte", wen:["alle"] },
-    { tag:"do", zeit:"10:30 – 12:30", titel:"Vortrag LAVI – erleb es", wer:"", wo:"Yogaraum", wen:["erwachsene"] },
+    { tag:"do", zeit:"10:30 – 12:30", titel:"Mein ICH - mein SelbstWert - mein Wert in der Familie", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"do", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"do", zeit:"14:00 – 16:00", titel:"Kuchen Pappelkinder & Hoflädle", wer:"", wo:"Dorfplatz", wen:["alle"] },
     { tag:"do", zeit:"15:00 – 16:00", titel:"Singen – Jodruf Sulzbrunn", wer:"Rolf & Margaretha", wo:"Dorfplatz", wen:["alle"] },
@@ -138,7 +138,7 @@ const WUNDA = {
     // Mittwoch
     { tag:"mi", zeit:"10:30 – 12:30", titel:"Ton brennen & Lehmgeister", wo:"Feuerstelle", wen:["kinder_0_4","kinder_ab_5"] },
     // Freitag
-    { tag:"fr", zeit:"10:30 – 12:30", titel:"Vortrag LAVI – erleb es", wer:"", wo:"Yogaraum", wen:["erwachsene"] },
+    { tag:"fr", zeit:"10:30 – 12:30", titel:"Vom ICH zum WIR – Beziehung in Familie leben", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"fr", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Bogenbau", wer:"Laurenz", wo:"Wundazelt", wen:["alle"] },
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Baumklettern", wer:"Stefan", wo:"Treffpunkt Zirkuszelt", wen:["kinder_ab_5"] },
@@ -374,7 +374,7 @@ const WUNDA = {
       wer: "Anouk & Regina (erLEBes Familie)",
       foto: "lavi.png",
       web: "lavi-schule.de/Wer-wir-sind",
-      beschreibung: "erLEBes Familie öffnet Räume für Eltern und Familien: Wie wirkt meine innere Welt auf meine Beziehungen? Wie gestalte ich Verbindung im Familienalltag bewusst? Ein Impuls rund um Kommunikation, Bedürfnisse und das WIR in der Familie.",
+      beschreibung: "Bewusst wachsen als Familie - vom ICH zum WIR\n\nDeine innere Haltung und deine Werte prägen dein Sein und dein Handeln – und damit das Miteinander in deiner Familie.\nWas du in dir veränderst, wirkt nach außen und kann euer Familienleben nachhaltig wandeln.\n\nWir geben 2 Workshops auf dem Wundaplunda und laden ein, beide in Kombination zu besuchen und auch unabhängig voneinander.\n\nDie Workshops bieten Raum für Entwicklung und persönliches Wachstum – für dich als Mensch und damit für deine Beziehungen in der Familie. Es geht darum in die Themenfelder hinein zu spüren, sie zu bewegen und zu erLEBen.\n\nDie Workshop- Begleiterinnen sind Anouk und Regina – die Initiatorinnen von erLEBes Familie.\nGemeinsam öffnen wir Räume für Eltern und Familien, die sich entwickeln und ihr Bewusstsein erweitern wollen, um ihr Familienleben authentischer, klarer und friedvoller\ngestalten zu können.\n\nerLEBes Workshop 2: Vom ICH zum WIR – Beziehung in Familie leben\nWie wirkt meine innere Welt auf meine Beziehungen in der Familie?\nWie kann ich Verbindung im Alltag bewusst gestalten?\nIn diesem Teil geht es um unsere Begegnungen im Familienalltag und darum, wie ich das\nWIR in meiner Familie lebe. Wir bewegen im Gespräch und auf spielerische Weise die\nThemen Persönliche Sprache, Kommunikation und Bedürfnisse im Familiensystem.",
     },
     "Schnitzen (Schnitzführerschein)": {
       wer: "Andreas Eckl (Natur-, Umwelt- & Erlebnispädagoge)",
@@ -564,6 +564,18 @@ const WUNDA = {
     Schmuckworkshop: {
       wer: "Gabriele",
       beschreibung: "Mein Name ist Gabriele Nikol und ich wohne im schönen oberfränkischen Forchheim. Seit einiger Zeit habe ich eine große Leidenschaft entdeckt: \ndas Herstellen von Halsketten, Armbändern und Ringen – ganz ohne formale  Ausbildung, als Autodidaktin. Dabei liebe ich es, mit den \nunterschiedlichsten Materialien zu experimentieren. Ob Perlen, \nEdelsteine, Baumperlen, Schmuckdraht oder außergewöhnliche Fundstücke, jede Kreation erzählt ihre eigene kleine Geschichte.\n\nDas Gestalten dieser Schmuckstücke bereitet mir nicht nur Freude, \nsondern erfüllt mich auch mit Stolz, wenn ich sehe, wie aus einfachen  Materialien etwas Einzigartiges entsteht. Beim Wundaplunda-Sommererlebnis möchte ich diese Begeisterung gerne weitergeben. Es ist mir ein \nHerzenswunsch, meine Erfahrungen und Techniken mit anderen zu teilen und gemeinsam kreativ zu sein.\n\nLasst uns zusammen in die faszinierende Welt des Schmuckdesigns eintauchen und unvergessliche Momente beim Wundaplunda erleben!",
+    },
+    "Mein ICH - mein SelbstWert - mein Wert in der Familie": {
+      wer: "Anouk & Regina (erLEBes Familie)",
+      beschreibung: "Bewusst wachsen als Familie - vom ICH zum WIR\n\nDeine innere Haltung und deine Werte prägen dein Sein und dein Handeln – und damit das Miteinander in deiner Familie.\nWas du in dir veränderst, wirkt nach außen und kann euer Familienleben nachhaltig wandeln.\n\nWir geben 2 Workshops auf dem Wundaplunda und laden ein, beide in Kombination zu besuchen und auch unabhängig voneinander.\nDie Workshops bieten Raum für Entwicklung und persönliches Wachstum – für dich als Mensch und damit für deine Beziehungen in der Familie. Es geht darum in die Themenfelder hinein zu spüren, sie zu bewegen und zu erLEBen.\n\nDie Workshop- Begleiterinnen sind\nAnouk und Regina – die Initiatorinnen von erLEBes Familie.\nGemeinsam öffnen wir Räume für Eltern und Familien, die sich entwickeln und ihr Bewusstsein erweitern wollen, um ihr Familienleben authentischer, klarer und friedvoller\ngestalten zu können.\n\nerLEBes Workshop 1: Mein ICH - mein SelbstWert - mein Wert in der Familie\nWie sieht meine innere Welt aus? Wie bewusst bin ich mir meiner Selbst und meinen\nAnteilen, meinen lichten und meinen dunklen Seiten?\nWas bedeutet für mich Selbstwert und was ist der kleine, sehr feine Unterschied zum\nSelbstvertrauen?\nWelche Gedanken & Gefühle begleiten mich zu diesem Thema?\nWie kann ich hier mein Bewusstsein erweitern & positiv auf mein Familienleben wirken?\nWir öffnen gemeinsam den Raum nach Innen - um ein tieferes Verständnis für uns selbst\nund unseren Wert als Mensch & Elternteil zu entwickeln\nerLEBes Workshop 2: Vom ICH zum WIR – Beziehung in Familie leben\nWie wirkt meine innere Welt auf meine Beziehungen in der Familie?\nWie kann ich Verbindung im Alltag bewusst gestalten?\nIn diesem Teil geht es um unsere Begegnungen im Familienalltag und darum, wie ich das\nWIR in meiner Familie lebe. Wir bewegen im Gespräch und auf spielerische Weise die\nThemen Persönliche Sprache, Kommunikation und Bedürfnisse im Familiensystem.",
+      foto: "lavi.png",
+      web: "lavi-schule.de/Wer-wir-sind",
+    },
+    "Vom ICH zum WIR – Beziehung in Familie leben": {
+      wer: "Anouk & Regina (erLEBes Familie)",
+      beschreibung: "Bewusst wachsen als Familie - vom ICH zum WIR\n\nDeine innere Haltung und deine Werte prägen dein Sein und dein Handeln – und damit das Miteinander in deiner Familie.\nWas du in dir veränderst, wirkt nach außen und kann euer Familienleben nachhaltig wandeln.\n\nWir geben 2 Workshops auf dem Wundaplunda und laden ein, beide in Kombination zu besuchen und auch unabhängig voneinander.\n\nDie Workshops bieten Raum für Entwicklung und persönliches Wachstum – für dich als Mensch und damit für deine Beziehungen in der Familie. Es geht darum in die Themenfelder hinein zu spüren, sie zu bewegen und zu erLEBen.\n\nDie Workshop- Begleiterinnen sind Anouk und Regina – die Initiatorinnen von erLEBes Familie.\nGemeinsam öffnen wir Räume für Eltern und Familien, die sich entwickeln und ihr Bewusstsein erweitern wollen, um ihr Familienleben authentischer, klarer und friedvoller\ngestalten zu können.\n\nerLEBes Workshop 2: Vom ICH zum WIR – Beziehung in Familie leben\nWie wirkt meine innere Welt auf meine Beziehungen in der Familie?\nWie kann ich Verbindung im Alltag bewusst gestalten?\nIn diesem Teil geht es um unsere Begegnungen im Familienalltag und darum, wie ich das\nWIR in meiner Familie lebe. Wir bewegen im Gespräch und auf spielerische Weise die\nThemen Persönliche Sprache, Kommunikation und Bedürfnisse im Familiensystem.",
+      foto: "lavi.png",
+      web: "lavi-schule.de/Wer-wir-sind",
     },
   },
 
