@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "13.07.2026, 19:01 Uhr",
+    stand: "13.07.2026, 19:08 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -97,14 +97,14 @@ const WUNDA = {
     // Freitag
     { tag:"fr", zeit:"10:30 – 12:30", titel:"Schlangen & Zauberei filzen", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     // Mittwoch
-    { tag:"mi", zeit:"10:30 – 12:30", titel:"Slackline Workshop", wer:"Daniel", wo:"Treffpunkt Zirkuszelt", wen:["alle"] },
+    { tag:"mi", zeit:"10:30 – 12:30", titel:"Slackline Workshop", wo:"Treffpunkt Zirkuszelt", wen:["kinder_ab_5"] },
     { tag:"mi", zeit:"10:30 – 12:30", titel:"Wahrnehmungs- / Sinnesübungen in der Natur", wer:"", wo:"Treffpunkt Kinderjurte", wen:["erwachsene"] },
     { tag:"mi", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"mi", zeit:"14:00 – 16:00", titel:"Bogenbau", wo:"Wundazelt", wen:["alle"] },
-    { tag:"mi", zeit:"14:00 – 16:00", titel:"Baumklettern", wer:"Stefan", wo:"Treffpunkt Zirkuszelt", wen:["kinder_ab_5"] },
+    { tag:"mi", zeit:"14:00 – 16:00", titel:"Baumklettern", wo:"Treffpunkt Zirkuszelt", wen:["kinder_ab_5"] },
     { tag:"mi", zeit:"15:00 – 16:00", titel:"Eltern-Kind-Akrobatik", wer:"Susanne", wo:"Turnhalle", wen:["kinder_0_4"] },
-    { tag:"mi", zeit:"15:00 – 16:00", titel:"Clownspiele", wer:"Florian", wo:"Yogaraum", wen:["kinder_ab_5"], anmeldung:"begrenzt" },
-    { tag:"mi", zeit:"16:00 – 17:30", titel:"Schmuckworkshop", wer:"Gabriele", wo:"Kinderjurte", wen:["erwachsene"], anmeldung:"begrenzt" },
+    { tag:"mi", zeit:"15:00 – 16:00", titel:"Clownspiele", wo:"Yogaraum", wen:["kinder_ab_5"], anmeldung:"begrenzt" },
+    { tag:"mi", zeit:"16:00 – 17:30", titel:"Schmuckworkshop", wo:"Kinderjurte", wen:["erwachsene"], anmeldung:"begrenzt" },
     { tag:"mi", zeit:"16:30 – 17:30", titel:"Hirnhopsen für Alle", wer:"Florian", wo:"Turnhalle", wen:["alle"] },
     { tag:"mi", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"mi", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
@@ -115,8 +115,8 @@ const WUNDA = {
     { tag:"do", zeit:"07:45 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
     { tag:"do", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"do", zeit:"09:45 – 10:30", titel:"Clanzeit", wer:"", wo:"Treff Zirkuszelt", wen:["alle"] },
-    { tag:"do", zeit:"ab 10:30", titel:"Weiden-Zauberstäbe", wer:"Tina", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
-    { tag:"do", zeit:"10:30 – 12:30", titel:"5 Minuten Feuer & Wilde Küche", wer:"", wo:"Kinderjurte", wen:["alle"] },
+    { tag:"do", zeit:"ab 10:30", titel:"Weiden-Zauberstäbe", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"do", zeit:"10:30 – 12:30", titel:"5 Minuten Feuer & Wilde Küche", wo:"Kinderjurte", wen:["alle"] },
     { tag:"do", zeit:"10:30 – 12:30", titel:"Vortrag LAVI – erleb es", wer:"", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"do", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"do", zeit:"14:00 – 16:00", titel:"Kuchen Pappelkinder & Hoflädle", wer:"", wo:"Dorfplatz", wen:["alle"] },
@@ -136,7 +136,7 @@ const WUNDA = {
     { tag:"fr", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"fr", zeit:"10:30 – 12:30", titel:"Baumpilze & Pilzpapier", wer:"", wo:"Wundazelt", wen:["alle"] },
     // Mittwoch
-    { tag:"mi", zeit:"10:30 – 12:30", titel:"Ton brennen & Lehmgeister", wo:"Feuerstelle", wen:["kinder_ab_5"] },
+    { tag:"mi", zeit:"10:30 – 12:30", titel:"Ton brennen & Lehmgeister", wo:"Feuerstelle", wen:["kinder_0_4","kinder_ab_5"] },
     // Freitag
     { tag:"fr", zeit:"10:30 – 12:30", titel:"Vortrag LAVI – erleb es", wer:"", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"fr", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
@@ -331,8 +331,8 @@ const WUNDA = {
     Baumklettern: {
       wer: "Stefan (Baumkletterer & Erlebnispädagoge)",
       foto: "baumklettern.png",
-      web: "new-institut.com/ueber-uns/team/stefan-lipp",
-      beschreibung: "Hoch hinaus, Äste unter den Händen und die Welt von oben sehen: Baumklettern ist Abenteuer pur. Jedes Kind, das möchte, darf sicher und begleitet von Stefan in die Baumwipfel.",
+      web: "https://stefanlipp.netlify.app/",
+      beschreibung: "Hoch hinaus, Äste unter den Händen und die Welt von oben sehen: Baumklettern ist Abenteuer pur. Jedes Kind, das möchte, darf sicher und begleitet von Stefan in die Baumwipfel.\n\nStefan Lipp - Lern Raum Gestaltung\n\nStefan kreiert gerne Räume, sowohl physisch als Bauwerk, als auch zum \nLernen und Erleben. Als Zimmermann und Sohn einer Sägewerksfamilie ist \ner mit dem Element Holz sehr verbunden. Und wenn er nicht gerade Holz \nbearbeitet, klettert er gerne Bäume hinauf. Das lässt ihn lebendig \nfühlen und weckt tief wurzelnde Kräfte. Dieses Erlebnis ermöglicht er \nauch gerne anderen Menschen, indem er sie beim Baumklettern begleitet.",
     },
     "Eltern-Kind-Akrobatik": {
       wer: "Susanne (Artistik Calimbaro)",
@@ -362,12 +362,13 @@ const WUNDA = {
     "Weiden-Zauberstäbe": {
       wer: "Tina (Naturgestalterin & Weidenflechterin)",
       foto: "weiden.png",
-      beschreibung: "Aus frischen Weidenruten gestalten wir wunderschöne Weidenzauberstäbe oder dekorative Weidenfische. Für Groß und Klein, ganz ohne Vorkenntnisse – kreative Kunst aus der Natur.",
+      beschreibung: "Aus frischen Weidenruten gestalten wir wunderschöne Weidenzauberstäbe oder dekorative Weidenfische. Für Groß und Klein, ganz ohne Vorkenntnisse – kreative Kunst aus der Natur.\n\nTina ist ausgebildete Weidenflechterin aus dem Allgäu!",
     },
     "5 Minuten Feuer & Wilde Küche": {
       wer: "Lena (Wildnispädagogin)",
       foto: "feuermachen.png",
-      beschreibung: "Groß und Klein lernen verschiedene Techniken des Feuermachens mit Magnesiumstab und Feuerstein. Wir entzünden ein Feuer, erfahren Wissenswertes über Zunder und bereiten anschließend eine einfache Leckerei über der Glut zu.",
+      beschreibung: "In diesem Familienworkshop lernen Groß und Klein verschiedene Techniken des Feuermachens mit Magnesiumstab und Feuerstein kennen. Gemeinsam entzünden wir ein Lagerfeuer, erfahren Wissenswertes über geegneten Zunder und Brennmaterialien und erleben, wie aus einem Funken eine Kochstelle entsteht. Anschließend bereitn wir eine einfache Leckerei über dem Feuer zu und genießen die besondere Atmosphäre der Feuerküche in der Natur.\n\nLena Maucher, Jahrgang 1986, langjährige Wildnispädagogin, lebt mit ihrer Familien im Allgäu. Ich liebe besonders das Draußen-unterwegs-sein und staune leidenschaftlich gerne über die Weisheit der Natur. Mich fasziniert das alte Wissen über das Leben in und mit der Wildnis sowie die Frage, wie wir innerhalb unserer modernen Welt wieder eine tiefere Verbindung zu unserer natürlichen Umwelt finden können.",
+      web: "www.wild-und-weiter.de",
     },
     "Vortrag LAVI – erleb es": {
       wer: "Anouk & Regina (erLEBes Familie)",
@@ -555,6 +556,14 @@ const WUNDA = {
     "Morgen-Workout – Kraftvoll in den Tag": {
       wer: "Matthias Zech",
       beschreibung: "Morgen-Workout – Kraftvoll in den Tag\nFür Erwachsene\nRaus aus dem Schlafmodus, rein in die Bewegung! Dieses Morgen-Workout bringt Puls, Muskeln und Motivation auf Touren. Mit einer abwechslungsreichen Mischung aus Ausdauer-, Kraft- und Koordinationsübungen starten wir aktiv und energiegeladen in den Tag.\nGemeinsam schwitzen, den Kreislauf ankurbeln und die eigene Stärke spüren – ganz ohne Leistungsdruck, aber mit Power. Der perfekte Start für alle, die wach werden wollen, bevor der Kaffee wirkt.\nDas Workout ist für unterschiedliche Fitnesslevel geeignet, da jede*r das eigene Tempo bestimmen kann.\nBitte bequeme Kleidung und etwas zu trinken mitbringen.\nFür Erwachsene.\n\nMatthias Zech\nMatthias ist Fachtrainer für Ausdauersport und selbst ambitionierter Sportler. Nebenberuflich begleitet er Athletinnen und Athleten auf dem Weg zu ihren sportlichen Zielen – vom ersten Wettkampf bis hin zur Triathlon-Langdistanz. Weitere Informationen unter: www.howtoathletic.de",
+    },
+    "Slackline Workshop": {
+      wer: "Daniel",
+      beschreibung: "Ich slackline seit fast 20 Jahre und liebe es, Menschen jeden Alters für das Balancieren zu begeistern. Für mich geht es dabei nicht nur um Sport, sondern auch um spielerische Bewegung, Konzentration und das Vertrauen in den eigenen Körper. In meinem Workshop steht Spaß an erster Stelle. Egal ob jemand zum ersten Mal auf der Line steht oder schon ein bisschen Erfahrung mitbringt. Ich freue mich darauf, gemeinsam mit Kindern und Eltern die Freude am Gleichgewicht zu entdeckem.",
+    },
+    Schmuckworkshop: {
+      wer: "Gabriele",
+      beschreibung: "Mein Name ist Gabriele Nikol und ich wohne im schönen oberfränkischen Forchheim. Seit einiger Zeit habe ich eine große Leidenschaft entdeckt: \ndas Herstellen von Halsketten, Armbändern und Ringen – ganz ohne formale  Ausbildung, als Autodidaktin. Dabei liebe ich es, mit den \nunterschiedlichsten Materialien zu experimentieren. Ob Perlen, \nEdelsteine, Baumperlen, Schmuckdraht oder außergewöhnliche Fundstücke, jede Kreation erzählt ihre eigene kleine Geschichte.\n\nDas Gestalten dieser Schmuckstücke bereitet mir nicht nur Freude, \nsondern erfüllt mich auch mit Stolz, wenn ich sehe, wie aus einfachen  Materialien etwas Einzigartiges entsteht. Beim Wundaplunda-Sommererlebnis möchte ich diese Begeisterung gerne weitergeben. Es ist mir ein \nHerzenswunsch, meine Erfahrungen und Techniken mit anderen zu teilen und gemeinsam kreativ zu sein.\n\nLasst uns zusammen in die faszinierende Welt des Schmuckdesigns eintauchen und unvergessliche Momente beim Wundaplunda erleben!",
     },
   },
 
