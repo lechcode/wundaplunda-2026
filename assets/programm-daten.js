@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "13.07.2026, 17:31 Uhr",
+    stand: "13.07.2026, 17:40 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -75,7 +75,7 @@ const WUNDA = {
     { tag:"di", zeit:"07:45 – 09:00", titel:"Frühstück", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
     { tag:"di", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"di", zeit:"09:45 – 10:30", titel:"Clanzeit", wer:"", wo:"Treff Zirkuszelt", wen:["alle"] },
-    { tag:"di", zeit:"ab 10:30", titel:"Pois basteln", wer:"Barbara & Patty", wo:"Kinderjurte", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"di", zeit:"10:30 - 11:30", titel:"Pois basteln", wo:"Kinderjurte", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"di", zeit:"10:30 – 12:30", titel:"Wir entdecken den Wald", wo:"Treff Zirkuszelt", wen:["alle"] },
     { tag:"di", zeit:"10:30 – 12:30", titel:"Knotenkunde & Tarpaufbau", wer:"", wo:"Wundazelt", wen:["erwachsene"] },
     { tag:"di", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
