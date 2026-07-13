@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "13.07.2026, 17:21 Uhr",
+    stand: "13.07.2026, 17:31 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -64,15 +64,15 @@ const WUNDA = {
     { tag:"mo", zeit:"14:30 – 16:00", titel:"Geländeführung", wo:"Treffpunkt Zirkuszelt", wen:["alle"] },
     { tag:"mo", zeit:"14:30 – 16:00", titel:"Bienenlehrgang für Groß und Klein", wo:"Kinderjurte", wen:["alle"] },
     { tag:"mo", zeit:"14:30 – 16:00", titel:"Seifenblasen", wer:"Patrick", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
-    { tag:"mo", zeit:"16:30 – 17:30", titel:"Impro Show Kids", wer:"", wo:"Zirkuszelt", wen:["alle"] },
-    { tag:"mo", zeit:"17:30 – 18:00", titel:"Kinderkreis mit Clown Malab", wer:"Clown Malab, Wundaplunda Team, Amelie", wo:"Zirkuszelt", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"mo", zeit:"16:30 – 17:30", titel:"EingangAusgang Impro-Theater", wo:"Zirkuszelt", wen:["alle"] },
+    { tag:"mo", zeit:"17:30 – 18:00", titel:"Kinderkreis mit Clown Malab", wo:"Zirkuszelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"mo", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"mo", zeit:"19:30 – 20:30", titel:"Jodruf Sulzbrunn", wer:"", wo:"Wundazelt", wen:["alle"] },
     { tag:"mo", zeit:"ab 20:30", titel:"Lagerfeuerabend", wer:"", wo:"Feuerstelle", wen:["alle"] },
     { tag:"mo", zeit:"Ganztags", titel:"Waldrallye · Spielewagen · Flying Fox", wer:"", wo:"", wen:["alle"] },
     // Dienstag
     { tag:"di", zeit:"07:30 – 08:15", titel:"Yoga", wer:"", wo:"Zirkuszelt", wen:["erwachsene"] },
-    { tag:"di", zeit:"07:45 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
+    { tag:"di", zeit:"07:45 – 09:00", titel:"Frühstück", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
     { tag:"di", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"di", zeit:"09:45 – 10:30", titel:"Clanzeit", wer:"", wo:"Treff Zirkuszelt", wen:["alle"] },
     { tag:"di", zeit:"ab 10:30", titel:"Pois basteln", wer:"Barbara & Patty", wo:"Kinderjurte", wen:["kinder_0_4","kinder_ab_5"] },
@@ -159,6 +159,8 @@ const WUNDA = {
     { tag:"sa", zeit:"14:30 – 15:00", titel:"Clan Show", wer:"", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"sa", zeit:"15:00 – 16:00", titel:"Gemeinsame Abschlusszeremonie", wer:"", wo:"Feuerstelle", wen:["alle"] },
     { tag:"sa", zeit:"16:00", titel:"Abreise / Ende des Camps", wer:"", wo:"", wen:["alle"] },
+    // Dienstag
+    { tag:"di", zeit:"14:00 - 16:00", titel:"Sulzbrunner Markt", wo:"Dorfplatz", wen:["alle"] },
   ],
 
   katalog: {
@@ -180,6 +182,7 @@ const WUNDA = {
     "Kinderkreis mit Clown Malab": {
       foto: "kinderkreis.png",
       beschreibung: "Während die Großen ihren Frauen- und Männerkreis haben, schaffen wir für die Kinder einen eigenen Raum zum Ankommen: Wir finden heraus, worauf ihr euch am meisten freut, und lernen erste neue Freund:innen kennen. Dieses Jahr mit Überraschungsgast mit roter Nase – Clown Malab!",
+      wer: "Clown Malab, Carmen vom Wundaplunda Team, Amelie",
     },
     "Jodruf Sulzbrunn": {
       wer: "Rolf & Margaretha (Gemeinschaft Sulzbrunn)",
@@ -418,6 +421,19 @@ const WUNDA = {
       wer: "Wundaplunda Team",
       foto: "eroeffnung-mrjd0hzc.jpg",
       beschreibung: "Wir freuen uns riesig, gemeinsam mit euch in diese wunda-schöne Woche zu starten!\n\nWir sind Fabienne, Carmen und Oliver – das Wundaplunda-Team und laden euch ein, den Alltag hinter euch zu lassen und ganz hier bei uns anzukommen.\nEs wäre toll, wenn möglichst alle dabei sind, denn dieser gemeinsame Auftakt ist für uns ein ganz besonderer Moment. Wir freuen uns auf euch!",
+    },
+    "EingangAusgang Impro-Theater": {
+      wer: "EingangAusgang Impro-Theater",
+      beschreibung: "Kommt mit auf eine fantastische Heldenreise! Beim Improvisations-Theater bestimmt ihr, das Publikum, was passiert – eure Ideen verwandeln sich live auf der Bühne in eine einzigartige Geschichte. Keine Vorstellung ist wie die andere.",
+      foto: "improtheater.png",
+    },
+    "Frühstück": {
+      beschreibung: "Nur wenn du Frühstück für die ganze Woche gebucht hast.",
+    },
+    "Sulzbrunner Markt": {
+      wer: "Handwerk & Kunst",
+      beschreibung: "Auf dem Sulzbrunner Markt findet ihr viele schöne, handgemachte Schätze: kunstvolle Weidenflechterei, Getöpfertes, Kunst, Schmuck, Kerzen aus Sulzbrunn und Kinderschminken für die Kleinen.\n\nAlle Produkte sind mit viel Liebe und Sorgfalt hergestellt und sorgfältig ausgewählt. Wir freuen uns, wenn ihr die Menschen unterstützt, die mit Herzblut und handwerklichem Können hinter ihren Produkten stehen. Viel Freude beim Stöbern und Entdecken!",
+      foto: "sulzbrunner-markt-mrjdr9ov.jpg",
     },
   },
 
