@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "13.07.2026, 18:56 Uhr",
+    stand: "13.07.2026, 18:57 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -182,6 +182,8 @@ const WUNDA = {
     { tag:"fr", zeit:"08:00 - 11:00", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
     { tag:"fr", zeit:"14:00 - 17:00", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
     { tag:"fr", zeit:"19:00 - 22:00", titel:"Unsere Bar hat geöffnet!", wo:"", wen:["alle"] },
+    // Samstag
+    { tag:"sa", zeit:"08 -11", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
   ],
 
   katalog: {
@@ -466,7 +468,7 @@ const WUNDA = {
       beschreibung: "An unserer Bar erwarten euch lecker Kaffee aus der Siebträgermaschine, frische Waffeln,  kühle, alkoholfreie Getränke und Eis. Alles bio! \nBringt gerne eure eigene Tasse für den Kaffee mit. Falls ihr keine dabeihabt, könnt ihr euch in der Draußenküche eine Leihtasse ausleihen. \nBitte stellt die Leihtassen nach dem Spülen wieder dort ab, damit sie für die Nächsten bereitstehen.\n\nWir verkaufen nachmittags zusätzlich Stockbrot sowie Calzone-Teig zum Selbermachen über dem Lagerfeuer oder auf unserer Murrikka Pfanne.\n\nBitte bringt außerdem Bargeld mit, wir haben keine Kartenzahlung an der Bar.\nKommt vorbei und lasst es euch schmecken!",
     },
     "Unsere Bar hat geöffnet!": {
-      beschreibung: "An unserer Bar erwarten euch lecker Kaffee aus der Siebträgermaschine, frische Waffeln,  kühle, alkoholfreie Getränke und Eis. Alles bio! \nBringt gerne eure eigene Tasse für den Kaffee mit. Falls ihr keine dabeihabt, könnt ihr euch in der Draußenküche eine Leihtasse ausleihen. \nBitte stellt die Leihtassen nach dem Spülen wieder dort ab, damit sie für die Nächsten bereitstehen.\n\nWir verkaufen nachmittags zusätzlich Stockbrot sowie Calzone-Teig zum Selbermachen über dem Lagerfeuer oder auf unserer Murrikka Pfanne.\n\nBitte bringt außerdem Bargeld mit, wir haben keine Kartenzahlung an der Bar.\nKommt vorbei und lasst es euch schmecken!",
+      beschreibung: "Bringt gerne eure eigene Tasse für den Kaffee mit. Falls ihr keine dabeihabt, könnt ihr euch in der Draußenküche eine Leihtasse ausleihen. \nBitte stellt die Leihtassen nach dem Spülen wieder dort ab, damit sie für die Nächsten bereitstehen.\n\nWir verkaufen nachmittags zusätzlich Stockbrot sowie Calzone-Teig zum Selbermachen über dem Lagerfeuer oder auf unserer Murrikka Pfanne.\n\nBitte bringt außerdem Bargeld mit, wir haben keine Kartenzahlung an der Bar.\nKommt vorbei und lasst es euch schmecken!",
     },
     "Unser Seminarhaus Kiosk hat geöffnet!": {
       beschreibung: "Brauchst du noch ein kühles Getränk vor Allikée und der Feuershow? Dann schau bei uns vorbei!",
