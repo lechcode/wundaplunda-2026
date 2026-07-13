@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "13.07.2026, 19:43 Uhr",
+    stand: "13.07.2026, 19:49 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -144,7 +144,9 @@ const WUNDA = {
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Baumklettern", wer:"Stefan", wo:"Treffpunkt Zirkuszelt", wen:["kinder_ab_5"] },
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Faszination Baumpilze & Naturkosmetik", wo:"Kinderjurte", wen:["erwachsene"] },
     { tag:"fr", zeit:"15:00 – 16:00", titel:"ContaKids -Bewegung, Spiel & Verbindung", wo:"Yogaraum", wen:["kinder_0_4"] },
-    { tag:"fr", zeit:"15:00 – 16:00", titel:"Seifenblasen", wer:"Patrick", wo:"Feuerstelle", wen:["kinder_0_4","kinder_ab_5"] },
+    // Donnerstag
+    { tag:"do", zeit:"10:30 – 11:30", titel:"Seifenblasen", wo:"Dorfplatz", wen:["kinder_0_4","kinder_ab_5"] },
+    // Freitag
     { tag:"fr", zeit:"16:00 – 18:00", titel:"Open Space - Gestalte das Programm mit!", wo:"", wen:["alle"], hinweis:"Alle, die etwas anbieten möchten · u. a. bietet Amelie Jodeln an" },
     { tag:"fr", zeit:"17:30 – 18:00", titel:"Vorlese- & Mitmachgeschichte: Das schrecklichste Monster der Welt", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"fr", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
@@ -196,6 +198,7 @@ const WUNDA = {
     Seifenblasen: {
       foto: "riesenseifenblasen.png",
       beschreibung: "Hier machen wir die größten Blasen aller Zeiten! Sie steigen hoch in den Himmel und schimmern in allen Farben. Komm vorbei und probier es aus – wer schafft die größte Blase?",
+      wer: "Patrick",
     },
     "Impro Show Kids": {
       wer: "EingangAusgang Impro-Theater",
@@ -541,7 +544,7 @@ const WUNDA = {
       insta: "@akademie_rueckenwind",
     },
     "Open Space - Gestalte das Programm mit!": {
-      beschreibung: "Open Space – Gestalte das Programm mit!\n\nEin **Open Space** ist ein offenes Format, bei dem alle Teilnehmenden die Möglichkeit haben, selbst ein Thema, einen Workshop, eine Diskussionsrunde oder eine andere Aktivität anzubieten. So entsteht ein abwechslungsreiches Programm, das von den Ideen und Interessen der Gruppe lebt.\n\nWenn du etwas anbieten möchtest, trage dich bitte bis Donnerstag, 18:00 Uhr, in die Liste an der Bar ein - wir hängen diese aus! Gib dabei möglichst kurz an, was du anbieten möchtest.\n\nAnschließend schauen wir uns alle eingegangenen Angebote an, planen sie ein und veröffentlichen sie im Programm.\n\nWir freuen uns auf eure Ideen und eure Beiträge!",
+      beschreibung: "Open Space – Gestalte das Programm mit!\n\nEin Open Space ist ein offenes Format, bei dem alle Teilnehmenden die Möglichkeit haben, selbst ein Thema, einen Workshop, eine Diskussionsrunde oder eine andere Aktivität anzubieten. So entsteht ein abwechslungsreiches Programm, das von den Ideen und Interessen der Gruppe lebt.\n\nWenn du etwas anbieten möchtest, trage dich bitte bis Donnerstagabend, 18:00 Uhr, in die Liste an der Bar ein - wir hängen diese aus! Gib dabei möglichst kurz an, was du anbieten möchtest.\n\nAnschließend schauen wir uns alle eingegangenen Angebote an, planen sie ein und veröffentlichen sie im Programm.\n\nWir freuen uns auf eure Ideen und eure Beiträge!",
       foto: "open-space-gestalte-das-programm-mit-mrjgf96w.jpg",
     },
     "Funkenflug Band - Folk, Swing, Pop": {
