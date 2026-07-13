@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "13.07.2026, 18:57 Uhr",
+    stand: "13.07.2026, 19:00 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -91,7 +91,7 @@ const WUNDA = {
     { tag:"di", zeit:"ab 21:00", titel:"Artistik Calimbaro: Feuershow & Akrobatik mit Trommelbegleitung", wo:"Dorfplatz", wen:["alle"] },
     // Mittwoch
     { tag:"mi", zeit:"07:30 – 08:15", titel:"Klang & Qigong – Entspannt in den Tag starten", wo:"Yogaraum", wen:["erwachsene"] },
-    { tag:"mi", zeit:"07:30 – 08:15", titel:"Morgen-Workout – Kraftvoll in den Tag", wer:"Matthias Zech", wo:"Zirkuszelt", wen:["erwachsene"] },
+    { tag:"mi", zeit:"07:30 – 08:15", titel:"Morgen-Workout – Kraftvoll in den Tag", wo:"Zirkuszelt", wen:["erwachsene"] },
     { tag:"mi", zeit:"07:45 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
     { tag:"mi", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"] },
     // Freitag
@@ -155,7 +155,7 @@ const WUNDA = {
     { tag:"sa", zeit:"07:45 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
     { tag:"sa", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"sa", zeit:"09:45 – 10:30", titel:"Probe Clanzeit", wer:"", wo:"Treff Zirkuszelt", wen:["alle"] },
-    { tag:"sa", zeit:"10:30 – 11:00", titel:"Kids Singen, Tanzen, Bewegen", wer:"Amelie", wo:"Zirkuszelt", wen:["kinder_0_4"] },
+    { tag:"sa", zeit:"10:30 – 11:00", titel:"Kids Singen, Tanzen, Bewegen", wo:"Zirkuszelt", wen:["kinder_0_4"] },
     { tag:"sa", zeit:"10:30 – 12:30", titel:"Schnitzen (Schnitzführerschein)", wer:"Andreas", wo:"Wundazelt", wen:["kinder_ab_5"] },
     { tag:"sa", zeit:"10:30 – 12:00", titel:"Wetterkunde", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"sa", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
@@ -183,7 +183,7 @@ const WUNDA = {
     { tag:"fr", zeit:"14:00 - 17:00", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
     { tag:"fr", zeit:"19:00 - 22:00", titel:"Unsere Bar hat geöffnet!", wo:"", wen:["alle"] },
     // Samstag
-    { tag:"sa", zeit:"08 -11", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
+    { tag:"sa", zeit:"08 -11:00", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
   ],
 
   katalog: {
@@ -414,7 +414,7 @@ const WUNDA = {
       foto: "singen-bewegen.png",
       web: "akademie-rueckenwind.de",
       insta: "@akademie_rueckenwind",
-      beschreibung: "Musikalischer Mitmach-Workshop für Kinder von 3 bis 6 Jahren: Wir singen kindgerechte Lieder und erwecken sie mit Bewegungen, Gesten und kleinen Rollenspielen zum Leben. Freude, Fantasie und gemeinsames Erleben stehen im Mittelpunkt.",
+      beschreibung: "Musikalischer Mitmach-Workshop für Kinder von 3 bis 6 Jahren: Wir singen kindgerechte Lieder und erwecken sie mit Bewegungen, Gesten und kleinen Rollenspielen zum Leben. Freude, Fantasie und gemeinsames Erleben stehen im Mittelpunkt.\n\n Amelie Zech\nAmelie ist Yogalehrerin und verfügt über mehrere Ausbildungen im Bereich der Stimmtherapie. Mit ihrer Akademie Rückenwind begleitet sie Menschen auf ihrem Weg zu einer freien, kraftvollen Stimme. Ihr Angebot umfasst sowohl Kinder- als auch Erwachsenenkurse sowie individuelle Begleitung. Weitere Informationen unter: www.akademie-rueckenwind.de",
     },
     Wetterkunde: {
       wer: "Laurenz (Wildnis- & Erlebnispädagoge)",
@@ -488,7 +488,7 @@ const WUNDA = {
     },
     "Yoga am Morgen": {
       wer: "Amelie (Stimmtherapeutin & Yogalehrerin)",
-      beschreibung: "Beim Yoga am Morgen mobilisieren wir den ganzen Körper, entspannen und lassen die Gedanken los – kraftvoll und entspannt in den Wundaplunda-Tag mit Amelie Zech.",
+      beschreibung: "Beim Yoga am Morgen mobilisieren wir den ganzen Körper, entspannen und lassen die Gedanken los – kraftvoll und entspannt in den Wundaplunda-Tag mit Amelie Zech.\n\n Amelie Zech\nAmelie ist Yogalehrerin und verfügt über mehrere Ausbildungen im Bereich der Stimmtherapie. Mit ihrer Akademie Rückenwind begleitet sie Menschen auf ihrem Weg zu einer freien, kraftvollen Stimme. Ihr Angebot umfasst sowohl Kinder- als auch Erwachsenenkurse sowie individuelle Begleitung. Weitere Informationen unter: www.akademie-rueckenwind.de",
       foto: "yoga.png",
       web: "akademie-rueckenwind.de",
       insta: "@akademie_rueckenwind",
@@ -551,6 +551,10 @@ const WUNDA = {
     },
     "Gemeinsame Abschlusszeremonie": {
       beschreibung: "Zum Abschluss unserer gemeinsamen Woche laden wir euch herzlich zur Abschlusszeremonie ein.\n\nHier möchten wir gemeinsam auf die vergangenen Tage zurückblicken, besondere Momente miteinander teilen und das Erlebte in einem schönen Rahmen ausklingen lassen. Es ist eine Gelegenheit, Danke zu sagen, Eindrücke mitzunehmen und unseren gemeinsamen Abschluss bewusst zu feiern.\n\nWir freuen uns, wenn möglichst viele von euch dabei sind und wir das Wochenende gemeinsam abrunden.",
+    },
+    "Morgen-Workout – Kraftvoll in den Tag": {
+      wer: "Matthias Zech",
+      beschreibung: "Morgen-Workout – Kraftvoll in den Tag\nFür Erwachsene\nRaus aus dem Schlafmodus, rein in die Bewegung! Dieses Morgen-Workout bringt Puls, Muskeln und Motivation auf Touren. Mit einer abwechslungsreichen Mischung aus Ausdauer-, Kraft- und Koordinationsübungen starten wir aktiv und energiegeladen in den Tag.\nGemeinsam schwitzen, den Kreislauf ankurbeln und die eigene Stärke spüren – ganz ohne Leistungsdruck, aber mit Power. Der perfekte Start für alle, die wach werden wollen, bevor der Kaffee wirkt.\nDas Workout ist für unterschiedliche Fitnesslevel geeignet, da jede*r das eigene Tempo bestimmen kann.\nBitte bequeme Kleidung und etwas zu trinken mitbringen.\nFür Erwachsene.\n\nMatthias Zech\nMatthias ist Fachtrainer für Ausdauersport und selbst ambitionierter Sportler. Nebenberuflich begleitet er Athletinnen und Athleten auf dem Weg zu ihren sportlichen Zielen – vom ersten Wettkampf bis hin zur Triathlon-Langdistanz. Weitere Informationen unter: www.howtoathletic.de",
     },
   },
 
