@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "13.07.2026, 18:54 Uhr",
+    stand: "13.07.2026, 18:56 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -161,7 +161,7 @@ const WUNDA = {
     { tag:"sa", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"sa", zeit:"14:00 – 14:30", titel:"Clown Malab Show", wer:"Clown Malab", wo:"Zirkuszelt", wen:["alle"], web:"artistik-calimbaro.de", insta:"@artistik_calimbaro" },
     { tag:"sa", zeit:"14:30 – 15:00", titel:"Clan Show", wer:"", wo:"Zirkuszelt", wen:["alle"] },
-    { tag:"sa", zeit:"15:00 – 16:00", titel:"Gemeinsame Abschlusszeremonie", wer:"", wo:"Feuerstelle", wen:["alle"] },
+    { tag:"sa", zeit:"15:00 – 16:00", titel:"Gemeinsame Abschlusszeremonie", wo:"Feuerstelle", wen:["alle"] },
     { tag:"sa", zeit:"16:00", titel:"Abreise / Ende des Camps", wer:"", wo:"", wen:["alle"] },
     // Dienstag
     { tag:"di", zeit:"14:00 - 16:00", titel:"Sulzbrunner Markt", wo:"Dorfplatz", wen:["alle"] },
@@ -546,6 +546,9 @@ const WUNDA = {
       foto: "funkenflug.png",
       web: "funkenflugmusik.de",
       insta: "@funkenflugmusik",
+    },
+    "Gemeinsame Abschlusszeremonie": {
+      beschreibung: "Zum Abschluss unserer gemeinsamen Woche laden wir euch herzlich zur Abschlusszeremonie ein.\n\nHier möchten wir gemeinsam auf die vergangenen Tage zurückblicken, besondere Momente miteinander teilen und das Erlebte in einem schönen Rahmen ausklingen lassen. Es ist eine Gelegenheit, Danke zu sagen, Eindrücke mitzunehmen und unseren gemeinsamen Abschluss bewusst zu feiern.\n\nWir freuen uns, wenn möglichst viele von euch dabei sind und wir das Wochenende gemeinsam abrunden.",
     },
   },
 
