@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "15.07.2026, 08:14 Uhr",
+    stand: "15.07.2026, 08:16 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -78,14 +78,14 @@ const WUNDA = {
     { tag:"di", zeit:"10:30 - 11:30", titel:"Pois basteln", wo:"Kinderjurte", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"di", zeit:"10:30 – 12:30", titel:"Wir entdecken den Wald", wo:"Treff Zirkuszelt", wen:["alle"] },
     { tag:"di", zeit:"10:30 – 12:30", titel:"Knotenkunde & Tarpaufbau", wo:"Wundazelt", wen:["erwachsene"] },
-    { tag:"di", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
+    { tag:"di", zeit:"12:15 – 13:45", titel:"Mittagessen", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"di", zeit:"14:00 – 16:00", titel:"Kaffee & Kuchen & Hoflädle", wo:"Dorfplatz", wen:["alle"], hinweis:"Kaffee & Kuchen (Verein Füreinander Miteinander e.V.) + Hoflädle" },
     { tag:"di", zeit:"14:15 – 15:00", titel:"Singen – Jodruf Sulzbrunn", wer:"", wo:"Dorfplatz", wen:["alle"] },
     { tag:"di", zeit:"15:00 – 16:00", titel:"Poi-Workshop", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"di", zeit:"16:00 – 18:00", titel:"Frauenkreis", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"di", zeit:"16:30 – 17:30", titel:"Kinderband \"Leicht Verschwitzt Und Zwergig\"", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"di", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
-    { tag:"di", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
+    { tag:"di", zeit:"17:45 – 19:15", titel:"Abendessen", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"di", zeit:"19:00 – 20:30", titel:"Männerkreis", wer:"Oliver", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"di", zeit:"20:00", titel:"Allikée Trommelgruppe", wo:"Dorfplatz", wen:["alle"] },
     { tag:"di", zeit:"ab 21:00", titel:"Feuershow & Akrobatik mit Trommelbegleitung", wo:"Dorfplatz", wen:["alle"] },
@@ -610,6 +610,12 @@ const WUNDA = {
       beschreibung: "Kleine Schnitzereien auch für Große\n\nKurs für Kinder ab 8 Jahren, jüngere bitte mit Begleitperson\nIn diesem Outdoor-Schnitzkurs lernt ihr den sicheren Umgang und Techniken mit dem eigenen Taschenmesser oder Kinderschnitzmesser.\nIhr schnitzt phantasievolle eigene Kreationen, kleine Perlen und andere Ideen aus Frischholz.\n \nVorkenntnisse sind nicht nötig, die Kinder erlernen den richtigen Umgang mit dem Messer.\nZum Abschluss erhaltet Ihr einen „Messerführer*innenschein“\n \nBitte mitbringen: \nSchnitzmesser können vor Ort ausgeliehen werden, eigene Taschenmesser oder (Kinder-)Schnitzmesser dürfen gerne mitgebracht werden\nWetterfeste Kleidung, die auch schmutzig werden darf, geschlossene Schuhe und lange Hose\n \nMax. 16 Kinder.\n \nAndreas Eckl\nJahrgang 1965\nNatur- & Umwelt- & Erlebnispädagoge\n„Hab Geduld, alle Dinge sind schwierig, bevor sie einfach werden.“",
       foto: "schnitzen.png",
       web: "naturnase.de/referenten.html",
+    },
+    Mittagessen: {
+      beschreibung: "Das Sulzbrunner Küchenteam bereitet vegetarische oder vegane Mahlzeiten ausschließlich mit biologischen Lebensmitteln zu, je nach Saison aus regionalen Lebensmitteln, teilweise aus der solidarischen Landwirtschaft der Gemeinschaft Sulzbrunn.\n\nWas es heute zu Essen gibt, findet ihr an unseren Aushängen an den Infopoints.",
+    },
+    Abendessen: {
+      beschreibung: "Das Sulzbrunner Küchenteam bereitet vegetarische oder vegane Mahlzeiten ausschließlich mit biologischen Lebensmitteln zu, je nach Saison aus regionalen Lebensmitteln, teilweise aus der solidarischen Landwirtschaft der Gemeinschaft Sulzbrunn.\n\nWas es heute zu Essen gibt, findet ihr an unseren Aushängen an den Infopoints.",
     },
   },
 
