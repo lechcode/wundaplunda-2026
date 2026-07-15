@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "14.07.2026, 07:44 Uhr",
+    stand: "15.07.2026, 08:09 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -88,7 +88,7 @@ const WUNDA = {
     { tag:"di", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"di", zeit:"19:00 – 20:30", titel:"Männerkreis", wer:"Oliver", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"di", zeit:"20:00", titel:"Allikée Trommelgruppe", wo:"Dorfplatz", wen:["alle"] },
-    { tag:"di", zeit:"ab 21:00", titel:"Artistik Calimbaro: Feuershow & Akrobatik mit Trommelbegleitung", wo:"Dorfplatz", wen:["alle"] },
+    { tag:"di", zeit:"ab 21:00", titel:"Feuershow & Akrobatik mit Trommelbegleitung", wo:"Dorfplatz", wen:["alle"] },
     // Mittwoch
     { tag:"mi", zeit:"07:30 – 08:15", titel:"Klang & Qigong – Entspannt in den Tag starten", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"mi", zeit:"07:30 – 08:15", titel:"Morgen-Workout – Kraftvoll in den Tag", wo:"Zirkuszelt", wen:["erwachsene"] },
@@ -478,7 +478,7 @@ const WUNDA = {
       beschreibung: "Brauchst du noch ein kühles Getränk vor Allikée und der Feuershow? Dann schau bei uns vorbei!",
     },
     "Allikée Trommelgruppe": {
-      wer: "Alex & Trommelgruppe (Allikée)",
+      wer: "Alex (Trommelstudio Kakilambe)",
       beschreibung: "„Allikée“ heißt so viel wie „Auf geht's!“ – westafrikanische Trommelmusik, gewürzt mit europäischen und lateinamerikanischen Einflüssen. Mal traditionell, mal modern, immer mit Freude und Groove.",
       foto: "allikee.png",
       web: "kakilambe.de",
