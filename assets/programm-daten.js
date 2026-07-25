@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "25.07.2026, 13:49 Uhr",
+    stand: "25.07.2026, 13:52 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -86,7 +86,7 @@ const WUNDA = {
     { tag:"di", zeit:"16:30 – 17:30", titel:"Kinderband \"Leicht Verschwitzt Und Zwergig\"", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"di", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"di", zeit:"17:45 – 19:15", titel:"Abendessen", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"di", zeit:"19:00 – 20:30", titel:"Männerkreis", wer:"Oliver", wo:"Yogaraum", wen:["erwachsene"] },
+    { tag:"di", zeit:"19:00 – 20:30", titel:"Männerkreis", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"di", zeit:"20:00", titel:"Allikée Trommelgruppe", wo:"Dorfplatz", wen:["alle"] },
     { tag:"di", zeit:"ab 21:00", titel:"Feuershow & Akrobatik mit Trommelbegleitung", wo:"Dorfplatz", wen:["alle"] },
     // Mittwoch
@@ -302,8 +302,8 @@ const WUNDA = {
     },
     "Männerkreis": {
       wer: "Oliver (Gemeinschaft Sulzbrunn)",
-      foto: "maennerkreis.png",
-      beschreibung: "Im geschützten Raum tauschen wir uns über Themen aus, die uns als Mann der heutigen Zeit bewegen oder herausfordern. Wild, sanft und authentisch – ein Raum, in dem wir uns hören, begegnen und berühren.",
+      foto: "maennerkreis-ms0b7a5j.jpg",
+      beschreibung: "„Der Kreis erinnert uns daran: Wir müssen unseren Weg nicht allein gehen.“\nDem Leben mit offenem Herzen begegnen.\nAn diesen beiden Abenden öffnen wir gemeinsam einen Begegnungsraum für uns Männer. Einen Raum\nder Kreiskultur, des gemeinsamen Forschens und der ehrlichen Begegnung. Mit kleinen Impulsen und\noffenem Herzen wollen wir uns selbst, dem anderen und der Lebendigkeit ein Stück näher kommen. Es\ngeht nicht darum, fertige Antworten zu finden, sondern gemeinsam Fragen zu stellen, zuzuhören und\nuns daran zu erinnern, dass wir unseren Weg nicht alleine gehen müssen.\n\nÜber mich, Oliver: \n\n\"Ich öffne Räume, in denen Menschen sich selbst,\ndem anderen und dem Leben begegnen dürfen.\"\nIch glaube daran, dass wir Menschen Räume brauchen, in denen wir uns wieder wirklich begegnen\nkönnen – ehrlich, achtsam und auf Augenhöhe. Männerkreise sind für mich solche Räume.\nMir ist eine Kultur des Miteinanders wichtig, in der wir einander zuhören, uns zeigen dürfen und\ngemeinsam erforschen, was uns als Männer bewegt und stärkt. Dabei geht es weniger um fertige\nAntworten als vielmehr um Präsenz, Verbundenheit und die Erfahrung, dass wir mit unseren Themen\nnicht allein sind.\nIch begleite diese Räume mit Bodenständigkeit, Offenheit und einer liebevollen Haltung. Durch kleine\nImpulse und gemeinsames Erforschen darf entstehen, was gerade da ist – lebendig, menschlich und\ngetragen von der Kraft des Kreises.\nOliver Weickert",
     },
     "Feuershow & Akrobatik mit Trommelbegleitung": {
       wer: "Artistik Calimbaro",
