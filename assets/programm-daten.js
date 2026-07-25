@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "25.07.2026, 14:26 Uhr",
+    stand: "25.07.2026, 14:27 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -520,7 +520,7 @@ const WUNDA = {
       foto: "waldrallye.jpg",
     },
     "Kaffee & Kuchen & Hoflädle": {
-      beschreibung: "Kaffee, Kuchen und ein kleiner, feiner Wundaplunda-Markt mit liebevoll ausgewähltem Kunsthandwerk aus Sulzbrunn: Honig, Bienenwachskerzen, Weidenkörbe, Getöpfertes, Schmuck und mehr. Mit Kuchen des Vereins Füreinander Miteinander e.V., die die ganzjährige Spielgruppe Pappelkinder in der Sulzbrunner Kinderjurte ins Leben gerufen haben. Die Kuchenspenden fließen direkt in dieses Projekt!",
+      beschreibung: "Kaffee, Kuchen und ein kleiner, feiner Wundaplunda-Markt mit liebevoll ausgewähltem Kunsthandwerk aus Sulzbrunn: Honig, Bienenwachskerzen, Weidenkörbe, Getöpfertes, Schmuck und mehr. Mit Kuchen des Vereins Natürlich Miteinander e.V., die die ganzjährige Spielgruppe Pappelkinder in der Sulzbrunner Kinderjurte ins Leben gerufen haben. Die Kuchenspenden fließen direkt in dieses Projekt!",
       foto: "markt.png",
       web: "natuerlich-miteinander.net",
     },
