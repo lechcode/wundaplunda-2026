@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "25.07.2026, 14:38 Uhr",
+    stand: "25.07.2026, 15:39 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -365,7 +365,7 @@ const WUNDA = {
     "Weiden-Zauberstäbe": {
       wer: "Tina (Naturgestalterin & Weidenflechterin)",
       foto: "weiden.png",
-      beschreibung: "Aus frischen Weidenruten gestalten wir wunderschöne Weidenzauberstäbe oder dekorative Weidenfische. Für Groß und Klein, ganz ohne Vorkenntnisse – kreative Kunst aus der Natur.\n\nTina ist ausgebildete Weidenflechterin aus dem Allgäu!",
+      beschreibung: "Aus frischen Weidenruten gestalten wir wunderschöne Weidenzauberstäbe oder dekorative Weidenfische. Für Groß und Klein, ganz ohne Vorkenntnisse – kreative Kunst aus der Natur.\n\nTina ist ausgebildete Weidenflechterin aus dem Allgäu mit Unterstützung von Cäcilia, die ebenfalls Weiden flechtet.",
     },
     "5 Minuten Feuer & Wilde Küche": {
       wer: "Lena (Wildnispädagogin)",
