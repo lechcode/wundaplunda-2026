@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "25.07.2026, 15:39 Uhr",
+    stand: "25.07.2026, 15:41 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -136,7 +136,7 @@ const WUNDA = {
     { tag:"fr", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"fr", zeit:"10:30 – 12:30", titel:"Faszination Baumpilze & Pilzpapier", wo:"Wundazelt", wen:["alle"] },
     // Mittwoch
-    { tag:"mi", zeit:"10:30 – 12:30", titel:"Ton brennen & Lehmgeister", wo:"Feuerstelle", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"mi", zeit:"10:30 – 12:30", titel:"Ton brennen & Lehmgeister", wo:"Feuerstelle", wen:["kinder_0_4","kinder_ab_5"], hinweis:"unter 6 Jahre: Lehmgeister, über 6 Jahre: Ton brennen" },
     // Freitag
     { tag:"fr", zeit:"10:30 – 12:30", titel:"Vom ICH zum WIR – Beziehung in Familie leben", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"fr", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
@@ -508,8 +508,8 @@ const WUNDA = {
       insta: "@fees_musikgaertchen",
     },
     "Ton brennen & Lehmgeister": {
-      wer: "Amelie & Matthias",
-      beschreibung: "Kinder ab 6 Jahren gestalten gemeinsam mit einem Elternteil eigene kleine Objekte aus Ton. Anschließend brennen wir die Werke im Feuer und beobachten, wie der Ton fest und zum Werkstück wird.\nmit Amelie & Matze",
+      wer: "Amelie & Matthias & Cäcilia",
+      beschreibung: "Kinder ab 6 Jahren gestalten gemeinsam mit einem Elternteil eigene kleine Objekte aus Ton. Anschließend brennen wir die Werke im Feuer und beobachten, wie der Ton fest und zum Werkstück wird. - mit Amelie & Matze\n\nDie Kinder unter 6 Jahre dürfen mit Cäcilia Lehmgeister an die Bäume machen.",
       foto: "ton-brennen.png",
     },
     "Waldrallye - Spielewagen - Flying Fox": {
