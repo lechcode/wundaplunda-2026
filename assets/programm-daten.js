@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "25.07.2026, 13:47 Uhr",
+    stand: "25.07.2026, 13:49 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -500,8 +500,6 @@ const WUNDA = {
     "Klang & Qigong – Entspannt in den Tag starten": {
       wer: "Anna-Elisabeth (Yogalehrerin)",
       beschreibung: "Beginne den Tag mit einer wohltuenden Kombination aus sanften Qigong-Übungen und entspannenden Klängen. Durch achtsame Bewegung, bewusstes Atmen und die harmonischen Schwingungen der Instrumente kannst du zur Ruhe kommen, neue Energie tanken und gestärkt in den Tag starten. Es sind keine Vorkenntnisse erforderlich – alle sind herzlich willkommen.",
-      web: "akademie-rueckenwind.de",
-      insta: "@akademie_rueckenwind",
     },
     "Schlangen & Zauberei filzen": {
       wer: "Fee",
