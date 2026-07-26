@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "25.07.2026, 17:38 Uhr",
+    stand: "26.07.2026, 10:47 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -271,7 +271,7 @@ const WUNDA = {
       wer: "Kristina",
       foto: "walderlebnis.png",
       insta: "@mykorrhina",
-      beschreibung: "Bei dieser familiengerechten Waldexkursion erleben Kinder und Erwachsene den Wald mit allen Sinnen. Spielerisch entdecken wir, welche Baumarten heimisch sind und warum der Wald für Mensch, Tier und Klima so wichtig ist – mit Lupen, Waldbingo und Entdeckerkarten.\nKristina Wolf ist Vorstand der Pilzfreunde Altusried e.V.",
+      beschreibung: "„Mykorrhina“ – Auf den Spuren des geheimen Waldnetzwerks\n\nWas ist der Wald eigentlich genau – außer ganz vielen Bäumen? Wer wohnt hier, wie „sprechen“ Bäume miteinander und was macht diesen Ort so besonders?\n\nGemeinsam mit Pilzcoach Kristina Wolf gehen wir auf eine spannende Entdecker-Tour für die ganze Familie. Wir lernen ein paar unserer Bäume ganz einfach an ihren Blättern kennen, lauschen überraschenden Waldgeschichten und gehen mit Becherlupen auf Entdecker-Suche. Ein lockeres Naturerlebnis, bei dem der Spaß am gemeinsamen Entdecken im Vordergrund steht!\n\nBitte wetterfeste Kleidung und eine große Portion Neugierde mitbringen.\n\n\nKristina Wolf ist Vorstand der Pilzfreunde Altusried e.V.:\nAls ausgebildeter Pilzcoach der DGfM möchte ich Menschen für die Wunder der Natur begeistern. Mir liegt am Herzen, den respektvollen Umgang mit unserer Umwelt zu vermitteln, den Blick für die kleinen Details zu schärfen und fundiertes Wissen über Ökologie, Lebensräume und Pilze weiterzugeben. Hier können wir Schatzsucher, Beobachter und Naturliebhaber sein - mal mit Pilzkorb oder mal einfach mit offenen Augen und einem neugierigen Blick für alles was wächst, lebt und sich zeigt.",
     },
     "Knotenkunde & Tarpaufbau": {
       wer: "Laurenz (Wildnispädagoge)",
