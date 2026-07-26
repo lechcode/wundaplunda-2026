@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "26.07.2026, 12:19 Uhr",
+    stand: "26.07.2026, 13:57 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -94,10 +94,10 @@ const WUNDA = {
     { tag:"mi", zeit:"07:30 – 08:15", titel:"Morgen-Workout – Kraftvoll in den Tag", wo:"Zirkuszelt", wen:["erwachsene"] },
     { tag:"mi", zeit:"07:45 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
     { tag:"mi", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"] },
+    { tag:"mi", zeit:"10:30 – 12:30", titel:"Schlangen & Zauberei filzen", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     // Freitag
-    { tag:"fr", zeit:"10:30 – 12:30", titel:"Schlangen & Zauberei filzen", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"fr", zeit:"10:30 – 12:30", titel:"Slackline Workshop", wo:"Treffpunkt Zirkuszelt", wen:["kinder_ab_5"] },
     // Mittwoch
-    { tag:"mi", zeit:"10:30 – 12:30", titel:"Slackline Workshop", wo:"Treffpunkt Zirkuszelt", wen:["kinder_ab_5"] },
     { tag:"mi", zeit:"10:30 – 12:30", titel:"Wahrnehmungs- / Sinnesübungen in der Natur", wer:"", wo:"Treffpunkt Kinderjurte", wen:["erwachsene"] },
     { tag:"mi", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"mi", zeit:"14:00 – 16:00", titel:"Bogenbau", wo:"Wundazelt", wen:["alle"] },
