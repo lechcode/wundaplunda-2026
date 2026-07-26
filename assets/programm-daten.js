@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "26.07.2026, 11:47 Uhr",
+    stand: "26.07.2026, 12:19 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -150,7 +150,7 @@ const WUNDA = {
     { tag:"fr", zeit:"16:00 – 18:00", titel:"Open Space - Gestalte das Programm mit!", wo:"", wen:["alle"], hinweis:"Alle, die etwas anbieten möchten · u. a. bietet Amelie Jodeln an" },
     { tag:"fr", zeit:"17:30 – 18:00", titel:"Vorlese- & Mitmachgeschichte: Das schrecklichste Monster der Welt", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"fr", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
-    { tag:"fr", zeit:"19:30 – 20:30", titel:"Funkenflug Band - Folk, Swing, Pop", wo:"Zirkuszelt", wen:["alle"] },
+    { tag:"fr", zeit:"19:30 – 21:00", titel:"Funkenflug Band - Folk, Swing, Pop", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"fr", zeit:"Ganztags", titel:"Waldrallye · Spielewagen · Flying Fox", wer:"", wo:"", wen:["alle"] },
     // Samstag
     { tag:"sa", zeit:"07:30 – 08:15", titel:"Yoga am Morgen", wo:"Zirkuszelt", wen:["erwachsene"] },
