@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "26.07.2026, 13:57 Uhr",
+    stand: "26.07.2026, 14:35 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -144,8 +144,8 @@ const WUNDA = {
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Baumklettern", wer:"Stefan", wo:"Treffpunkt Zirkuszelt", wen:["kinder_ab_5"] },
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Faszination Baumpilze & Naturkosmetik", wo:"Kinderjurte", wen:["erwachsene"] },
     { tag:"fr", zeit:"15:00 – 16:00", titel:"ContaKids -Bewegung, Spiel & Verbindung", wo:"Yogaraum", wen:["kinder_0_4"] },
-    // Donnerstag
-    { tag:"do", zeit:"10:30 – 11:30", titel:"Seifenblasen", wo:"Dorfplatz", wen:["kinder_0_4","kinder_ab_5"] },
+    // Mittwoch
+    { tag:"mi", zeit:"16:30 – 17:30", titel:"Seifenblasen", wo:"Dorfplatz", wen:["kinder_0_4","kinder_ab_5"] },
     // Freitag
     { tag:"fr", zeit:"16:00 – 18:00", titel:"Open Space - Gestalte das Programm mit!", wo:"", wen:["alle"], hinweis:"Alle, die etwas anbieten möchten · u. a. bietet Amelie Jodeln an" },
     { tag:"fr", zeit:"17:30 – 18:00", titel:"Vorlese- & Mitmachgeschichte: Das schrecklichste Monster der Welt", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
