@@ -277,6 +277,11 @@ details[open] summary::after{content:"–"}
 .tg-btn:hover{background:var(--blau-tief)}
 .tg-btn[aria-disabled="true"]{background:var(--muted);cursor:not-allowed}
 .tg-note{font-size:.82rem;color:var(--muted);margin-top:.45rem}
+.tg-tag{padding:.5rem 0;border-bottom:1px dotted var(--line)}
+.tg-tag:last-of-type{border-bottom:none}
+.tg-tag-titel{font-family:var(--display);color:var(--blau-tief);font-weight:700;font-size:1.05rem;margin-bottom:.15rem}
+.tg-zeile{margin:.15rem 0;color:var(--ink-soft)}
+.tg-zeile b{color:var(--rot)}
 
 /* ---------- Ansicht-Umschalter (Programm / Infos A–Z) ---------- */
 .viewnav{background:var(--blau-tief);box-shadow:0 6px 18px -14px rgba(0,0,0,.6)}
@@ -702,9 +707,13 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     <section class="info-panel" id="panel-hygiene" role="tabpanel">
       <div class="info-panel-head"><h3>🧼 Hygiene &amp; Gesundheit</h3><button class="act ghost" type="button" data-print-info="hygiene"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
+        <details class="acc-item"><summary>Toiletten</summary><div>
+          <p>Auf dem Gelände stehen <strong>8 Komposttoiletten</strong> bereit, die regelmäßig gereinigt werden. Zusätzlich gibt es eine barrierefreie Toilette und weitere Toiletten im Seminarhaus. Bitte erklärt euren Kindern das Komposttoilettensystem und wie wichtig es ist, sich nach jedem Toilettengang die Hände zu waschen!</p>
+          <p><strong>Pipiplätze:</strong> Für das kleine Geschäft gibt es eigene Pipiecken, um die Komposttoiletten zu entlasten.</p>
+          <p><strong>Desinfektion:</strong> Oberflächendesinfektion, Handdesinfektion und Wasser mit Seife stehen an jeder Toilette bereit.</p>
+        </div></details>
         <details class="acc-item"><summary>Duschen</summary><div>
           <p>Die Duschen befinden sich im autarken <strong>Solarduschwagen</strong> (bitte nur ökologische Seife &amp; Shampoo verwenden – diese wird auch bereitgestellt). Wer sich wohler fühlt, kann auch im Seminarhaus (2. UG) duschen.</p>
-          <p><em>Toiletten, Pipiplätze &amp; Desinfektion siehe Reiter „Infrastruktur".</em></p>
         </div></details>
         <details class="acc-item"><summary>Wickeln</summary><div>
           <p>In der Toilette im Erdgeschoss des Seminarhauses befindet sich ein Wickeltisch.</p>
@@ -725,31 +734,14 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
     <section class="info-panel" id="panel-infrastruktur" role="tabpanel">
       <div class="info-panel-head"><h3>🔌 Infrastruktur</h3><button class="act ghost" type="button" data-print-info="infrastruktur"><svg><use href="#i-print"/></svg> Drucken</button></div>
       <div class="box-body">
-        <details class="acc-item"><summary>Toiletten</summary><div>
-          <p>Auf dem Gelände stehen <strong>8 Komposttoiletten</strong> bereit, die regelmäßig gereinigt werden. Zusätzlich gibt es eine barrierefreie Toilette mit Waschbecken im Seminarhaus (EG). Bitte erklärt euren Kindern das Komposttoilettensystem und wie wichtig es ist, sich nach jedem Toilettengang die Hände zu waschen!</p>
-          <p><strong>Pipiplätze:</strong> Für das kleine Geschäft gibt es eigene Pipiecken, um die Komposttoiletten zu entlasten.</p>
-          <p><strong>Desinfektion:</strong> Oberflächendesinfektion, Handdesinfektion und Wasser mit Seife stehen an jeder Toilette bereit.</p>
-        </div></details>
         <details class="acc-item"><summary>Strom &amp; Solarstation</summary><div>
           <p>Bitte kommt so autark wie möglich. Es gibt eine kleine <strong>Solarstation mit USB-Anschlüssen</strong> auf dem Gelände sowie Strom für einige Camper – leider aber nicht ausreichend für alle Camperbusse.</p>
         </div></details>
+        <details class="acc-item"><summary>Trinkwasser</summary><div>
+          <p>Auf dem Wundaplunda-Gelände gibt es <strong>zertifiziertes Trinkwasser</strong> (Draußenküche / am Carport) – die Stellen sind ausgeschildert. An der <strong>Spülstation</strong> ist es <strong>kein</strong> zertifiziertes Trinkwasser.</p>
+        </div></details>
         <details class="acc-item"><summary>Kühlschränke</summary><div>
           <p>Im Küchenpavillon stehen <strong>Gemeinschaftskühlschränke</strong> für die Selbstverpflegung bereit – bitte beschriftet eure Lebensmittel. Eigene Kühlakkus können dort im Gefrierfach wieder aufgeladen werden. (Mehr zur Selbstverpflegung im Reiter „Versorgung &amp; Verpflegung".)</p>
-        </div></details>
-        <details class="acc-item"><summary>Gelände &amp; wichtige Orte</summary><div>
-          <ul id="gelaende-liste" class="orte-liste">
-            <li><strong>Zirkuszelt</strong> – Lounge, Workshopzelt, Erste-Hilfe-Set</li>
-            <li><strong>Bar</strong> – Kaffee, Eis, Waffeln und alkoholfreie Getränke, direkt neben dem Zirkuszelt</li>
-            <li><strong>Yogaraum</strong> – Workshopraum</li>
-            <li><strong>Kinderjurte</strong> – Kreativ- und Kinderangebote; hier findest du auch ein Erste-Hilfe-Set</li>
-            <li><strong>Wundazelt</strong> – Workshopzelt</li>
-            <li><strong>Küchenpavillon</strong> – überdachte Draußenküche für die Selbstverpflegung mit Gaskochern, Kühlschränken und Spülstation</li>
-            <li><strong>Seminarhaus</strong> – Essensausgabe, Kiosk, Duschen, Waschmaschine, Wickeltisch, barrierefreie Toilette, Erste-Hilfe-Set</li>
-            <li><strong>Feuerstelle</strong> – zum gemeinsamen Lagerfeuer und für Stockbrot</li>
-            <li><strong>Kasse</strong> – Anmeldung und Bändchen-Ausgabe</li>
-            <li><strong>Dorfplatz</strong> – Hoflädle, Markt, Sandkasten</li>
-            <li><strong>Turnhalle</strong> – Workshopraum, Spieleraum</li>
-          </ul>
         </div></details>
       </div>
     </section>
@@ -843,6 +835,8 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
           <li>Taschenlampe</li>
           <li>Eigenes Schnitzmesser, am besten mit feststellbarer Klinge (z.&nbsp;B. Opinel für Kinder)</li>
           <li>Wer mag: Fahrräder (für Ausflüge) oder kleine Fahrzeuge für die Kinder</li>
+          <li>Wer mag: eigener Schattenspender/Tarp für euer Zelt – ein großer Teil des Zeltplatzes ist ohne Bäume</li>
+          <li>Wer mag: Wasser-Sprühflasche als Abkühlung oder zum Wespen vertreiben</li>
         </ul>
       </div>
     </section>
@@ -1436,11 +1430,22 @@ document.write('<script src="assets/programm-daten.js?v=' + Date.now() + '"><\/s
     }
     table("Preise Verpflegung", v.preise_essen);
     table("Getränke", v.getraenke);
-    if(v.laedle){ mount.appendChild(el("h4",null,"Hoflädle / Laura's Lädle")); mount.appendChild(el("p",null,esc(v.laedle))); }
-    if(v.snacks){ mount.appendChild(el("h4",null,"Snacks, Waffeln & Kiosk")); mount.appendChild(el("p",null,esc(v.snacks))); }
-    // Tagesgerichte (Platzhalter – konkrete 2026-Karte folgt von Carmen)
+    // Tagesgerichtkarte (Mo–Sa, mittags/abends)
     var tgm=document.getElementById("tagesgerichte-mount");
-    if(tgm){ tgm.appendChild(el("p",null,"Es gibt täglich wechselnde Tagesgerichte – mittags und abends, alles Bio, vegetarisch/vegan. Die aktuelle Auswahl hängt vor Ort an der Tagesgerichtkarte aus.")); }
+    if(tgm){
+      if(v.tagesgerichte && v.tagesgerichte.length){
+        v.tagesgerichte.forEach(function(t){
+          var day=el("div","tg-tag");
+          day.appendChild(el("div","tg-tag-titel",esc(t.tag)));
+          if(t.mittag) day.appendChild(el("p","tg-zeile",'<b>Mittag:</b> '+esc(t.mittag)));
+          if(t.abend)  day.appendChild(el("p","tg-zeile",'<b>Abend:</b> '+esc(t.abend)));
+          tgm.appendChild(day);
+        });
+        tgm.appendChild(el("p","tg-note","Alles Bio, vegetarisch/vegan. Es gilt die Tagesgerichtkarte vor Ort – Änderungen möglich."));
+      } else {
+        tgm.appendChild(el("p",null,"Es gibt täglich wechselnde Tagesgerichte – mittags und abends, alles Bio, vegetarisch/vegan. Die aktuelle Auswahl hängt vor Ort an der Tagesgerichtkarte aus."));
+      }
+    }
   })();
 
   /* ---- Gelände-Liste ---- */
