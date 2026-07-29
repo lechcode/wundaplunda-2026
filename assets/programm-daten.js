@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "29.07.2026, 08:33 Uhr",
+    stand: "29.07.2026, 15:03 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -82,7 +82,7 @@ const WUNDA = {
     { tag:"di", zeit:"14:00 – 16:00", titel:"Kaffee & Kuchen & Hoflädle", wo:"Dorfplatz", wen:["alle"], hinweis:"Kaffee & Kuchen (Verein Natürlich Miteinander e.V.) + Hoflädle" },
     { tag:"di", zeit:"14:15 – 15:00", titel:"Singen – Jodruf Sulzbrunn", wer:"", wo:"Dorfplatz", wen:["alle"] },
     { tag:"di", zeit:"15:00 – 16:00", titel:"Poi-Workshop", wo:"Treffpunkt Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
-    { tag:"di", zeit:"16:00 – 18:00", titel:"Frauenkreis", wo:"Yogaraum", wen:["erwachsene"] },
+    { tag:"di", zeit:"16:30 – 18:00", titel:"Frauenkreis \"Frau und Natur\"", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"di", zeit:"16:30 – 17:30", titel:"Kinderband \"Leicht Verschwitzt Und Zwergig\"", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"di", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"di", zeit:"17:45 – 19:15", titel:"Abendessen", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
@@ -612,6 +612,11 @@ const WUNDA = {
     },
     Abendessen: {
       beschreibung: "Das Sulzbrunner Küchenteam bereitet vegetarische oder vegane Mahlzeiten ausschließlich mit biologischen Lebensmitteln zu, je nach Saison aus regionalen Lebensmitteln, teilweise aus der solidarischen Landwirtschaft der Gemeinschaft Sulzbrunn.\n\nWas es heute zu Essen gibt, findet ihr an unseren Aushängen an den Infopoints.",
+    },
+    "Frauenkreis \"Frau und Natur\"": {
+      wer: "Fabienne (Gemeinschaft Sulzbrunn)",
+      beschreibung: "Frau und Natur – Zyklisches Sein, Verbundenheit und innere Jahreszeiten\n\nDie Natur lebt in Rhythmen. Sie kennt Zeiten des Wachsens und Blühens ebenso wie Zeiten des Rückzugs und der Regeneration. Auch wir Frauen bewegen uns durch innere Jahreszeiten – Phasen der Fülle, der Wandlung, des Loslassens und des Neubeginns. Oft vergessen wir im Alltag, wie natürlich und kraftvoll dieses zyklische Sein ist.\nIn diesem Frauenkreis erforschen wir die Verbindung zwischen der Natur und unserer eigenen inneren Landschaft. Durch achtsame Körperübungen, Reflexion, Austausch sowie kleine Rituale lassen wir uns von den Qualitäten der Jahreszeiten inspirieren und lauschen den Rhythmen, die in uns wirken.\nGemeinsam schaffen wir einen Raum, um langsamer zu werden, zu spüren und uns mit dem zu verbinden, was gerade lebendig ist. Eine Einladung, der eigenen Natur näherzukommen und die Schönheit des Wandels neu zu entdecken.\n \nIch bin Fabienne.\nEine naturverbundene Abenteurerin, die das Kind in sich noch nicht vergessen hat. Neben dem Kind in mir finden meine Wurzeln immer mehr ihren Weg und schenken mir Ruhe in meinem Leben, um daraus wundervolle Schätze entstehen lassen zu können.\nMein Wunsch ist es, Menschen auf ihrem natürlichen Weg zu begleiten und zu inspirieren und sie dort abzuholen, wo sie in ihrem Leben stehen. Ich möchte gemeinsam Schritte gehen – eingebunden in eine Gemeinschaft, die uns Menschen und die Natur gleichermaßen umfasst. In den von mir gestalteten Räumen begegnen wir uns selbst, dem anderen, der Natur und erfahren uns als Ganzes in einem lebendigen Beziehungsgeflecht mit dem Leben.  \nSo gestaltet sich auch mein Sein im Naturkindergarten und der Wildnispädagogik - ursprünglich, verbunden und bindungsorientiert. Ich liebe es am Feuer zusammen zu kommen, zu singen und in ehrlicher und authentischer Begegnung zu sein. Neben und innerhalb der Naturarbeit weitet sich mein Wirken in Räume die geprägt sind von Beziehung, Sinnlichkeit, Tanz und  wahrhaftiger Kommunikation.",
+      foto: "frauenkreis.png",
     },
   },
 
