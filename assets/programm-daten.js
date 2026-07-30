@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "30.07.2026, 09:20 Uhr",
+    stand: "30.07.2026, 09:41 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -123,7 +123,7 @@ const WUNDA = {
     { tag:"do", zeit:"14:15 – 15:30", titel:"Singen – Jodruf Sulzbrunn", wo:"Dorfplatz", wen:["alle"] },
     { tag:"do", zeit:"16:00 – 17:30", titel:"Frauenkreis \"Weibliche Lebendigkeit\"", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"do", zeit:"15:30 – 17:30", titel:"Kleine Schnitzereien auch für Große", wo:"Wundazelt", wen:["erwachsene","kinder_ab_5"], anmeldung:"begrenzt" },
-    { tag:"do", zeit:"15:30 – 16:30", titel:"ContaKids - Bewegung, Spiel & Verbindung", wo:"", wen:["kinder_0_4"] },
+    { tag:"do", zeit:"15:30 – 16:30", titel:"ContaKids - Bewegung, Spiel & Verbindung", wo:"Turnhalle", wen:["kinder_0_4"] },
     { tag:"do", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"do", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"do", zeit:"19:30 – 20:30", titel:"Singen – Jodruf Sulzbrunn", wer:"Rolf & Margaretha", wo:"Zirkuszelt", wen:["alle"] },
@@ -595,6 +595,7 @@ const WUNDA = {
       wer: "Natalie",
       beschreibung: "Ich bin Natalie, Mutter eines vierjährigen Sohnes aus München. Nach der Babyzeit habe ich durch Contact Improvisation wieder Freude an Bewegung und einen neuen Zugang zu meinem Körper gefunden. Daraus entstand der Wunsch, den\nspielerischen körperlichen Austausch auch im Miteinander mit meinem Kind zu vertiefen – so bin ich zur ContaKids Ausbildung gekommen.\n\nIn meinem Workshop lade ich Eltern und Kinder ein, sich über Bewegung neu zu begegnen. Wir rollen, tragen, balancieren und forschen gemeinsam – mal wild, mal achtsam.\n Es entsteht ein Raum für Vertrauen, Nähe und Leichtigkeit jenseits\nvon Worten. Im Mittelpunkt steht nicht das „richtig machen“, sondern das gemeinsame Erleben und die Freude an Kontakt und Bewegung.",
       foto: "contakids.jpg",
+      insta: "@contakidsworld",
     },
     "ContaKids -Bewegung, Spiel & Verbindung": {
       wer: "Natalie Zeitler",
