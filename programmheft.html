@@ -372,7 +372,9 @@ footer h4{color:#fff;font-size:1.05rem;margin-bottom:.3rem;font-family:var(--dis
    DRUCK — Pro-Tag-Blatt für die Infowand (jetzt MIT Leitung!)
    ============================================================ */
 @media print{
-  @page{size:A4 portrait;margin:8mm}
+  /* Nur Hochformat vorgeben, Papiergröße NICHT festnageln -> Carmen kann im Druckdialog
+     A4 ODER A3 wählen; der einspaltige Plan füllt das jeweilige Blatt (pt-Größen bleiben gleich). */
+  @page{size:portrait;margin:8mm}
   html{scroll-padding-top:0}
   body{background:#fff;font-size:10pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .cover,.viewnav,.bar,.info-wrap,footer,.lcband,.skip,.day-head .tagdruck,.badge.mehr,.card-chev,.tagezahl,.info-text,.empty{display:none!important}
