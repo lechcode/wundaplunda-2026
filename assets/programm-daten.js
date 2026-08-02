@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "30.07.2026, 14:27 Uhr",
+    stand: "02.08.2026, 17:00 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -82,7 +82,7 @@ const WUNDA = {
     { tag:"di", zeit:"14:00 – 16:00", titel:"Kaffee & Kuchen & Hoflädle", wo:"Dorfplatz", wen:["alle"], hinweis:"Kaffee & Kuchen (Verein Natürlich Miteinander e.V.) + Hoflädle" },
     { tag:"di", zeit:"14:15 – 15:00", titel:"Singen – Jodruf Sulzbrunn", wer:"", wo:"Dorfplatz", wen:["alle"] },
     { tag:"di", zeit:"15:00 – 16:00", titel:"Poi-Workshop", wo:"Treffpunkt Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
-    { tag:"di", zeit:"16:30 – 18:00", titel:"Frauenkreis \"Frau und Natur\"", wo:"Yogaraum", wen:["erwachsene"] },
+    { tag:"di", zeit:"16:00 – 18:00", titel:"Frauenkreis", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"di", zeit:"16:30 – 17:30", titel:"Kinderband \"Leicht Verschwitzt Und Zwergig\"", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"di", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"di", zeit:"17:45 – 19:15", titel:"Abendessen", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
@@ -121,9 +121,9 @@ const WUNDA = {
     { tag:"do", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"do", zeit:"14:00 – 16:00", titel:"Kuchen Pappelkinder & Hoflädle", wo:"Dorfplatz", wen:["alle"], hinweis:"Kaffee & Kuchen (Verein Natürlich Miteinander e.V.) + Hoflädle" },
     { tag:"do", zeit:"14:15 – 15:30", titel:"Singen – Jodruf Sulzbrunn", wo:"Dorfplatz", wen:["alle"] },
-    { tag:"do", zeit:"16:00 – 17:30", titel:"Frauenkreis \"Weibliche Lebendigkeit\"", wo:"Yogaraum", wen:["erwachsene"] },
+    { tag:"do", zeit:"15:30 – 17:30", titel:"Frauenkreis", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"do", zeit:"15:30 – 17:30", titel:"Kleine Schnitzereien auch für Große", wo:"Wundazelt", wen:["erwachsene","kinder_ab_5"], anmeldung:"begrenzt" },
-    { tag:"do", zeit:"15:30 – 16:30", titel:"ContaKids - Bewegung, Spiel & Verbindung", wo:"Turnhalle", wen:["kinder_0_4"] },
+    { tag:"do", zeit:"15:30 – 17:30", titel:"ContaKids - Bewegung, Spiel & Verbindung", wo:"", wen:["kinder_0_4"] },
     { tag:"do", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"do", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"do", zeit:"19:30 – 20:30", titel:"Singen – Jodruf Sulzbrunn", wer:"Rolf & Margaretha", wo:"Zirkuszelt", wen:["alle"] },
@@ -142,8 +142,8 @@ const WUNDA = {
     { tag:"fr", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Bogenbau", wer:"Laurenz", wo:"Wundazelt", wen:["alle"] },
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Baumklettern", wer:"Stefan", wo:"Treffpunkt Zirkuszelt", wen:["kinder_ab_5"] },
-    { tag:"fr", zeit:"14:00 – 16:00", titel:"Faszination Baumpilze & Naturkosmetik", wo:"Kinderjurte", wen:["erwachsene"] },
-    { tag:"fr", zeit:"15:00 – 16:00", titel:"ContaKids -Bewegung, Spiel & Verbindung", wo:"Turnhalle", wen:["kinder_0_4"] },
+    { tag:"fr", zeit:"14:00 – 16:00", titel:"Faszination Baumpilze & Naturkosmetik", wo:"Kinderjurte", wen:["erwachsene","kinder_ab_5"] },
+    { tag:"fr", zeit:"15:00 – 16:00", titel:"ContaKids -Bewegung, Spiel & Verbindung", wo:"Yogaraum", wen:["kinder_0_4"] },
     { tag:"fr", zeit:"15:00 – 16:00", titel:"Seifenblasen", wo:"Dorfplatz", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"fr", zeit:"16:00 – 18:00", titel:"Open Space - Gestalte das Programm mit!", wo:"", wen:["alle"], hinweis:"Alle, die etwas anbieten möchten · u. a. bietet Amelie Jodeln an" },
     { tag:"fr", zeit:"17:30 – 18:00", titel:"Vorlese- & Mitmachgeschichte: Das schrecklichste Monster der Welt", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
@@ -511,7 +511,7 @@ const WUNDA = {
       foto: "ton-brennen.png",
     },
     "Waldrallye - Spielewagen - Flying Fox": {
-      beschreibung: "Ganztägige Entdecker-Angebote: Auf der Waldrallye zieht ihr mit Entdeckerrucksäcken (Hase, Eule, Fuchs …) los und löst spannende Aufgaben in der Natur. \nDazu der Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen – und die Flying Fox für ein kleines Abenteuer mit Schwung.\n\nRucksackverleih\nDie Rucksäcke können zu folgenden Zeiten gegen 10 € Pfand an der Bar ausgeliehen werden:\n\n08:00 – 10:00 Uhr \n10:00 – 12:00 Uhr \n\nSamstags nur bis mittags! \n\nBitte holt die Rucksäcke zu Beginn des jeweiligen Zeitfensters an der Bar ab und bringt sie spätestens zum Ende des Zeitfensters wieder zurück, damit sie den nächsten Ausleihenden zur Verfügung stehen.",
+      beschreibung: "Ganztägige Entdecker-Angebote: Auf der Waldrallye zieht ihr mit Entdeckerrucksäcken (Hase, Eule, Fuchs …) los und löst spannende Aufgaben in der Natur. \nDazu der Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen – und die Flying Fox für ein kleines Abenteuer mit Schwung.\n\nRucksackverleih\nDie Rucksäcke können zu folgenden Zeiten gegen 10 € Pfand an der Bar ausgeliehen werden:\nDienstag - Freitag\n08:00 – 10:00 Uhr \n10:00 – 12:00 Uhr \n12:00 - 14:00 Uhr\n14:00 - 16:00 Uhr\n16:00 - 18:00 Uhr\nSamstag\n8:00 - 10:00 Uhr\n10:00 - 12:00 Uhr\n\n\nSamstags nur bis mittags! \n\nBitte holt die Rucksäcke zu Beginn des jeweiligen Zeitfensters an der Bar ab und bringt sie spätestens zum Ende des Zeitfensters wieder zurück, damit sie den nächsten Ausleihenden zur Verfügung stehen.",
     },
     "Spielewagen · Flying Fox": {
       beschreibung: "Juchuh wir lieben diese Fahrzeuge. Der Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen steht wieder zur Verfügung– und die Flying Fox für ein kleines Abenteuer mit Schwung.",
@@ -595,7 +595,6 @@ const WUNDA = {
       wer: "Natalie",
       beschreibung: "Ich bin Natalie, Mutter eines vierjährigen Sohnes aus München. Nach der Babyzeit habe ich durch Contact Improvisation wieder Freude an Bewegung und einen neuen Zugang zu meinem Körper gefunden. Daraus entstand der Wunsch, den\nspielerischen körperlichen Austausch auch im Miteinander mit meinem Kind zu vertiefen – so bin ich zur ContaKids Ausbildung gekommen.\n\nIn meinem Workshop lade ich Eltern und Kinder ein, sich über Bewegung neu zu begegnen. Wir rollen, tragen, balancieren und forschen gemeinsam – mal wild, mal achtsam.\n Es entsteht ein Raum für Vertrauen, Nähe und Leichtigkeit jenseits\nvon Worten. Im Mittelpunkt steht nicht das „richtig machen“, sondern das gemeinsame Erleben und die Freude an Kontakt und Bewegung.",
       foto: "contakids.jpg",
-      insta: "@contakidsworld",
     },
     "ContaKids -Bewegung, Spiel & Verbindung": {
       wer: "Natalie Zeitler",
@@ -613,16 +612,6 @@ const WUNDA = {
     },
     Abendessen: {
       beschreibung: "Das Sulzbrunner Küchenteam bereitet vegetarische oder vegane Mahlzeiten ausschließlich mit biologischen Lebensmitteln zu, je nach Saison aus regionalen Lebensmitteln, teilweise aus der solidarischen Landwirtschaft der Gemeinschaft Sulzbrunn.\n\nWas es heute zu Essen gibt, findet ihr an unseren Aushängen an den Infopoints.",
-    },
-    "Frauenkreis \"Frau und Natur\"": {
-      wer: "Fabienne (Gemeinschaft Sulzbrunn)",
-      beschreibung: "Frau und Natur – Zyklisches Sein, Verbundenheit und innere Jahreszeiten\n\nDie Natur lebt in Rhythmen. Sie kennt Zeiten des Wachsens und Blühens ebenso wie Zeiten des Rückzugs und der Regeneration. Auch wir Frauen bewegen uns durch innere Jahreszeiten – Phasen der Fülle, der Wandlung, des Loslassens und des Neubeginns. Oft vergessen wir im Alltag, wie natürlich und kraftvoll dieses zyklische Sein ist.\nIn diesem Frauenkreis erforschen wir die Verbindung zwischen der Natur und unserer eigenen inneren Landschaft. Durch achtsame Körperübungen, Reflexion, Austausch sowie kleine Rituale lassen wir uns von den Qualitäten der Jahreszeiten inspirieren und lauschen den Rhythmen, die in uns wirken.\nGemeinsam schaffen wir einen Raum, um langsamer zu werden, zu spüren und uns mit dem zu verbinden, was gerade lebendig ist. Eine Einladung, der eigenen Natur näherzukommen und die Schönheit des Wandels neu zu entdecken.\n \nIch bin Fabienne.\nEine naturverbundene Abenteurerin, die das Kind in sich noch nicht vergessen hat. Neben dem Kind in mir finden meine Wurzeln immer mehr ihren Weg und schenken mir Ruhe in meinem Leben, um daraus wundervolle Schätze entstehen lassen zu können.\nMein Wunsch ist es, Menschen auf ihrem natürlichen Weg zu begleiten und zu inspirieren und sie dort abzuholen, wo sie in ihrem Leben stehen. Ich möchte gemeinsam Schritte gehen – eingebunden in eine Gemeinschaft, die uns Menschen und die Natur gleichermaßen umfasst. In den von mir gestalteten Räumen begegnen wir uns selbst, dem anderen, der Natur und erfahren uns als Ganzes in einem lebendigen Beziehungsgeflecht mit dem Leben.  \nSo gestaltet sich auch mein Sein im Naturkindergarten und der Wildnispädagogik - ursprünglich, verbunden und bindungsorientiert. Ich liebe es am Feuer zusammen zu kommen, zu singen und in ehrlicher und authentischer Begegnung zu sein. Neben und innerhalb der Naturarbeit weitet sich mein Wirken in Räume die geprägt sind von Beziehung, Sinnlichkeit, Tanz und  wahrhaftiger Kommunikation.",
-      foto: "frauenkreis-frau-und-natur-ms63qqrk.jpg",
-    },
-    "Frauenkreis \"Weibliche Lebendigkeit\"": {
-      wer: "Fabienne (Gemeinschaft Sulzbrunn)",
-      beschreibung: "Weibliche Lebendigkeit – Sinnlichkeit, Präsenz und Lebensenergie\n\nIn jeder Frau lebt eine natürliche Quelle von Lebendigkeit, Sinnlichkeit und schöpferischer Kraft. Manchmal fließt sie frei, manchmal gerät sie im Trubel des Alltags in den Hintergrund. Dieser Frauenkreis lädt dazu ein, wieder mehr in Kontakt mit dem eigenen Körper, den Sinnen und der eigenen Lebensenergie zu kommen.\nDurch Embodiment, Atem, Bewegung sowie Begegnungs- und Wahrnehmungsübungen erforschen wir, was uns lebendig macht und wie wir uns selbst tiefer begegnen können. Inspiriert von tantrischen Grundprinzipien wie Präsenz, Bewusstheit und Verkörperung richten wir unsere Aufmerksamkeit auf das unmittelbare Erleben – auf das, was im Moment spürbar ist.\nEin Raum für authentische Begegnung mit dir selbst und anderen und die Freude daran, ganz im eigenen Körper anzukommen. Eine Einladung, der eigenen Lebendigkeit mit Offenheit, Neugier und Wertschätzung zu begegnen.\n\nIch bin Fabienne.\nEine naturverbundene Abenteurerin, die das Kind in sich noch nicht vergessen hat. Neben dem Kind in mir finden meine Wurzeln immer mehr ihren Weg und schenken mir Ruhe in meinem Leben, um daraus wundervolle Schätze entstehen lassen zu können.\nMein Wunsch ist es, Menschen auf ihrem natürlichen Weg zu begleiten und zu inspirieren und sie dort abzuholen, wo sie in ihrem Leben stehen. Ich möchte gemeinsam Schritte gehen – eingebunden in eine Gemeinschaft, die uns Menschen und die Natur gleichermaßen umfasst. In den von mir gestalteten Räumen begegnen wir uns selbst, dem anderen, der Natur und erfahren uns als Ganzes in einem lebendigen Beziehungsgeflecht mit dem Leben.  \nSo gestaltet sich auch mein Sein im Naturkindergarten und der Wildnispädagogik - ursprünglich, verbunden und bindungsorientiert. Ich liebe es am Feuer zusammen zu kommen, zu singen und in ehrlicher und authentischer Begegnung zu sein. Neben und innerhalb der Naturarbeit weitet sich mein Wirken in Räume die geprägt sind von Beziehung, Sinnlichkeit, Tanz und  wahrhaftiger Kommunikation.",
-      foto: "frauenkreis.png",
     },
   },
 
