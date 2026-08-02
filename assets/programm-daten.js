@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "02.08.2026, 17:01 Uhr",
+    stand: "02.08.2026, 17:03 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -129,7 +129,7 @@ const WUNDA = {
     { tag:"do", zeit:"19:30 – 20:30", titel:"Singen – Jodruf Sulzbrunn", wer:"Rolf & Margaretha", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"do", zeit:"19:00 – 20:30", titel:"Männerkreis", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"do", zeit:"ab 20:30", titel:"Lagerfeuerabend", wer:"", wo:"Feuerstelle", wen:["kinder_ab_5","erwachsene"], hinweis:"Instrumente mitbringen" },
-    { tag:"do", zeit:"Ganztags", titel:"Waldrallye · Spielewagen · Flying Fox", wer:"", wo:"", wen:["alle"] },
+    { tag:"do", zeit:"Ganztags", titel:"Waldrallye · Spielewagen · Flying Fox", wo:"", wen:["alle"] },
     // Freitag
     { tag:"fr", zeit:"07:30 – 08:15", titel:"Klang & Qigong – Entspannt in den Tag starten", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"fr", zeit:"07:45 – 09:00", titel:"Frühstück", wer:"", wo:"Seminarhaus", wen:["alle"], hinweis:"Nur vorgebucht" },
@@ -230,7 +230,7 @@ const WUNDA = {
     },
     "Waldrallye · Spielewagen · Flying Fox": {
       foto: "waldrallye.jpg",
-      beschreibung: "Ganztägige Entdecker-Angebote: Auf der Waldrallye zieht ihr mit Entdeckerrucksäcken (Hase, Eule, Fuchs …) los und löst spannende Aufgaben in der Natur. \nDazu der Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen – und die Flying Fox für ein kleines Abenteuer mit Schwung.\n\nRucksackverleih für die Waldrallye: \nDie Rucksäcke können zu folgenden Zeiten gegen 10 € Pfand an der Bar ausgeliehen werden:\n\n08:00 – 10:00 Uhr \n10:00 – 12:00 Uhr \n14:00 – 16:00 Uhr \n16:00 – 18:00 Uhr \n\nBitte holt die Rucksäcke zu Beginn des jeweiligen Zeitfensters an der Bar ab und bringt sie spätestens zum Ende des Zeitfensters wieder zurück, damit sie den nächsten Ausleihenden zur Verfügung stehen.\nDie Rucksäcke sind vorbereitet von Julia Heldt, wohnhaft im Oberallgäu, ist seit 2016 aktiv als Tagesmutter, sowie zertifizierte Wanderführerin und Musiktherapeutin. Schnitzeljagt in der Natur und Kindergeburtstage gestaltet sie phantasievoll.",
+      beschreibung: "Ganztägige Entdecker-Angebote: Auf der Waldrallye zieht ihr mit Entdeckerrucksäcken (Hase, Eule, Fuchs …) los und löst spannende Aufgaben in der Natur. \nRucksackverleih\nDie Rucksäcke können zu folgenden Zeiten gegen 10 € Pfand an der Bar ausgeliehen werden:\nDienstag - Freitag\n08:00 – 10:00 Uhr \n10:00 – 12:00 Uhr \n12:00 - 14:00 Uhr\n14:00 - 16:00 Uhr\n16:00 - 18:00 Uhr\nSamstag\n8:00 - 10:00 Uhr\n10:00 - 12:00 Uhr\nSamstags nur bis mittags! \n\nBitte holt die Rucksäcke zu Beginn des jeweiligen Zeitfensters an der Bar ab und bringt sie spätestens zum Ende des Zeitfensters wieder zurück, damit sie den nächsten Ausleihenden zur Verfügung stehen.\n\nDie Rucksäcke sind vorbereitet von Julia Heldt, wohnhaft im Oberallgäu, ist seit 2016 aktiv als Tagesmutter, sowie zertifizierte Wanderführerin und Musiktherapeutin. Schnitzeljagt in der Natur und Kindergeburtstage gestaltet sie phantasievoll.\n\nEin weiteres Vergnügen am Wundaplunda Platz ist unser Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen – und die Flying Fox für ein kleines Abenteuer mit Schwung.",
     },
     Yoga: {
       wer: "Amelie Zech (Stimmtherapeutin & Yogalehrerin)",
@@ -511,7 +511,7 @@ const WUNDA = {
       foto: "ton-brennen.png",
     },
     "Waldrallye - Spielewagen - Flying Fox": {
-      beschreibung: "Ganztägige Entdecker-Angebote: Auf der Waldrallye zieht ihr mit Entdeckerrucksäcken (Hase, Eule, Fuchs …) los und löst spannende Aufgaben in der Natur. \nRucksackverleih\nDie Rucksäcke können zu folgenden Zeiten gegen 10 € Pfand an der Bar ausgeliehen werden:\nDienstag - Freitag\n08:00 – 10:00 Uhr \n10:00 – 12:00 Uhr \n12:00 - 14:00 Uhr\n14:00 - 16:00 Uhr\n16:00 - 18:00 Uhr\nSamstag\n8:00 - 10:00 Uhr\n10:00 - 12:00 Uhr\nSamstags nur bis mittags! \n\nBitte holt die Rucksäcke zu Beginn des jeweiligen Zeitfensters an der Bar ab und bringt sie spätestens zum Ende des Zeitfensters wieder zurück, damit sie den nächsten Ausleihenden zur Verfügung stehen.\n\nEin weiteres Vergnügen ist unser Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen – und die Flying Fox für ein kleines Abenteuer mit Schwung.",
+      beschreibung: "Ganztägige Entdecker-Angebote: Auf der Waldrallye zieht ihr mit Entdeckerrucksäcken (Hase, Eule, Fuchs …) los und löst spannende Aufgaben in der Natur. \nRucksackverleih\nDie Rucksäcke können zu folgenden Zeiten gegen 10 € Pfand an der Bar ausgeliehen werden:\nDienstag - Freitag\n08:00 – 10:00 Uhr \n10:00 – 12:00 Uhr \n12:00 - 14:00 Uhr\n14:00 - 16:00 Uhr\n16:00 - 18:00 Uhr\nSamstag\n8:00 - 10:00 Uhr\n10:00 - 12:00 Uhr\nSamstags nur bis mittags! \n\nBitte holt die Rucksäcke zu Beginn des jeweiligen Zeitfensters an der Bar ab und bringt sie spätestens zum Ende des Zeitfensters wieder zurück, damit sie den nächsten Ausleihenden zur Verfügung stehen.\n\nDie Rucksäcke sind vorbereitet von Julia Heldt, wohnhaft im Oberallgäu, ist seit 2016 aktiv als Tagesmutter, sowie zertifizierte Wanderführerin und Musiktherapeutin. Schnitzeljagt in der Natur und Kindergeburtstage gestaltet sie phantasievoll.\n\nEin weiteres Vergnügen am Wundaplunda Platz ist unser Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen – und die Flying Fox für ein kleines Abenteuer mit Schwung.",
     },
     "Spielewagen · Flying Fox": {
       beschreibung: "Juchuh wir lieben diese Fahrzeuge. Der Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen steht wieder zur Verfügung– und die Flying Fox für ein kleines Abenteuer mit Schwung.",
