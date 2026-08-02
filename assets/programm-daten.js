@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "02.08.2026, 17:00 Uhr",
+    stand: "02.08.2026, 17:01 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -511,7 +511,7 @@ const WUNDA = {
       foto: "ton-brennen.png",
     },
     "Waldrallye - Spielewagen - Flying Fox": {
-      beschreibung: "Ganztägige Entdecker-Angebote: Auf der Waldrallye zieht ihr mit Entdeckerrucksäcken (Hase, Eule, Fuchs …) los und löst spannende Aufgaben in der Natur. \nDazu der Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen – und die Flying Fox für ein kleines Abenteuer mit Schwung.\n\nRucksackverleih\nDie Rucksäcke können zu folgenden Zeiten gegen 10 € Pfand an der Bar ausgeliehen werden:\nDienstag - Freitag\n08:00 – 10:00 Uhr \n10:00 – 12:00 Uhr \n12:00 - 14:00 Uhr\n14:00 - 16:00 Uhr\n16:00 - 18:00 Uhr\nSamstag\n8:00 - 10:00 Uhr\n10:00 - 12:00 Uhr\n\n\nSamstags nur bis mittags! \n\nBitte holt die Rucksäcke zu Beginn des jeweiligen Zeitfensters an der Bar ab und bringt sie spätestens zum Ende des Zeitfensters wieder zurück, damit sie den nächsten Ausleihenden zur Verfügung stehen.",
+      beschreibung: "Ganztägige Entdecker-Angebote: Auf der Waldrallye zieht ihr mit Entdeckerrucksäcken (Hase, Eule, Fuchs …) los und löst spannende Aufgaben in der Natur. \nRucksackverleih\nDie Rucksäcke können zu folgenden Zeiten gegen 10 € Pfand an der Bar ausgeliehen werden:\nDienstag - Freitag\n08:00 – 10:00 Uhr \n10:00 – 12:00 Uhr \n12:00 - 14:00 Uhr\n14:00 - 16:00 Uhr\n16:00 - 18:00 Uhr\nSamstag\n8:00 - 10:00 Uhr\n10:00 - 12:00 Uhr\nSamstags nur bis mittags! \n\nBitte holt die Rucksäcke zu Beginn des jeweiligen Zeitfensters an der Bar ab und bringt sie spätestens zum Ende des Zeitfensters wieder zurück, damit sie den nächsten Ausleihenden zur Verfügung stehen.\n\nEin weiteres Vergnügen ist unser Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen – und die Flying Fox für ein kleines Abenteuer mit Schwung.",
     },
     "Spielewagen · Flying Fox": {
       beschreibung: "Juchuh wir lieben diese Fahrzeuge. Der Spielewagen des Kreisjugendrings mit vielen Fahrzeugen und Spielen steht wieder zur Verfügung– und die Flying Fox für ein kleines Abenteuer mit Schwung.",
