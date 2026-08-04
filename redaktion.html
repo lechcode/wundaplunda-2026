@@ -540,7 +540,8 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
 
   /* ============ Entwurf (Autosave) ============ */
   function saveDraft(){
-    try{ localStorage.setItem(DRAFT_KEY, JSON.stringify({p:work,e:workEssen,k:workKatalog,t:Date.now()})); }catch(e){}
+    // base = SHA des Live-Stands, auf dem dieser Entwurf beruht -> so lassen sich veraltete Entwürfe erkennen
+    try{ localStorage.setItem(DRAFT_KEY, JSON.stringify({p:work,e:workEssen,k:workKatalog,t:Date.now(),base:(baseline&&baseline.sha)||null})); }catch(e){}
   }
   function clearDraft(){ try{localStorage.removeItem(DRAFT_KEY);}catch(e){} $("draft-banner").hidden=true; }
   function applyDraftIfAny(){
@@ -548,6 +549,11 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
     if(!raw) return;
     try{
       var d=JSON.parse(raw);
+      // Entwurf NUR übernehmen, wenn er auf dem AKTUELLEN Live-Stand beruht. Sonst ist er veraltet
+      // (inzwischen wurde – evtl. von einem anderen Gerät – veröffentlicht) und würde beim nächsten
+      // Veröffentlichen neuere Inhalte (z. B. Katalog-Texte) überschreiben/löschen. Also verwerfen.
+      var liveSha=(baseline&&baseline.sha)||null;
+      if(!liveSha || d.base!==liveSha){ clearDraft(); return; }
       var differs = JSON.stringify(d.p)!==JSON.stringify(work) || JSON.stringify(d.e)!==JSON.stringify(workEssen) || (d.k && JSON.stringify(d.k)!==JSON.stringify(workKatalog));
       if(!differs){ clearDraft(); return; }
       work=d.p; workEssen=d.e; if(d.k) workKatalog=d.k;
@@ -654,7 +660,9 @@ dialog#key-dialog::backdrop{background:rgba(16,29,41,.45)}
       merged.festival.stand=standStr;
       // Katalog-Inhalte: nur die von mir geänderten/neuen/entfernten Titel auf den frischen Remote-Stand anwenden
       merged.katalog=merged.katalog||{};
-      Object.keys(baseKatalog).forEach(function(t){ if(!(t in workKatalog)) delete merged.katalog[t]; });
+      // Löschen nur, wenn ICH den Titel entfernt habe UND der Live-Eintrag seit dem Laden unverändert ist
+      // (sonst würde eine parallele/neuere Änderung fremder Titel versehentlich gelöscht).
+      Object.keys(baseKatalog).forEach(function(t){ if(!(t in workKatalog) && JSON.stringify(merged.katalog[t])===JSON.stringify(baseKatalog[t])) delete merged.katalog[t]; });
       Object.keys(workKatalog).forEach(function(t){ if(JSON.stringify(workKatalog[t])!==JSON.stringify(baseKatalog[t])) merged.katalog[t]=deepCopy(workKatalog[t]); });
       var newSource=serializeWunda(merged, extractHeader(remote.source));
       var re=parseWunda(newSource);
