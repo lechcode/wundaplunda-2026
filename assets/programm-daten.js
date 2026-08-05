@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "05.08.2026, 22:23 Uhr",
+    stand: "05.08.2026, 22:27 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -116,7 +116,7 @@ const WUNDA = {
     { tag:"do", zeit:"09:20 – 09:40", titel:"Morgenkreis mit dem Wundaplunda Team", wer:"Wundaplunda Team", wo:"Zirkuszelt", wen:["alle"] },
     { tag:"do", zeit:"09:45 – 10:30", titel:"Clanzeit", wer:"", wo:"Treff Zirkuszelt", wen:["alle"] },
     { tag:"do", zeit:"10:30 - 12:30", titel:"Weiden-Zauberstäbe", wo:"Zirkuszelt", wen:["kinder_0_4","kinder_ab_5"], anmeldung:"begrenzt" },
-    { tag:"do", zeit:"10:30 – 12:30", titel:"5 Minuten Feuer & Wilde Küche", wo:"Kinderjurte", wen:["alle"] },
+    { tag:"do", zeit:"10:30 – 12:30", titel:"5 Minuten Feuer & Wilde Küche", wo:"Wundazelt", wen:["alle"] },
     { tag:"do", zeit:"10:30 – 12:30", titel:"Mein ICH - mein SelbstWert - mein Wert in der Familie", wo:"Yogaraum", wen:["erwachsene"] },
     { tag:"do", zeit:"12:15 – 13:45", titel:"Mittagessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
     { tag:"do", zeit:"14:00 – 16:00", titel:"Kuchen Pappelkinder & Hoflädle", wo:"Dorfplatz", wen:["alle"], hinweis:"Kaffee & Kuchen (Verein Natürlich Miteinander e.V.) + Hoflädle" },
