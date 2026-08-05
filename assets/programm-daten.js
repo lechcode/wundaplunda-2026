@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "02.08.2026, 17:03 Uhr",
+    stand: "05.08.2026, 06:39 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -104,7 +104,7 @@ const WUNDA = {
     { tag:"mi", zeit:"14:00 – 16:00", titel:"Baumklettern", wo:"Treffpunkt Zirkuszelt", wen:["kinder_ab_5"] },
     { tag:"mi", zeit:"15:00 – 16:00", titel:"Eltern-Kind-Akrobatik", wo:"Turnhalle", wen:["kinder_0_4"], anmeldung:"begrenzt" },
     { tag:"mi", zeit:"15:00 – 16:00", titel:"Clownspiele", wo:"Yogaraum", wen:["kinder_ab_5"], anmeldung:"begrenzt" },
-    { tag:"mi", zeit:"16:00 – 17:30", titel:"Schmuckworkshop", wo:"Kinderjurte", wen:["erwachsene"], anmeldung:"begrenzt" },
+    { tag:"mi", zeit:"16:00 – 17:30", titel:"Schmuckworkshop", wo:"Dorfplatz", wen:["erwachsene"], anmeldung:"begrenzt", status:"geaendert" },
     { tag:"mi", zeit:"16:30 – 17:30", titel:"Hirnhopsen für Alle", wer:"Florian", wo:"Turnhalle", wen:["alle"] },
     { tag:"mi", zeit:"17:30 – 18:00", titel:"Lisa liest Geschichte", wer:"Lisa", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"mi", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
