@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "06.08.2026, 09:38 Uhr",
+    stand: "06.08.2026, 09:44 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -186,6 +186,7 @@ const WUNDA = {
     { tag:"sa", zeit:"08:00-11:00", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
     // Donnerstag
     { tag:"do", zeit:"15:30 - 17:30", titel:"OPEN SPACE", wo:"", wen:["alle"] },
+    { tag:"do", zeit:"15:30 - 16:30", titel:"Turnen", wo:"Turnhalle", wen:["kinder_0_4","kinder_ab_5","alle"] },
   ],
 
   katalog: {
@@ -627,6 +628,9 @@ const WUNDA = {
     },
     "OPEN SPACE": {
       beschreibung: "Heute muss ContaKids leider wegen Krankheit entfallen. Wer Lust und Zeit hat heute zwischen 15:30 Uhr und 16:30 Uhr oder 16:30 - 17:30 Uhr was anzubieten komm gerne auf das Orgateam Wundaplunda zu.",
+    },
+    Turnen: {
+      wer: "Mit Emily",
     },
   },
 
