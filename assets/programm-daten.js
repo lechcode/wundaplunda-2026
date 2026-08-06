@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "06.08.2026, 12:30 Uhr",
+    stand: "06.08.2026, 12:40 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -186,7 +186,7 @@ const WUNDA = {
     { tag:"do", zeit:"15:30 - 16:30", titel:"Jodeln", wo:"Zirkuszelt", wen:["erwachsene"] },
     { tag:"do", zeit:"15:30 - 16:30", titel:"Turnen", wo:"Turnhalle", wen:["kinder_0_4","kinder_ab_5","alle"] },
     { tag:"do", zeit:"14:00 - 16:00", titel:"Kinderschminken (Spende)", wo:"Dorfplatz", wen:["alle"] },
-    { tag:"do", zeit:"16:30 - 17:30", titel:"Kong Fu", wo:"Zirkuszelt", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"do", zeit:"16:30 - 17:30", titel:"Kung Fu", wo:"Zirkuszelt", wen:["kinder_0_4","kinder_ab_5"] },
     // Freitag
     { tag:"fr", zeit:"16:45 - 17:30", titel:"Eselbegegnung", wo:"", wen:["alle"] },
   ],
@@ -656,6 +656,10 @@ const WUNDA = {
     Eselbegegnung: {
       wer: "Jonne",
       beschreibung: "Lerne unsere Besucheresel in entspannter Atmosphäre kennen und erlebe ihre ruhige, freundliche Art hautnah. Beim gemeinsamen Führen, Streicheln und Beobachten entsteht eine besondere Verbindung zwischen Mensch und Tier.",
+    },
+    "Kung Fu": {
+      wer: "mit Andi",
+      beschreibung: "Workshop: Lerne die Grundschritte des Kung Fu mit Andi\n\nDu möchtest Kung Fu kennenlernen und die ersten Bewegungen sicher erlernen? Dann ist dieser Workshop genau das Richtige für dich!\n\nGemeinsam mit Andi lernst du die Grundlagen des Kung Fu!",
     },
   },
 
