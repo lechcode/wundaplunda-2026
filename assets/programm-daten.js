@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "06.08.2026, 07:43 Uhr",
+    stand: "06.08.2026, 07:49 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -184,6 +184,8 @@ const WUNDA = {
     { tag:"fr", zeit:"19:00 - 21:30", titel:"Unsere Bar hat geöffnet!", wo:"", wen:["alle"] },
     // Samstag
     { tag:"sa", zeit:"08:00-11:00", titel:"Unsere Bar hat geöffnet!", wo:"Bar", wen:["alle"] },
+    // Donnerstag
+    { tag:"do", zeit:"15:30 - 17:30", titel:"OPEN SPACE", wo:"", wen:["alle"] },
   ],
 
   katalog: {
@@ -622,6 +624,9 @@ const WUNDA = {
     },
     Abendessen: {
       beschreibung: "Das Sulzbrunner Küchenteam bereitet vegetarische oder vegane Mahlzeiten ausschließlich mit biologischen Lebensmitteln zu, je nach Saison aus regionalen Lebensmitteln, teilweise aus der solidarischen Landwirtschaft der Gemeinschaft Sulzbrunn.\n\nWas es heute zu Essen gibt, findet ihr an unseren Aushängen an den Infopoints.",
+    },
+    "OPEN SPACE": {
+      beschreibung: "Heute muss ContaKids leider wegen Krankheit entfallen. Wer Lust und Zeit hat heute zwischen 15:30 Uhr und 16:30 Uhr oder 16:30 - 17:30 Uhr was anzubieten komm gerne auf das Orgateam Wundaplunda zu.",
     },
   },
 
