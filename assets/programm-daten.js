@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "06.08.2026, 12:40 Uhr",
+    stand: "06.08.2026, 12:45 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -187,8 +187,6 @@ const WUNDA = {
     { tag:"do", zeit:"15:30 - 16:30", titel:"Turnen", wo:"Turnhalle", wen:["kinder_0_4","kinder_ab_5","alle"] },
     { tag:"do", zeit:"14:00 - 16:00", titel:"Kinderschminken (Spende)", wo:"Dorfplatz", wen:["alle"] },
     { tag:"do", zeit:"16:30 - 17:30", titel:"Kung Fu", wo:"Zirkuszelt", wen:["kinder_0_4","kinder_ab_5"] },
-    // Freitag
-    { tag:"fr", zeit:"16:45 - 17:30", titel:"Eselbegegnung", wo:"", wen:["alle"] },
   ],
 
   katalog: {
