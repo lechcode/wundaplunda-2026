@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "06.08.2026, 12:22 Uhr",
+    stand: "06.08.2026, 12:30 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -142,8 +142,7 @@ const WUNDA = {
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Bogenbau", wer:"Laurenz", wo:"Wundazelt", wen:["alle"] },
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Baumklettern", wer:"Stefan", wo:"Treffpunkt Zirkuszelt", wen:["kinder_ab_5"] },
     { tag:"fr", zeit:"14:00 – 16:00", titel:"Faszination Baumpilze & Naturkosmetik", wo:"Kinderjurte", wen:["erwachsene","kinder_ab_5"] },
-    { tag:"fr", zeit:"15:00 – 16:00", titel:"ContaKids -Bewegung, Spiel & Verbindung", wo:"Turnhalle", wen:["kinder_0_4"] },
-    { tag:"fr", zeit:"15:00 – 16:00", titel:"Seifenblasen", wo:"Dorfplatz", wen:["kinder_0_4","kinder_ab_5"] },
+    { tag:"fr", zeit:"16:45 - 17:30", titel:"Seifenblasen", wo:"Dorfplatz", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"fr", zeit:"16:00 – 16:45", titel:"Clan Zeit", wo:"", wen:["alle"] },
     { tag:"fr", zeit:"17:30 – 18:00", titel:"Vorlese- & Mitmachgeschichte: Das schrecklichste Monster der Welt", wo:"Wundazelt", wen:["kinder_0_4","kinder_ab_5"] },
     { tag:"fr", zeit:"17:45 – 19:15", titel:"Abendessen", wer:"", wo:"Seminarhaus", wen:["alle"], anmeldung:"offen" },
@@ -188,6 +187,8 @@ const WUNDA = {
     { tag:"do", zeit:"15:30 - 16:30", titel:"Turnen", wo:"Turnhalle", wen:["kinder_0_4","kinder_ab_5","alle"] },
     { tag:"do", zeit:"14:00 - 16:00", titel:"Kinderschminken (Spende)", wo:"Dorfplatz", wen:["alle"] },
     { tag:"do", zeit:"16:30 - 17:30", titel:"Kong Fu", wo:"Zirkuszelt", wen:["kinder_0_4","kinder_ab_5"] },
+    // Freitag
+    { tag:"fr", zeit:"16:45 - 17:30", titel:"Eselbegegnung", wo:"", wen:["alle"] },
   ],
 
   katalog: {
@@ -651,6 +652,10 @@ const WUNDA = {
       wer: "Wundaplunda Team",
       beschreibung: "Wetterbedingt ist die Clanzeit am Mittwoch ausgefallen. Daher wurde sie auf heute, Donnerstag, verschoben.",
       foto: "open-space-gestalte-das-programm-mit-mrjgf96w.jpg",
+    },
+    Eselbegegnung: {
+      wer: "Jonne",
+      beschreibung: "Lerne unsere Besucheresel in entspannter Atmosphäre kennen und erlebe ihre ruhige, freundliche Art hautnah. Beim gemeinsamen Führen, Streicheln und Beobachten entsteht eine besondere Verbindung zwischen Mensch und Tier.",
     },
   },
 
