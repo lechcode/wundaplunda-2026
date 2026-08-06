@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "06.08.2026, 10:02 Uhr",
+    stand: "06.08.2026, 10:08 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -582,6 +582,7 @@ const WUNDA = {
       beschreibung: "Bewusst wachsen als Familie - vom ICH zum WIR\n\nDeine innere Haltung und deine Werte prägen dein Sein und dein Handeln – und damit das Miteinander in deiner Familie.\nWas du in dir veränderst, wirkt nach außen und kann euer Familienleben nachhaltig wandeln.\n\nWir geben 2 Workshops auf dem Wundaplunda und laden ein, beide in Kombination zu besuchen und auch unabhängig voneinander.\nDie Workshops bieten Raum für Entwicklung und persönliches Wachstum – für dich als Mensch und damit für deine Beziehungen in der Familie. Es geht darum in die Themenfelder hinein zu spüren, sie zu bewegen und zu erLEBen.\n\nDie Workshop- Begleiterinnen sind\nAnouk und Regina – die Initiatorinnen von erLEBes Familie.\nGemeinsam öffnen wir Räume für Eltern und Familien, die sich entwickeln und ihr Bewusstsein erweitern wollen, um ihr Familienleben authentischer, klarer und friedvoller\ngestalten zu können.\n\nerLEBes Workshop 1: Mein ICH - mein SelbstWert - mein Wert in der Familie\nWie sieht meine innere Welt aus? Wie bewusst bin ich mir meiner Selbst und meinen\nAnteilen, meinen lichten und meinen dunklen Seiten?\nWas bedeutet für mich Selbstwert und was ist der kleine, sehr feine Unterschied zum\nSelbstvertrauen?\nWelche Gedanken & Gefühle begleiten mich zu diesem Thema?\nWie kann ich hier mein Bewusstsein erweitern & positiv auf mein Familienleben wirken?\nWir öffnen gemeinsam den Raum nach Innen - um ein tieferes Verständnis für uns selbst\nund unseren Wert als Mensch & Elternteil zu entwickeln\nerLEBes Workshop 2: Vom ICH zum WIR – Beziehung in Familie leben\nWie wirkt meine innere Welt auf meine Beziehungen in der Familie?\nWie kann ich Verbindung im Alltag bewusst gestalten?\nIn diesem Teil geht es um unsere Begegnungen im Familienalltag und darum, wie ich das\nWIR in meiner Familie lebe. Wir bewegen im Gespräch und auf spielerische Weise die\nThemen Persönliche Sprache, Kommunikation und Bedürfnisse im Familiensystem.",
       foto: "lavi.png",
       web: "lavi-schule.de/Wer-wir-sind",
+      fotopos: "52% 0%",
     },
     "Vom ICH zum WIR – Beziehung in Familie leben": {
       wer: "Anouk & Regina (erLEBes Familie)",
