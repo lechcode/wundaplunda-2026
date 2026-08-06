@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "06.08.2026, 09:44 Uhr",
+    stand: "06.08.2026, 09:56 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -631,6 +631,7 @@ const WUNDA = {
     },
     Turnen: {
       wer: "Mit Emily",
+      foto: "turnen-msh7mxl9.jpg",
     },
   },
 
