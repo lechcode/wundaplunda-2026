@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "07.08.2026, 08:40 Uhr",
+    stand: "07.08.2026, 08:50 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -189,6 +189,7 @@ const WUNDA = {
     { tag:"do", zeit:"16:30 - 17:30", titel:"Kung Fu", wo:"Zirkuszelt", wen:["kinder_0_4","kinder_ab_5"] },
     // Freitag
     { tag:"fr", zeit:"17:00 - 18:00", titel:"OPEN SPACE", wo:"", wen:["alle"] },
+    { tag:"fr", zeit:"14:00 - 16:00", titel:"HEUTE BESONDERER GAST: Besuch 3 SAT Film Team", wo:"", wen:["alle"] },
   ],
 
   katalog: {
@@ -660,6 +661,12 @@ const WUNDA = {
     "Kung Fu": {
       wer: "mit Andi",
       beschreibung: "Workshop: Lerne die Grundschritte des Kung Fu mit Andi\n\nDu möchtest Kung Fu kennenlernen und die ersten Bewegungen sicher erlernen? Dann ist dieser Workshop genau das Richtige für dich!\n\nGemeinsam mit Andi lernst du die Grundlagen des Kung Fu!",
+    },
+    "Besuch 3 SAT Film Team": {
+      beschreibung: "Besonderer Gast heute bei Wundaplunda! 🎥\n\nHeute begleitet uns ein zweiköpfiges Filmteam, das eine Dokumentation über die Gemeinschaft Sulzbrunn dreht. Da Wundaplunda die größte Veranstaltung der Gemeinschaft ist, werden auch hier Eindrücke und die besondere Atmosphäre eingefangen. \nWichtig: Eure Privatsphäre steht an erster Stelle.\nEs werden keine Nahaufnahmen von einzelnen Personen gemacht. Wir möchten eure Privatsphäre schützen und respektieren selbstverständlich auch den Wunsch, wenn ihr gar nicht im Bild erscheinen möchtet.\n\nDie Dokumentation wird am 19. September 2026 im Länder-Magazin aus Bayern ausgestrahlt.\n\nDas Filmteam möchte lediglich einen Gesamteindruck und die besondere Stimmung unseres Sommererlebnisses festhalten.",
+    },
+    "HEUTE BESONDERER GAST: Besuch 3 SAT Film Team": {
+      beschreibung: "Besonderer Gast heute bei Wundaplunda! 🎥\n\nHeute begleitet uns ein zweiköpfiges Filmteam, das eine Dokumentation über die Gemeinschaft Sulzbrunn dreht. Da Wundaplunda die größte Veranstaltung der Gemeinschaft ist, werden auch hier Eindrücke und die besondere Atmosphäre eingefangen. \nWichtig: Eure Privatsphäre steht an erster Stelle.\nEs werden keine Nahaufnahmen von einzelnen Personen gemacht. Wir möchten eure Privatsphäre schützen und respektieren selbstverständlich auch den Wunsch, wenn ihr gar nicht im Bild erscheinen möchtet.\n\nDie Dokumentation wird am 19. September 2026 im Länder-Magazin aus Bayern ausgestrahlt.\n\nDas Filmteam möchte lediglich einen Gesamteindruck und die besondere Stimmung unseres Sommererlebnisses festhalten.",
     },
   },
 
