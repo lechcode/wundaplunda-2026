@@ -36,7 +36,7 @@ const WUNDA = {
     ort: "Gemeinschaft Sulzbrunn · Allgäu",
     adresse: "Sulzbrunn 1–8, 87477 Sulzberg",
     hinweis_jahr: "Stand Juli 2026 – Änderungen möglich",
-    stand: "06.08.2026, 12:49 Uhr",
+    stand: "07.08.2026, 08:40 Uhr",
     tage: [
       { key:"mo", wochentag:"Montag", datum:"03.08." },
       { key:"di", wochentag:"Dienstag", datum:"04.08." },
@@ -187,6 +187,8 @@ const WUNDA = {
     { tag:"do", zeit:"15:30 - 16:30", titel:"Turnen", wo:"Turnhalle", wen:["kinder_0_4","kinder_ab_5","alle"] },
     { tag:"do", zeit:"14:00 - 16:00", titel:"Kinderschminken (Spende)", wo:"Dorfplatz", wen:["alle"] },
     { tag:"do", zeit:"16:30 - 17:30", titel:"Kung Fu", wo:"Zirkuszelt", wen:["kinder_0_4","kinder_ab_5"] },
+    // Freitag
+    { tag:"fr", zeit:"17:00 - 18:00", titel:"OPEN SPACE", wo:"", wen:["alle"] },
   ],
 
   katalog: {
@@ -628,7 +630,7 @@ const WUNDA = {
       beschreibung: "Das Sulzbrunner Küchenteam bereitet vegetarische oder vegane Mahlzeiten ausschließlich mit biologischen Lebensmitteln zu, je nach Saison aus regionalen Lebensmitteln, teilweise aus der solidarischen Landwirtschaft der Gemeinschaft Sulzbrunn.\n\nWas es heute zu Essen gibt, findet ihr an unseren Aushängen an den Infopoints.",
     },
     "OPEN SPACE": {
-      beschreibung: "Heute muss ContaKids leider wegen Krankheit entfallen. Wer Lust und Zeit hat heute zwischen 15:30 Uhr und 16:30 Uhr oder 16:30 - 17:30 Uhr was anzubieten komm gerne auf das Orgateam Wundaplunda zu.",
+      beschreibung: "Wir freuen uns, dass ihr das Programm mitgestaltet. Wir entscheiden im Morgenkreis zusammen, wie der Open Space gestaltet ist.",
     },
     Turnen: {
       wer: "Mit Emily",
